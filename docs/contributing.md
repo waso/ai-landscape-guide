@@ -73,4 +73,4 @@ Open an issue first describing what the page would show and why the existing map
 
 ## Code of conduct
 
-Be kind and assume good faith; see [CODE_OF_CONDUCT.md](https://github.com/<your-github-user>/ai-landscape-field-guide/blob/main/CODE_OF_CONDUCT.md).
+Be kind and assume good faith; see [CODE_OF_CONDUCT.md](https://github.com/waso/ai-landscape-guide/blob/main/CODE_OF_CONDUCT.md).

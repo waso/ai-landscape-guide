@@ -28,7 +28,7 @@ Made for people who learn from videos and courses and keep meeting new acronyms.
 
     ---
 
-    This is a community document. [Open an issue or a pull request](https://github.com/<your-github-user>/ai-landscape-field-guide) — see [how to contribute](contributing.md).
+    This is a community document. [Open an issue or a pull request](https://github.com/waso/ai-landscape-guide) — see [how to contribute](contributing.md).
 
 </div>
 
