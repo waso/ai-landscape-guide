@@ -1,0 +1,4742 @@
+[
+ {
+  "section": 1,
+  "section_title": "The big picture",
+  "id": "model",
+  "term": "Model",
+  "core": true,
+  "also_known_as": [],
+  "definition": "A function with learned parameters: input goes in, a prediction comes out. On disk it is a file of numbers (the weights) plus the code that runs them.",
+  "why_it_matters": "When a video says \"the model\", it means this: a big file of numbers and the program that applies them.",
+  "aliases": [],
+  "url": "glossary/01-the-big-picture.md#model"
+ },
+ {
+  "section": 1,
+  "section_title": "The big picture",
+  "id": "artificial-intelligence",
+  "term": "Artificial Intelligence (AI)",
+  "core": false,
+  "also_known_as": [],
+  "definition": "Umbrella term for any technique that lets computers do things that normally need human intelligence, from hand-written rules to learned neural networks.",
+  "why_it_matters": "The whole field. Everything else in this guide is a sub-topic of it.",
+  "aliases": [
+   "AI"
+  ],
+  "url": "glossary/01-the-big-picture.md#artificial-intelligence"
+ },
+ {
+  "section": 1,
+  "section_title": "The big picture",
+  "id": "machine-learning",
+  "term": "Machine Learning (ML)",
+  "core": false,
+  "also_known_as": [],
+  "definition": "Sub-field of AI where the program learns patterns from examples instead of being explicitly programmed with rules.",
+  "why_it_matters": "Solves problems where nobody can write the rules by hand: recognising a face, judging spam, predicting churn.",
+  "aliases": [
+   "ML"
+  ],
+  "url": "glossary/01-the-big-picture.md#machine-learning"
+ },
+ {
+  "section": 1,
+  "section_title": "The big picture",
+  "id": "deep-learning",
+  "term": "Deep Learning (DL)",
+  "core": false,
+  "also_known_as": [],
+  "definition": "ML using neural networks with many layers. The approach behind modern vision, speech and language models.",
+  "why_it_matters": "More layers let the network learn more abstract patterns (edges → shapes → objects; letters → words → meaning). This is what made today's AI possible.",
+  "aliases": [
+   "DL"
+  ],
+  "url": "glossary/01-the-big-picture.md#deep-learning"
+ },
+ {
+  "section": 1,
+  "section_title": "The big picture",
+  "id": "neural-network",
+  "term": "Neural Network (NN)",
+  "core": true,
+  "also_known_as": [],
+  "definition": "A model built from layers of simple units (neurons) that pass weighted signals forward. Training adjusts the weights.",
+  "why_it_matters": "The basic machine every deep-learning model, including every LLM, is built from.",
+  "aliases": [
+   "NN"
+  ],
+  "url": "glossary/01-the-big-picture.md#neural-network"
+ },
+ {
+  "section": 1,
+  "section_title": "The big picture",
+  "id": "training-vs-inference",
+  "term": "Training vs inference",
+  "core": true,
+  "also_known_as": [],
+  "definition": "Training adjusts the weights using data: expensive, done rarely, by whoever builds the model. Inference runs the frozen weights to get an answer: cheap, done billions of times, by everyone.",
+  "why_it_matters": "The most important split on the map: stages 3–5 train, stages 6–7 only infer. Prompting and RAG never change the weights.",
+  "aliases": [],
+  "url": "glossary/01-the-big-picture.md#training-vs-inference"
+ },
+ {
+  "section": 1,
+  "section_title": "The big picture",
+  "id": "generative-ai",
+  "term": "Generative AI (GenAI)",
+  "core": false,
+  "also_known_as": [],
+  "definition": "Models that produce new content (text, images, audio, code) rather than only predicting a label or a number.",
+  "why_it_matters": "The shift from AI that classifies things to AI that makes things.",
+  "aliases": [
+   "GenAI"
+  ],
+  "url": "glossary/01-the-big-picture.md#generative-ai"
+ },
+ {
+  "section": 1,
+  "section_title": "The big picture",
+  "id": "large-language-model",
+  "term": "Large Language Model (LLM)",
+  "core": true,
+  "also_known_as": [],
+  "definition": "A very large neural network (almost always a Transformer) trained on huge amounts of text to predict the next token. The engine behind chatbots and coding assistants.",
+  "why_it_matters": "The thing you talk to in ChatGPT or Claude. The central object of this guide; stages 1–7 of Map 2 describe its life.",
+  "aliases": [
+   "LLM"
+  ],
+  "url": "glossary/01-the-big-picture.md#large-language-model"
+ },
+ {
+  "section": 1,
+  "section_title": "The big picture",
+  "id": "foundation-model",
+  "term": "Foundation model",
+  "core": false,
+  "also_known_as": [],
+  "definition": "A big general-purpose model trained once on broad data and then adapted to many tasks. LLMs are the best-known example.",
+  "why_it_matters": "Train once, expensively; reuse everywhere, cheaply. This economics is why a few labs train and everyone else adapts.",
+  "aliases": [],
+  "url": "glossary/01-the-big-picture.md#foundation-model"
+ },
+ {
+  "section": 1,
+  "section_title": "The big picture",
+  "id": "frontier-model-frontier-lab",
+  "term": "Frontier model / frontier lab",
+  "core": false,
+  "also_known_as": [],
+  "definition": "The most capable models available at a given moment, and the handful of companies that train them (OpenAI, Anthropic, Google DeepMind, Meta, xAI, and a few Chinese labs).",
+  "why_it_matters": "\"Frontier\" in a video simply means \"the best there is right now\".",
+  "aliases": [
+   "Frontier lab"
+  ],
+  "url": "glossary/01-the-big-picture.md#frontier-model-frontier-lab"
+ },
+ {
+  "section": 1,
+  "section_title": "The big picture",
+  "id": "multimodal-model",
+  "term": "Multimodal model",
+  "core": false,
+  "also_known_as": [],
+  "definition": "A model that handles more than one data type (text + images + audio + video) as input and/or output.",
+  "why_it_matters": "Lets one model read a screenshot, listen to a voice note, and answer in text. See section 14.",
+  "aliases": [
+   "Multimodal (section 14)"
+  ],
+  "url": "glossary/01-the-big-picture.md#multimodal-model"
+ },
+ {
+  "section": 1,
+  "section_title": "The big picture",
+  "id": "natural-language-processing",
+  "term": "Natural Language Processing (NLP)",
+  "core": false,
+  "also_known_as": [],
+  "definition": "The field of making computers understand and generate human language. LLMs are its current state of the art.",
+  "why_it_matters": "The older name for the discipline; many pre-2020 techniques (word2vec, BERT, parsing) come from here.",
+  "aliases": [
+   "NLP"
+  ],
+  "url": "glossary/01-the-big-picture.md#natural-language-processing"
+ },
+ {
+  "section": 1,
+  "section_title": "The big picture",
+  "id": "computer-vision",
+  "term": "Computer Vision (CV)",
+  "core": false,
+  "also_known_as": [],
+  "definition": "The field of understanding images and video. Historically CNNs, increasingly Transformers (ViT).",
+  "why_it_matters": "Where deep learning first proved itself (ImageNet, 2012), and where many terms like \"convolution\" come from.",
+  "aliases": [
+   "CV",
+   "Computer vision (CV)"
+  ],
+  "url": "glossary/01-the-big-picture.md#computer-vision"
+ },
+ {
+  "section": 1,
+  "section_title": "The big picture",
+  "id": "discriminative-vs-generative-model",
+  "term": "Discriminative vs generative model",
+  "core": false,
+  "also_known_as": [],
+  "definition": "A discriminative model learns to separate or label inputs (spam / not spam). A generative model learns the distribution of the data, so it can produce new samples.",
+  "why_it_matters": "Tells you whether a model judges inputs or produces outputs. A spam filter is discriminative; an LLM is generative.",
+  "aliases": [],
+  "url": "glossary/01-the-big-picture.md#discriminative-vs-generative-model"
+ },
+ {
+  "section": 1,
+  "section_title": "The big picture",
+  "id": "narrow-ai-vs-agi",
+  "term": "Narrow AI vs AGI",
+  "core": false,
+  "also_known_as": [
+   "Artificial General Intelligence"
+  ],
+  "definition": "Narrow AI does one task well. AGI would match humans across most intellectual tasks; it is a goal and a debate, not a product.",
+  "why_it_matters": "When people argue about AGI timelines, this is the term; nothing you can download today is AGI.",
+  "aliases": [
+   "AGI"
+  ],
+  "url": "glossary/01-the-big-picture.md#narrow-ai-vs-agi"
+ },
+ {
+  "section": 1,
+  "section_title": "The big picture",
+  "id": "symbolic-ai",
+  "term": "Symbolic AI",
+  "core": false,
+  "also_known_as": [
+   "GOFAI",
+   "expert systems"
+  ],
+  "definition": "The older, rule- and logic-based approach to AI. Contrasts with learning from data. Still used inside planners and some hybrid systems.",
+  "why_it_matters": "Explains why \"AI\" in a 1990s product meant if/else rules, and why \"neuro-symbolic\" means mixing the two.",
+  "aliases": [
+   "Expert systems / GOFAI"
+  ],
+  "url": "glossary/01-the-big-picture.md#symbolic-ai"
+ },
+ {
+  "section": 2,
+  "section_title": "Learning paradigms",
+  "id": "supervised-learning",
+  "term": "Supervised learning",
+  "core": true,
+  "also_known_as": [],
+  "definition": "Learning from examples that come with the correct answer (labels); the model learns input → label. Used in classic ML, in SFT and in reward-model training.",
+  "why_it_matters": "Most accurate way to learn when you can afford labelled examples. Its limit is the cost of labelling.",
+  "aliases": [],
+  "url": "glossary/02-learning-paradigms.md#supervised-learning"
+ },
+ {
+  "section": 2,
+  "section_title": "Learning paradigms",
+  "id": "unsupervised-learning",
+  "term": "Unsupervised learning",
+  "core": false,
+  "also_known_as": [],
+  "definition": "Finding structure in data with no labels: grouping, compressing, spotting anomalies.",
+  "why_it_matters": "Works on data nobody has labelled, which is most data. Finds groups and outliers you did not know to look for.",
+  "aliases": [],
+  "url": "glossary/02-learning-paradigms.md#unsupervised-learning"
+ },
+ {
+  "section": 2,
+  "section_title": "Learning paradigms",
+  "id": "self-supervised-learning",
+  "term": "Self-supervised learning (SSL)",
+  "core": true,
+  "also_known_as": [],
+  "definition": "Supervised-style training where the label is carved out of the data itself, e.g. hide the next word and predict it. This is how LLMs are pre-trained.",
+  "why_it_matters": "Turns the whole internet into free training labels. The single trick that made LLMs possible at scale.",
+  "aliases": [
+   "SSL",
+   "SSL (self-supervised)"
+  ],
+  "url": "glossary/02-learning-paradigms.md#self-supervised-learning"
+ },
+ {
+  "section": 2,
+  "section_title": "Learning paradigms",
+  "id": "semi-supervised-learning",
+  "term": "Semi-supervised learning",
+  "core": false,
+  "also_known_as": [],
+  "definition": "Mixing a small labelled set with a lot of unlabelled data.",
+  "why_it_matters": "Gets most of the accuracy of supervised learning with a fraction of the labelling cost.",
+  "aliases": [],
+  "url": "glossary/02-learning-paradigms.md#semi-supervised-learning"
+ },
+ {
+  "section": 2,
+  "section_title": "Learning paradigms",
+  "id": "reinforcement-learning",
+  "term": "Reinforcement Learning (RL)",
+  "core": true,
+  "also_known_as": [],
+  "definition": "An agent takes actions in an environment and learns from rewards instead of labelled answers. Used in games, robotics and LLM post-training (RLHF, GRPO).",
+  "why_it_matters": "Lets a model get better than its teachers: it can discover strategies no example showed it, as long as you can score the result.",
+  "aliases": [
+   "RL",
+   "RL (reinforcement learning)"
+  ],
+  "url": "glossary/02-learning-paradigms.md#reinforcement-learning"
+ },
+ {
+  "section": 2,
+  "section_title": "Learning paradigms",
+  "id": "agent-environment-policy-reward",
+  "term": "Agent, environment, policy, reward (RL vocabulary)",
+  "core": false,
+  "also_known_as": [],
+  "definition": "The agent is the learner, the environment is what it acts on, the policy is its decision rule (for LLMs: the model itself), the reward is the feedback signal.",
+  "why_it_matters": "Decode any RL video: \"policy\" = the model being trained, \"reward\" = the score it is chasing.",
+  "aliases": [
+   "RL vocabulary",
+   "Policy (RL)",
+   "Reward (RL)",
+   "Environment (RL)"
+  ],
+  "url": "glossary/02-learning-paradigms.md#agent-environment-policy-reward"
+ },
+ {
+  "section": 2,
+  "section_title": "Learning paradigms",
+  "id": "exploration-vs-exploitation",
+  "term": "Exploration vs exploitation",
+  "core": false,
+  "also_known_as": [],
+  "definition": "The RL dilemma: try new actions to discover better ones (explore) or repeat what already works (exploit).",
+  "why_it_matters": "Explains why RL training samples several answers per prompt instead of only the best one.",
+  "aliases": [],
+  "url": "glossary/02-learning-paradigms.md#exploration-vs-exploitation"
+ },
+ {
+  "section": 2,
+  "section_title": "Learning paradigms",
+  "id": "q-learning-dqn",
+  "term": "Q-learning / DQN (Deep Q-Network)",
+  "core": false,
+  "also_known_as": [],
+  "definition": "Classic value-based RL: learn a table (or network) estimating how good each action is in each state. DQN was the 2013 breakthrough that played Atari games from pixels.",
+  "why_it_matters": "The RL you see in game-playing demos. LLM post-training uses policy-based methods (PPO, GRPO) instead.",
+  "aliases": [
+   "Deep Q-Network",
+   "DQN"
+  ],
+  "url": "glossary/02-learning-paradigms.md#q-learning-dqn"
+ },
+ {
+  "section": 2,
+  "section_title": "Learning paradigms",
+  "id": "monte-carlo-tree-search-alphago",
+  "term": "Monte Carlo Tree Search / AlphaGo (MCTS)",
+  "core": false,
+  "also_known_as": [],
+  "definition": "Search that looks ahead by simulating many possible futures and focusing on promising ones. Combined with neural networks (AlphaGo) it beat Go champion Lee Sedol in 2016.",
+  "why_it_matters": "An ancestor of \"thinking longer\" in reasoning models: spend more compute at decision time to get better decisions. (Today's reasoning models do it with long chains of thought, not tree search.)",
+  "aliases": [
+   "MCTS",
+   "AlphaGo"
+  ],
+  "url": "glossary/02-learning-paradigms.md#monte-carlo-tree-search-alphago"
+ },
+ {
+  "section": 2,
+  "section_title": "Learning paradigms",
+  "id": "imitation-learning-behaviour-cloning",
+  "term": "Imitation learning / behaviour cloning",
+  "core": false,
+  "also_known_as": [],
+  "definition": "Learning a policy by copying demonstrations from an expert.",
+  "why_it_matters": "SFT is imitation learning: the model copies the ideal answers humans wrote. RL is what lets it go beyond them.",
+  "aliases": [
+   "Behaviour cloning"
+  ],
+  "url": "glossary/02-learning-paradigms.md#imitation-learning-behaviour-cloning"
+ },
+ {
+  "section": 2,
+  "section_title": "Learning paradigms",
+  "id": "transfer-learning",
+  "term": "Transfer learning",
+  "core": false,
+  "also_known_as": [],
+  "definition": "Reusing what a model learned on one task or dataset as the starting point for another. Fine-tuning a pre-trained model is transfer learning.",
+  "why_it_matters": "Why you never start from zero: a model that already knows language learns your task from a few hundred examples.",
+  "aliases": [],
+  "url": "glossary/02-learning-paradigms.md#transfer-learning"
+ },
+ {
+  "section": 2,
+  "section_title": "Learning paradigms",
+  "id": "contrastive-learning",
+  "term": "Contrastive learning",
+  "core": false,
+  "also_known_as": [
+   "CLIP",
+   "SimCLR"
+  ],
+  "definition": "Training that pulls representations of matching pairs together and pushes non-matching pairs apart (an image and its caption; two views of the same photo).",
+  "why_it_matters": "How embedding models and CLIP learn that \"a photo of a cat\" and the cat picture belong together.",
+  "aliases": [],
+  "url": "glossary/02-learning-paradigms.md#contrastive-learning"
+ },
+ {
+  "section": 2,
+  "section_title": "Learning paradigms",
+  "id": "classification",
+  "term": "Classification",
+  "core": false,
+  "also_known_as": [],
+  "definition": "Predicting a category (spam / not spam, cat / dog).",
+  "why_it_matters": "The most common ML task in business. Next-token prediction is also a classification over the vocabulary.",
+  "aliases": [],
+  "url": "glossary/02-learning-paradigms.md#classification"
+ },
+ {
+  "section": 2,
+  "section_title": "Learning paradigms",
+  "id": "regression",
+  "term": "Regression",
+  "core": false,
+  "also_known_as": [],
+  "definition": "Predicting a continuous number (price, temperature, time to failure).",
+  "why_it_matters": "The other basic task; when the answer is a number, it is regression.",
+  "aliases": [],
+  "url": "glossary/02-learning-paradigms.md#regression"
+ },
+ {
+  "section": 2,
+  "section_title": "Learning paradigms",
+  "id": "clustering",
+  "term": "Clustering",
+  "core": false,
+  "also_known_as": [],
+  "definition": "Grouping similar items together without labels (k-means).",
+  "why_it_matters": "Finds natural groups: customer segments, topics in documents, duplicate records.",
+  "aliases": [],
+  "url": "glossary/02-learning-paradigms.md#clustering"
+ },
+ {
+  "section": 2,
+  "section_title": "Learning paradigms",
+  "id": "dimensionality-reduction",
+  "term": "Dimensionality reduction",
+  "core": false,
+  "also_known_as": [],
+  "definition": "Compressing many features into fewer while keeping the important structure (PCA, t-SNE, UMAP).",
+  "why_it_matters": "How people draw 2-D pictures of embeddings: hundreds of dimensions squashed down so you can see clusters.",
+  "aliases": [
+   "t-SNE / UMAP"
+  ],
+  "url": "glossary/02-learning-paradigms.md#dimensionality-reduction"
+ },
+ {
+  "section": 2,
+  "section_title": "Learning paradigms",
+  "id": "anomaly-detection",
+  "term": "Anomaly detection",
+  "core": false,
+  "also_known_as": [],
+  "definition": "Flagging data points that do not look like the rest.",
+  "why_it_matters": "Fraud, intrusion and fault detection: learn what normal looks like, alert on the rest.",
+  "aliases": [],
+  "url": "glossary/02-learning-paradigms.md#anomaly-detection"
+ },
+ {
+  "section": 2,
+  "section_title": "Learning paradigms",
+  "id": "label-ground-truth",
+  "term": "Label / ground truth",
+  "core": false,
+  "also_known_as": [],
+  "definition": "The known correct answer attached to a training example.",
+  "why_it_matters": "The expensive ingredient of supervised learning; its quality caps the model's quality.",
+  "aliases": [
+   "Ground truth"
+  ],
+  "url": "glossary/02-learning-paradigms.md#label-ground-truth"
+ },
+ {
+  "section": 3,
+  "section_title": "Classic ML toolbox",
+  "id": "linear-regression",
+  "term": "Linear regression",
+  "core": false,
+  "also_known_as": [],
+  "definition": "Fit a straight line (or hyperplane) to predict a number.",
+  "why_it_matters": "The simplest model there is; everything else is a more flexible version of \"fit a curve to the data\".",
+  "aliases": [],
+  "url": "glossary/03-classic-ml-toolbox.md#linear-regression"
+ },
+ {
+  "section": 3,
+  "section_title": "Classic ML toolbox",
+  "id": "logistic-regression",
+  "term": "Logistic regression",
+  "core": false,
+  "also_known_as": [],
+  "definition": "A linear model for classification that outputs a probability.",
+  "why_it_matters": "Fast, explainable baseline. If a neural network cannot beat it, something is wrong.",
+  "aliases": [
+   "Logistic regression (classifier)"
+  ],
+  "url": "glossary/03-classic-ml-toolbox.md#logistic-regression"
+ },
+ {
+  "section": 3,
+  "section_title": "Classic ML toolbox",
+  "id": "decision-tree",
+  "term": "Decision tree",
+  "core": false,
+  "also_known_as": [],
+  "definition": "A flowchart of if/else splits on features. Easy to read, prone to overfitting.",
+  "why_it_matters": "Humans can read the rules it learned, which makes it popular where decisions must be explained.",
+  "aliases": [
+   "Decision trees"
+  ],
+  "url": "glossary/03-classic-ml-toolbox.md#decision-tree"
+ },
+ {
+  "section": 3,
+  "section_title": "Classic ML toolbox",
+  "id": "random-forest",
+  "term": "Random forest",
+  "core": false,
+  "also_known_as": [],
+  "definition": "Many decision trees trained on random subsets of data and features, then averaged.",
+  "why_it_matters": "Averaging many imperfect trees cancels their individual mistakes: more accurate and far more robust than one tree.",
+  "aliases": [
+   "Random forest (ensemble)"
+  ],
+  "url": "glossary/03-classic-ml-toolbox.md#random-forest"
+ },
+ {
+  "section": 3,
+  "section_title": "Classic ML toolbox",
+  "id": "gradient-boosting",
+  "term": "Gradient boosting",
+  "core": false,
+  "also_known_as": [
+   "XGBoost",
+   "LightGBM",
+   "CatBoost"
+  ],
+  "definition": "Build trees one after another, each correcting the errors of the previous ones.",
+  "why_it_matters": "The most accurate choice for tabular data in most competitions and companies. Try this before a neural network.",
+  "aliases": [
+   "Gradient boosting (XGBoost",
+   "LightGBM)"
+  ],
+  "url": "glossary/03-classic-ml-toolbox.md#gradient-boosting"
+ },
+ {
+  "section": 3,
+  "section_title": "Classic ML toolbox",
+  "id": "support-vector-machine",
+  "term": "Support Vector Machine (SVM)",
+  "core": false,
+  "also_known_as": [],
+  "definition": "Finds the boundary with the widest margin between classes.",
+  "why_it_matters": "A strong pre-2012 classifier; a wide margin makes it generalise well on small datasets.",
+  "aliases": [
+   "SVM"
+  ],
+  "url": "glossary/03-classic-ml-toolbox.md#support-vector-machine"
+ },
+ {
+  "section": 3,
+  "section_title": "Classic ML toolbox",
+  "id": "k-nearest-neighbours",
+  "term": "k-Nearest Neighbours (kNN)",
+  "core": false,
+  "also_known_as": [],
+  "definition": "Predict by looking at the k most similar training examples.",
+  "why_it_matters": "No training at all, just lookup. The same idea powers vector search in RAG: find the nearest embeddings.",
+  "aliases": [
+   "kNN"
+  ],
+  "url": "glossary/03-classic-ml-toolbox.md#k-nearest-neighbours"
+ },
+ {
+  "section": 3,
+  "section_title": "Classic ML toolbox",
+  "id": "naive-bayes",
+  "term": "Naive Bayes",
+  "core": false,
+  "also_known_as": [],
+  "definition": "Fast probabilistic classifier that assumes features are independent.",
+  "why_it_matters": "The classic spam filter; works surprisingly well on text with almost no compute.",
+  "aliases": [
+   "Naive Bayes classifier"
+  ],
+  "url": "glossary/03-classic-ml-toolbox.md#naive-bayes"
+ },
+ {
+  "section": 3,
+  "section_title": "Classic ML toolbox",
+  "id": "k-means",
+  "term": "k-means",
+  "core": false,
+  "also_known_as": [],
+  "definition": "Clustering by assigning points to the nearest of k centroids and repeating until stable.",
+  "why_it_matters": "The default way to split data into k groups when you have no labels.",
+  "aliases": [],
+  "url": "glossary/03-classic-ml-toolbox.md#k-means"
+ },
+ {
+  "section": 3,
+  "section_title": "Classic ML toolbox",
+  "id": "principal-component-analysis",
+  "term": "Principal Component Analysis (PCA)",
+  "core": false,
+  "also_known_as": [],
+  "definition": "Linear dimensionality reduction along the directions of largest variance.",
+  "why_it_matters": "Compresses data while keeping what varies most; used to shrink embeddings and to visualise them.",
+  "aliases": [
+   "PCA"
+  ],
+  "url": "glossary/03-classic-ml-toolbox.md#principal-component-analysis"
+ },
+ {
+  "section": 3,
+  "section_title": "Classic ML toolbox",
+  "id": "feature-feature-engineering",
+  "term": "Feature / feature engineering",
+  "core": false,
+  "also_known_as": [],
+  "definition": "A feature is one input variable. Feature engineering is hand-crafting better inputs.",
+  "why_it_matters": "In classic ML, good features matter more than the algorithm. Deep learning's big win is learning features automatically.",
+  "aliases": [
+   "Feature engineering"
+  ],
+  "url": "glossary/03-classic-ml-toolbox.md#feature-feature-engineering"
+ },
+ {
+  "section": 3,
+  "section_title": "Classic ML toolbox",
+  "id": "train-validation-test-split",
+  "term": "Train / validation / test split",
+  "core": false,
+  "also_known_as": [],
+  "definition": "Data is divided so you train on one part, tune settings on a second and measure final performance on a third the model never saw.",
+  "why_it_matters": "The only honest way to know how a model will do on new data. Skipping it is how projects fool themselves.",
+  "aliases": [
+   "Validation set",
+   "Test set"
+  ],
+  "url": "glossary/03-classic-ml-toolbox.md#train-validation-test-split"
+ },
+ {
+  "section": 3,
+  "section_title": "Classic ML toolbox",
+  "id": "cross-validation",
+  "term": "Cross-validation",
+  "core": false,
+  "also_known_as": [],
+  "definition": "Rotate which slice is held out and average, for a more reliable estimate.",
+  "why_it_matters": "Gives a trustworthy accuracy number from a small dataset.",
+  "aliases": [],
+  "url": "glossary/03-classic-ml-toolbox.md#cross-validation"
+ },
+ {
+  "section": 3,
+  "section_title": "Classic ML toolbox",
+  "id": "overfitting-underfitting",
+  "term": "Overfitting / underfitting",
+  "core": true,
+  "also_known_as": [],
+  "definition": "Memorising the training data (great on train, poor on new data) versus being too simple to capture the pattern at all.",
+  "why_it_matters": "Overfitting is the number-one way models fail in production: perfect in the lab, useless on real inputs.",
+  "aliases": [],
+  "url": "glossary/03-classic-ml-toolbox.md#overfitting-underfitting"
+ },
+ {
+  "section": 3,
+  "section_title": "Classic ML toolbox",
+  "id": "biasvariance-trade-off",
+  "term": "Bias–variance trade-off",
+  "core": false,
+  "also_known_as": [],
+  "definition": "Simple models err systematically (bias); complex models err erratically depending on the data they saw (variance).",
+  "why_it_matters": "Explains why bigger is not always better: a model can be too flexible for the amount of data you have.",
+  "aliases": [
+   "Bias–variance"
+  ],
+  "url": "glossary/03-classic-ml-toolbox.md#biasvariance-trade-off"
+ },
+ {
+  "section": 3,
+  "section_title": "Classic ML toolbox",
+  "id": "regularization",
+  "term": "Regularization",
+  "core": false,
+  "also_known_as": [
+   "L1",
+   "L2"
+  ],
+  "definition": "Penalising large weights to reduce overfitting. L1 also pushes weights to exactly zero.",
+  "why_it_matters": "Makes a model generalise better by stopping it from relying too hard on any one input.",
+  "aliases": [
+   "L1 / L2 regularization"
+  ],
+  "url": "glossary/03-classic-ml-toolbox.md#regularization"
+ },
+ {
+  "section": 3,
+  "section_title": "Classic ML toolbox",
+  "id": "early-stopping",
+  "term": "Early stopping",
+  "core": false,
+  "also_known_as": [],
+  "definition": "Stop training when validation loss stops improving, even if training loss is still falling.",
+  "why_it_matters": "The cheapest protection against overfitting: just stop at the right moment.",
+  "aliases": [],
+  "url": "glossary/03-classic-ml-toolbox.md#early-stopping"
+ },
+ {
+  "section": 3,
+  "section_title": "Classic ML toolbox",
+  "id": "hyperparameter",
+  "term": "Hyperparameter",
+  "core": false,
+  "also_known_as": [],
+  "definition": "A setting you choose before training (learning rate, tree depth, LoRA rank), as opposed to parameters learned from data.",
+  "why_it_matters": "What engineers tune by hand; a wrong learning rate can make an otherwise good model fail completely.",
+  "aliases": [],
+  "url": "glossary/03-classic-ml-toolbox.md#hyperparameter"
+ },
+ {
+  "section": 3,
+  "section_title": "Classic ML toolbox",
+  "id": "ensemble",
+  "term": "Ensemble",
+  "core": false,
+  "also_known_as": [],
+  "definition": "Combining several models' predictions.",
+  "why_it_matters": "Usually beats any single model; the same idea as asking several experts and taking the majority view.",
+  "aliases": [],
+  "url": "glossary/03-classic-ml-toolbox.md#ensemble"
+ },
+ {
+  "section": 3,
+  "section_title": "Classic ML toolbox",
+  "id": "confusion-matrix",
+  "term": "Confusion matrix",
+  "core": false,
+  "also_known_as": [],
+  "definition": "A table of predicted class versus actual class, showing where a classifier confuses things.",
+  "why_it_matters": "Shows which mistakes the model makes, not just how many. Essential when some errors cost more than others.",
+  "aliases": [],
+  "url": "glossary/03-classic-ml-toolbox.md#confusion-matrix"
+ },
+ {
+  "section": 3,
+  "section_title": "Classic ML toolbox",
+  "id": "precision-recall-f1-roc-auc",
+  "term": "Precision, recall, F1, ROC / AUC",
+  "core": false,
+  "also_known_as": [],
+  "definition": "Precision: of what the model flagged, how much was right. Recall: of what should be flagged, how much it caught. F1 balances the two; ROC / AUC summarises the trade-off across thresholds.",
+  "why_it_matters": "Accuracy alone lies when classes are unbalanced (99% \"not fraud\" is 99% accurate and useless). These metrics tell the truth.",
+  "aliases": [
+   "AUC / ROC",
+   "Precision / recall",
+   "F1 score"
+  ],
+  "url": "glossary/03-classic-ml-toolbox.md#precision-recall-f1-roc-auc"
+ },
+ {
+  "section": 3,
+  "section_title": "Classic ML toolbox",
+  "id": "data-leakage",
+  "term": "Data leakage",
+  "core": false,
+  "also_known_as": [],
+  "definition": "Information from the test set, or from the future, accidentally reaching the training data.",
+  "why_it_matters": "The classic reason a model scores brilliantly in testing and fails in production.",
+  "aliases": [],
+  "url": "glossary/03-classic-ml-toolbox.md#data-leakage"
+ },
+ {
+  "section": 3,
+  "section_title": "Classic ML toolbox",
+  "id": "class-imbalance",
+  "term": "Class imbalance",
+  "core": false,
+  "also_known_as": [],
+  "definition": "When one class is far rarer than the other (fraud, defects, disease).",
+  "why_it_matters": "Needs special handling (re-weighting, re-sampling, the right metrics) or the model simply learns to predict the majority class.",
+  "aliases": [],
+  "url": "glossary/03-classic-ml-toolbox.md#class-imbalance"
+ },
+ {
+  "section": 3,
+  "section_title": "Classic ML toolbox",
+  "id": "scikit-learn",
+  "term": "scikit-learn",
+  "core": false,
+  "also_known_as": [],
+  "definition": "The standard Python library for classic ML.",
+  "why_it_matters": "Where almost every tutorial's `.fit()` and `.predict()` come from.",
+  "aliases": [],
+  "url": "glossary/03-classic-ml-toolbox.md#scikit-learn"
+ },
+ {
+  "section": 4,
+  "section_title": "Neural-network foundations",
+  "id": "neuron-perceptron",
+  "term": "Neuron / perceptron",
+  "core": false,
+  "also_known_as": [],
+  "definition": "The basic unit: a weighted sum of inputs plus a bias, passed through an activation function.",
+  "why_it_matters": "Everything in deep learning is millions of these wired together; each one is just multiply, add, squash.",
+  "aliases": [
+   "Perceptron"
+  ],
+  "url": "glossary/04-neural-network-foundations.md#neuron-perceptron"
+ },
+ {
+  "section": 4,
+  "section_title": "Neural-network foundations",
+  "id": "weights-biases-parameters",
+  "term": "Weights, biases, parameters",
+  "core": true,
+  "also_known_as": [],
+  "definition": "The numbers inside the model that training adjusts. \"7B\" means 7 billion of them.",
+  "why_it_matters": "The parameters are the model. Download the weights and you have it; change them and you have a different model.",
+  "aliases": [
+   "Weights (the file)",
+   "Parameters"
+  ],
+  "url": "glossary/04-neural-network-foundations.md#weights-biases-parameters"
+ },
+ {
+  "section": 4,
+  "section_title": "Neural-network foundations",
+  "id": "activations",
+  "term": "Activations",
+  "core": false,
+  "also_known_as": [],
+  "definition": "The intermediate values flowing through the network for one input (as opposed to the weights, which are fixed during inference).",
+  "why_it_matters": "Weights are what the model knows; activations are what it is thinking right now about this input. Interpretability studies activations.",
+  "aliases": [],
+  "url": "glossary/04-neural-network-foundations.md#activations"
+ },
+ {
+  "section": 4,
+  "section_title": "Neural-network foundations",
+  "id": "layer-hidden-layer",
+  "term": "Layer / hidden layer",
+  "core": false,
+  "also_known_as": [],
+  "definition": "A group of neurons computed together. Layers between input and output are hidden layers.",
+  "why_it_matters": "\"Deep\" simply means many hidden layers; each adds a level of abstraction.",
+  "aliases": [
+   "Hidden layer"
+  ],
+  "url": "glossary/04-neural-network-foundations.md#layer-hidden-layer"
+ },
+ {
+  "section": 4,
+  "section_title": "Neural-network foundations",
+  "id": "multi-layer-perceptron-feed-forward-network",
+  "term": "Multi-Layer Perceptron / Feed-forward network",
+  "core": false,
+  "also_known_as": [
+   "MLP",
+   "FFN"
+  ],
+  "definition": "Stacked fully-connected layers. Also the second half of every Transformer block.",
+  "why_it_matters": "The plainest neural network; inside an LLM the FFN layers are where most of the parameters, and most of the stored knowledge, live.",
+  "aliases": [],
+  "url": "glossary/04-neural-network-foundations.md#multi-layer-perceptron-feed-forward-network"
+ },
+ {
+  "section": 4,
+  "section_title": "Neural-network foundations",
+  "id": "activation-function",
+  "term": "Activation function",
+  "core": false,
+  "also_known_as": [
+   "ReLU",
+   "GELU",
+   "SiLU/Swish",
+   "sigmoid",
+   "tanh"
+  ],
+  "definition": "Non-linearity applied after a layer. GELU and SiLU are the ones used inside LLMs.",
+  "why_it_matters": "Without it, stacking layers would collapse into one straight line. The non-linearity is what lets networks learn curves and complex rules.",
+  "aliases": [],
+  "url": "glossary/04-neural-network-foundations.md#activation-function"
+ },
+ {
+  "section": 4,
+  "section_title": "Neural-network foundations",
+  "id": "softmax",
+  "term": "Softmax",
+  "core": false,
+  "also_known_as": [],
+  "definition": "Turns a vector of scores into probabilities that sum to 1.",
+  "why_it_matters": "How the model expresses \"70% sure the next word is 'Paris'\". Applied at the output and inside attention.",
+  "aliases": [],
+  "url": "glossary/04-neural-network-foundations.md#softmax"
+ },
+ {
+  "section": 4,
+  "section_title": "Neural-network foundations",
+  "id": "logits",
+  "term": "Logits",
+  "core": false,
+  "also_known_as": [],
+  "definition": "Raw, unnormalised scores that come out before softmax.",
+  "why_it_matters": "What the model actually computes; softmax just converts them to probabilities. Temperature acts on logits.",
+  "aliases": [],
+  "url": "glossary/04-neural-network-foundations.md#logits"
+ },
+ {
+  "section": 4,
+  "section_title": "Neural-network foundations",
+  "id": "one-hot-encoding",
+  "term": "One-hot encoding",
+  "core": false,
+  "also_known_as": [],
+  "definition": "Representing a category as a vector of zeros with a single 1 at that category's position.",
+  "why_it_matters": "The naive way to feed words to a network. Embeddings replace it with dense vectors that carry meaning.",
+  "aliases": [],
+  "url": "glossary/04-neural-network-foundations.md#one-hot-encoding"
+ },
+ {
+  "section": 4,
+  "section_title": "Neural-network foundations",
+  "id": "forward-pass",
+  "term": "Forward pass",
+  "core": false,
+  "also_known_as": [],
+  "definition": "Running an input through the network to get an output.",
+  "why_it_matters": "Inference is just a forward pass; training is a forward pass plus a backward pass.",
+  "aliases": [],
+  "url": "glossary/04-neural-network-foundations.md#forward-pass"
+ },
+ {
+  "section": 4,
+  "section_title": "Neural-network foundations",
+  "id": "loss-function",
+  "term": "Loss function",
+  "core": true,
+  "also_known_as": [
+   "cross-entropy",
+   "MSE"
+  ],
+  "definition": "A number measuring how wrong the output is; training minimises it. Cross-entropy for classification and next-token prediction, mean squared error for regression.",
+  "why_it_matters": "Defines what \"better\" means. The whole of training is \"make this number smaller\".",
+  "aliases": [
+   "Cross-entropy"
+  ],
+  "url": "glossary/04-neural-network-foundations.md#loss-function"
+ },
+ {
+  "section": 4,
+  "section_title": "Neural-network foundations",
+  "id": "backpropagation",
+  "term": "Backpropagation (backprop)",
+  "core": true,
+  "also_known_as": [],
+  "definition": "The algorithm that computes how much each weight contributed to the loss, by applying the chain rule backwards through the network.",
+  "why_it_matters": "Tells every one of the billions of weights which direction to move. Without it, training deep networks would be hopeless.",
+  "aliases": [],
+  "url": "glossary/04-neural-network-foundations.md#backpropagation"
+ },
+ {
+  "section": 4,
+  "section_title": "Neural-network foundations",
+  "id": "gradient",
+  "term": "Gradient",
+  "core": false,
+  "also_known_as": [],
+  "definition": "The direction and size of change in loss for each weight.",
+  "why_it_matters": "The \"which way is downhill\" signal; backprop computes it, the optimizer follows it.",
+  "aliases": [],
+  "url": "glossary/04-neural-network-foundations.md#gradient"
+ },
+ {
+  "section": 4,
+  "section_title": "Neural-network foundations",
+  "id": "gradient-descent",
+  "term": "Gradient descent (SGD)",
+  "core": true,
+  "also_known_as": [],
+  "definition": "Nudge each weight a small step against its gradient. Stochastic gradient descent does this on one mini-batch per step.",
+  "why_it_matters": "The learning rule behind all of deep learning: take a small step downhill, repeat millions of times.",
+  "aliases": [
+   "SGD"
+  ],
+  "url": "glossary/04-neural-network-foundations.md#gradient-descent"
+ },
+ {
+  "section": 4,
+  "section_title": "Neural-network foundations",
+  "id": "optimizer",
+  "term": "Optimizer",
+  "core": false,
+  "also_known_as": [
+   "Adam",
+   "AdamW"
+  ],
+  "definition": "Smarter update rules that adapt the step size per weight using running averages of gradients. AdamW is the default for Transformers.",
+  "why_it_matters": "Makes training converge faster and more reliably than plain gradient descent, at the cost of extra memory per weight.",
+  "aliases": [],
+  "url": "glossary/04-neural-network-foundations.md#optimizer"
+ },
+ {
+  "section": 4,
+  "section_title": "Neural-network foundations",
+  "id": "learning-rate",
+  "term": "Learning rate (LR)",
+  "core": false,
+  "also_known_as": [],
+  "definition": "How big each update step is.",
+  "why_it_matters": "The single most important hyperparameter. Too high and training blows up; too low and it never gets anywhere.",
+  "aliases": [
+   "Learning rate (LR)"
+  ],
+  "url": "glossary/04-neural-network-foundations.md#learning-rate"
+ },
+ {
+  "section": 4,
+  "section_title": "Neural-network foundations",
+  "id": "batch-mini-batch",
+  "term": "Batch / mini-batch",
+  "core": false,
+  "also_known_as": [],
+  "definition": "The group of examples processed in one step before the weights are updated.",
+  "why_it_matters": "Bigger batches use the GPU better and give smoother gradients; smaller ones fit in memory. A knob you will see in every training script.",
+  "aliases": [],
+  "url": "glossary/04-neural-network-foundations.md#batch-mini-batch"
+ },
+ {
+  "section": 4,
+  "section_title": "Neural-network foundations",
+  "id": "epoch",
+  "term": "Epoch",
+  "core": false,
+  "also_known_as": [],
+  "definition": "One full pass over the training set.",
+  "why_it_matters": "Classic ML trains for many epochs; LLM pre-training usually sees each token about once.",
+  "aliases": [],
+  "url": "glossary/04-neural-network-foundations.md#epoch"
+ },
+ {
+  "section": 4,
+  "section_title": "Neural-network foundations",
+  "id": "training-loop",
+  "term": "Training loop",
+  "core": false,
+  "also_known_as": [],
+  "definition": "Forward pass → loss → backward pass → optimizer step, repeated. Everything from a toy MLP to a frontier LLM runs this loop.",
+  "why_it_matters": "If you understand this loop (Map 3) you understand what \"training\" means at every stage of Map 2.",
+  "aliases": [],
+  "url": "glossary/04-neural-network-foundations.md#training-loop"
+ },
+ {
+  "section": 4,
+  "section_title": "Neural-network foundations",
+  "id": "weight-initialization",
+  "term": "Weight initialization",
+  "core": false,
+  "also_known_as": [],
+  "definition": "How the weights are set before training starts: small random numbers with a carefully chosen scale.",
+  "why_it_matters": "A bad starting scale makes gradients vanish or explode on step one; good initialization makes deep networks trainable.",
+  "aliases": [],
+  "url": "glossary/04-neural-network-foundations.md#weight-initialization"
+ },
+ {
+  "section": 4,
+  "section_title": "Neural-network foundations",
+  "id": "dropout",
+  "term": "Dropout",
+  "core": false,
+  "also_known_as": [],
+  "definition": "Randomly switch off neurons during training.",
+  "why_it_matters": "Forces the network not to rely on any single neuron, which reduces overfitting.",
+  "aliases": [],
+  "url": "glossary/04-neural-network-foundations.md#dropout"
+ },
+ {
+  "section": 4,
+  "section_title": "Neural-network foundations",
+  "id": "weight-decay",
+  "term": "Weight decay",
+  "core": false,
+  "also_known_as": [],
+  "definition": "Shrink the weights slightly every step (L2-style regularization).",
+  "why_it_matters": "Keeps weights small, which helps generalisation; the \"W\" in AdamW.",
+  "aliases": [],
+  "url": "glossary/04-neural-network-foundations.md#weight-decay"
+ },
+ {
+  "section": 4,
+  "section_title": "Neural-network foundations",
+  "id": "normalization",
+  "term": "Normalization",
+  "core": false,
+  "also_known_as": [
+   "BatchNorm",
+   "LayerNorm",
+   "RMSNorm"
+  ],
+  "definition": "Rescaling activations so they stay in a healthy range. LayerNorm and its cheaper cousin RMSNorm are the ones used in Transformers.",
+  "why_it_matters": "Keeps training stable in very deep networks; without it, values drift and training diverges.",
+  "aliases": [],
+  "url": "glossary/04-neural-network-foundations.md#normalization"
+ },
+ {
+  "section": 4,
+  "section_title": "Neural-network foundations",
+  "id": "residual-skip-connection",
+  "term": "Residual / skip connection",
+  "core": false,
+  "also_known_as": [],
+  "definition": "Add a layer's input to its output. Forms the residual stream of a Transformer.",
+  "why_it_matters": "Lets gradients flow straight through dozens of layers, which is what makes 100-layer networks trainable at all.",
+  "aliases": [
+   "Skip connection"
+  ],
+  "url": "glossary/04-neural-network-foundations.md#residual-skip-connection"
+ },
+ {
+  "section": 4,
+  "section_title": "Neural-network foundations",
+  "id": "vanishing-exploding-gradients",
+  "term": "Vanishing / exploding gradients",
+  "core": false,
+  "also_known_as": [],
+  "definition": "Gradients shrinking to nothing or blowing up as they flow back through many layers.",
+  "why_it_matters": "The historical reason deep networks did not work before ~2012; residuals, normalization and better initialization fixed it.",
+  "aliases": [
+   "Exploding gradients",
+   "Vanishing gradients"
+  ],
+  "url": "glossary/04-neural-network-foundations.md#vanishing-exploding-gradients"
+ },
+ {
+  "section": 4,
+  "section_title": "Neural-network foundations",
+  "id": "embedding",
+  "term": "Embedding",
+  "core": true,
+  "also_known_as": [],
+  "definition": "A learned vector of numbers representing a token, word, image or item so that similar things end up close together.",
+  "why_it_matters": "How a computer represents meaning: \"king\" and \"queen\" become nearby points. The input to every LLM and the basis of semantic search.",
+  "aliases": [],
+  "url": "glossary/04-neural-network-foundations.md#embedding"
+ },
+ {
+  "section": 4,
+  "section_title": "Neural-network foundations",
+  "id": "latent-space-representation",
+  "term": "Latent space / representation",
+  "core": false,
+  "also_known_as": [],
+  "definition": "The internal vector space in which the model represents meaning.",
+  "why_it_matters": "Where the model \"thinks\": arithmetic on these vectors (king − man + woman ≈ queen) is what makes them useful.",
+  "aliases": [
+   "Latent space"
+  ],
+  "url": "glossary/04-neural-network-foundations.md#latent-space-representation"
+ },
+ {
+  "section": 4,
+  "section_title": "Neural-network foundations",
+  "id": "inductive-bias",
+  "term": "Inductive bias",
+  "core": false,
+  "also_known_as": [],
+  "definition": "The assumptions an architecture builds in: CNNs assume nearby pixels matter, RNNs assume order, Transformers assume very little.",
+  "why_it_matters": "Explains why CNNs need less data for images and why Transformers need huge data but scale further.",
+  "aliases": [],
+  "url": "glossary/04-neural-network-foundations.md#inductive-bias"
+ },
+ {
+  "section": 4,
+  "section_title": "Neural-network foundations",
+  "id": "tensor",
+  "term": "Tensor",
+  "core": false,
+  "also_known_as": [],
+  "definition": "A multi-dimensional array (vector, matrix, and beyond).",
+  "why_it_matters": "The data type everything in deep learning is made of; a \"shape\" like [batch, tokens, 768] tells you what is flowing where.",
+  "aliases": [],
+  "url": "glossary/04-neural-network-foundations.md#tensor"
+ },
+ {
+  "section": 4,
+  "section_title": "Neural-network foundations",
+  "id": "autograd-computational-graph",
+  "term": "Autograd / computational graph",
+  "core": false,
+  "also_known_as": [],
+  "definition": "Framework machinery (PyTorch) that records every operation so backprop can be computed automatically.",
+  "why_it_matters": "Why you never write backprop by hand: call `loss.backward()` and PyTorch does the calculus.",
+  "aliases": [
+   "Computational graph"
+  ],
+  "url": "glossary/04-neural-network-foundations.md#autograd-computational-graph"
+ },
+ {
+  "section": 4,
+  "section_title": "Neural-network foundations",
+  "id": "convolutional-neural-network",
+  "term": "Convolutional Neural Network (CNN)",
+  "core": false,
+  "also_known_as": [],
+  "definition": "A network using small sliding filters. The classic architecture for images (LeNet, AlexNet, ResNet).",
+  "why_it_matters": "Detects the same pattern anywhere in an image with few parameters. Still the workhorse for vision on small devices.",
+  "aliases": [
+   "CNN"
+  ],
+  "url": "glossary/04-neural-network-foundations.md#convolutional-neural-network"
+ },
+ {
+  "section": 4,
+  "section_title": "Neural-network foundations",
+  "id": "recurrent-networks",
+  "term": "Recurrent networks",
+  "core": false,
+  "also_known_as": [
+   "RNN",
+   "LSTM",
+   "GRU"
+  ],
+  "definition": "Networks that process sequences one step at a time with a memory state. They dominated language tasks before Transformers replaced them.",
+  "why_it_matters": "Worked for sequences but could not be parallelised and forgot long-range context. Attention fixed both problems.",
+  "aliases": [
+   "LSTM / GRU"
+  ],
+  "url": "glossary/04-neural-network-foundations.md#recurrent-networks"
+ },
+ {
+  "section": 4,
+  "section_title": "Neural-network foundations",
+  "id": "sequence-to-sequence",
+  "term": "Sequence-to-sequence (seq2seq)",
+  "core": false,
+  "also_known_as": [],
+  "definition": "An encoder reads an input sequence, a decoder writes an output sequence (early translation models).",
+  "why_it_matters": "Attention was invented to fix seq2seq's bottleneck of squeezing a whole sentence into one vector.",
+  "aliases": [
+   "seq2seq"
+  ],
+  "url": "glossary/04-neural-network-foundations.md#sequence-to-sequence"
+ },
+ {
+  "section": 4,
+  "section_title": "Neural-network foundations",
+  "id": "autoencoder-vae",
+  "term": "Autoencoder / VAE",
+  "core": false,
+  "also_known_as": [
+   "Variational Autoencoder"
+  ],
+  "definition": "Networks trained to compress and then reconstruct their input. The variational version learns a smooth latent space you can sample from.",
+  "why_it_matters": "Learns compact representations without labels; the VAE is also the compressor inside Stable Diffusion.",
+  "aliases": [
+   "VAE"
+  ],
+  "url": "glossary/04-neural-network-foundations.md#autoencoder-vae"
+ },
+ {
+  "section": 4,
+  "section_title": "Neural-network foundations",
+  "id": "generative-adversarial-network",
+  "term": "Generative Adversarial Network (GAN)",
+  "core": false,
+  "also_known_as": [],
+  "definition": "A generator and a discriminator trained against each other.",
+  "why_it_matters": "Produced the first photorealistic generated faces (2014–2020); mostly replaced by diffusion models, which are easier to train.",
+  "aliases": [
+   "GAN"
+  ],
+  "url": "glossary/04-neural-network-foundations.md#generative-adversarial-network"
+ },
+ {
+  "section": 4,
+  "section_title": "Neural-network foundations",
+  "id": "diffusion-model",
+  "term": "Diffusion model",
+  "core": false,
+  "also_known_as": [],
+  "definition": "Generates images (and audio, video) by learning to reverse a gradual noising process.",
+  "why_it_matters": "The engine behind Stable Diffusion, DALL·E 2/3 and Midjourney: start from noise, remove it step by step toward the prompt.",
+  "aliases": [],
+  "url": "glossary/04-neural-network-foundations.md#diffusion-model"
+ },
+ {
+  "section": 5,
+  "section_title": "Data & tokenization",
+  "id": "corpus-training-data",
+  "term": "Corpus / training data",
+  "core": false,
+  "also_known_as": [],
+  "definition": "The collection of text (web pages, books, code, transcripts) the model learns from. Trillions of tokens for frontier models.",
+  "why_it_matters": "The model knows only what was in here. Quality and mix of the corpus decide much of the model's quality.",
+  "aliases": [],
+  "url": "glossary/05-data-tokenization.md#corpus-training-data"
+ },
+ {
+  "section": 5,
+  "section_title": "Data & tokenization",
+  "id": "token",
+  "term": "Token",
+  "core": true,
+  "also_known_as": [],
+  "definition": "The unit the model actually reads and writes. Usually a word piece; roughly ¾ of an English word on average.",
+  "why_it_matters": "Everything is counted in tokens: context limits, speed, and your API bill.",
+  "aliases": [],
+  "url": "glossary/05-data-tokenization.md#token"
+ },
+ {
+  "section": 5,
+  "section_title": "Data & tokenization",
+  "id": "tokenizer",
+  "term": "Tokenizer",
+  "core": false,
+  "also_known_as": [],
+  "definition": "Converts text to token IDs and back. Built before pre-training and frozen with the model.",
+  "why_it_matters": "Explains odd behaviour like miscounting letters in a word: the model never sees letters, only token IDs.",
+  "aliases": [],
+  "url": "glossary/05-data-tokenization.md#tokenizer"
+ },
+ {
+  "section": 5,
+  "section_title": "Data & tokenization",
+  "id": "token-ids-detokenization",
+  "term": "Token IDs / detokenization",
+  "core": false,
+  "also_known_as": [],
+  "definition": "Each token has an integer ID in the vocabulary. The model consumes and produces IDs; detokenization turns IDs back into text.",
+  "why_it_matters": "The model is a function from integers to integers; text is only at the edges.",
+  "aliases": [],
+  "url": "glossary/05-data-tokenization.md#token-ids-detokenization"
+ },
+ {
+  "section": 5,
+  "section_title": "Data & tokenization",
+  "id": "byte-pair-encoding",
+  "term": "Byte-Pair Encoding (BPE)",
+  "core": false,
+  "also_known_as": [],
+  "definition": "The most common tokenizer algorithm: start from bytes or characters and repeatedly merge the most frequent adjacent pair. Used by GPT and Llama models.",
+  "why_it_matters": "Lets the model handle any string (even emoji and typos) with a fixed vocabulary, while keeping common words as single tokens.",
+  "aliases": [
+   "BPE"
+  ],
+  "url": "glossary/05-data-tokenization.md#byte-pair-encoding"
+ },
+ {
+  "section": 5,
+  "section_title": "Data & tokenization",
+  "id": "wordpiece-sentencepiece-tiktoken",
+  "term": "WordPiece, SentencePiece, tiktoken",
+  "core": false,
+  "also_known_as": [],
+  "definition": "Other tokenizer algorithms and libraries: BERT uses WordPiece, many open models use SentencePiece, OpenAI models use tiktoken.",
+  "why_it_matters": "Different names in different tutorials, same job: text ↔ tokens.",
+  "aliases": [
+   "tiktoken",
+   "SentencePiece",
+   "WordPiece"
+  ],
+  "url": "glossary/05-data-tokenization.md#wordpiece-sentencepiece-tiktoken"
+ },
+ {
+  "section": 5,
+  "section_title": "Data & tokenization",
+  "id": "vocabulary-vocab-size",
+  "term": "Vocabulary / vocab size",
+  "core": false,
+  "also_known_as": [],
+  "definition": "The set of all tokens the model knows, typically 32k to 200k entries.",
+  "why_it_matters": "A bigger vocabulary means fewer tokens per sentence (cheaper, faster) but a bigger output layer.",
+  "aliases": [],
+  "url": "glossary/05-data-tokenization.md#vocabulary-vocab-size"
+ },
+ {
+  "section": 5,
+  "section_title": "Data & tokenization",
+  "id": "multilingual-token-cost",
+  "term": "Multilingual token cost",
+  "core": false,
+  "also_known_as": [],
+  "definition": "Tokenizers are trained mostly on English, so other languages split into more tokens per word. Polish text typically costs about 2× the tokens of the same text in English (1.5–2.5× depending on the tokenizer; newer 200k+ vocabularies do better, older 32k ones worse).",
+  "why_it_matters": "The same prompt in Polish uses more of the context window and costs more than in English.",
+  "aliases": [],
+  "url": "glossary/05-data-tokenization.md#multilingual-token-cost"
+ },
+ {
+  "section": 5,
+  "section_title": "Data & tokenization",
+  "id": "special-tokens",
+  "term": "Special tokens",
+  "core": false,
+  "also_known_as": [
+   "BOS",
+   "EOS",
+   "PAD"
+  ],
+  "definition": "Control tokens marking beginning / end of sequence, padding, or chat roles (user, assistant, tool).",
+  "why_it_matters": "How the model knows where a message starts and ends, and when to stop generating.",
+  "aliases": [
+   "BOS / EOS / PAD"
+  ],
+  "url": "glossary/05-data-tokenization.md#special-tokens"
+ },
+ {
+  "section": 5,
+  "section_title": "Data & tokenization",
+  "id": "context-window-context-length",
+  "term": "Context window / context length",
+  "core": true,
+  "also_known_as": [],
+  "definition": "The maximum number of tokens the model can take in at once (prompt plus answer): 8k, 128k, 1M.",
+  "why_it_matters": "The model's working memory. Anything outside it does not exist for the model; everything inside costs compute and money.",
+  "aliases": [],
+  "url": "glossary/05-data-tokenization.md#context-window-context-length"
+ },
+ {
+  "section": 5,
+  "section_title": "Data & tokenization",
+  "id": "sequence-sequence-length",
+  "term": "Sequence / sequence length",
+  "core": false,
+  "also_known_as": [],
+  "definition": "An ordered list of tokens. Models are trained on fixed-length chunks of the corpus.",
+  "why_it_matters": "\"Sequence length\" in a training script is how much text the model sees per example.",
+  "aliases": [],
+  "url": "glossary/05-data-tokenization.md#sequence-sequence-length"
+ },
+ {
+  "section": 5,
+  "section_title": "Data & tokenization",
+  "id": "inputtarget-pairs-sliding-window",
+  "term": "Input–target pairs / sliding window",
+  "core": false,
+  "also_known_as": [],
+  "definition": "Training data is cut into chunks; the target is the same chunk shifted by one token, so every position has a \"next token\" to predict. (Raschka chapter 2.)",
+  "why_it_matters": "How free labels are created from raw text: the text itself is the answer key.",
+  "aliases": [],
+  "url": "glossary/05-data-tokenization.md#inputtarget-pairs-sliding-window"
+ },
+ {
+  "section": 5,
+  "section_title": "Data & tokenization",
+  "id": "data-cleaning-deduplication-filtering",
+  "term": "Data cleaning, deduplication, filtering",
+  "core": false,
+  "also_known_as": [],
+  "definition": "Removing junk, duplicates and low-quality text before training.",
+  "why_it_matters": "One of the biggest levers on model quality: cleaner data makes a smarter model at the same size.",
+  "aliases": [
+   "Dedup"
+  ],
+  "url": "glossary/05-data-tokenization.md#data-cleaning-deduplication-filtering"
+ },
+ {
+  "section": 5,
+  "section_title": "Data & tokenization",
+  "id": "data-mixture",
+  "term": "Data mixture",
+  "core": false,
+  "also_known_as": [],
+  "definition": "The proportions of web, code, books, maths, multilingual text in the training set.",
+  "why_it_matters": "Decides what the model is good at: more code in the mix makes a better coder.",
+  "aliases": [],
+  "url": "glossary/05-data-tokenization.md#data-mixture"
+ },
+ {
+  "section": 5,
+  "section_title": "Data & tokenization",
+  "id": "synthetic-data",
+  "term": "Synthetic data",
+  "core": false,
+  "also_known_as": [],
+  "definition": "Training text generated by another model.",
+  "why_it_matters": "Fills gaps where real data is scarce (maths steps, rare languages) and is now a major ingredient of both pre- and post-training.",
+  "aliases": [],
+  "url": "glossary/05-data-tokenization.md#synthetic-data"
+ },
+ {
+  "section": 5,
+  "section_title": "Data & tokenization",
+  "id": "data-annotation-human-raters",
+  "term": "Data annotation / human raters",
+  "core": false,
+  "also_known_as": [],
+  "definition": "People who write ideal answers, rank outputs or label data for SFT and reward models (companies like Scale AI and Surge AI).",
+  "why_it_matters": "The human work behind \"human feedback\"; its quality shapes how the model behaves.",
+  "aliases": [
+   "Human raters",
+   "Scale AI"
+  ],
+  "url": "glossary/05-data-tokenization.md#data-annotation-human-raters"
+ },
+ {
+  "section": 5,
+  "section_title": "Data & tokenization",
+  "id": "common-crawl-the-pile-fineweb",
+  "term": "Common Crawl, The Pile, FineWeb",
+  "core": false,
+  "also_known_as": [],
+  "definition": "Well-known public web-scale datasets used as pre-training corpora.",
+  "why_it_matters": "When a video says a model was trained on \"the internet\", these are the concrete datasets it means.",
+  "aliases": [
+   "Common Crawl",
+   "FineWeb",
+   "The Pile"
+  ],
+  "url": "glossary/05-data-tokenization.md#common-crawl-the-pile-fineweb"
+ },
+ {
+  "section": 5,
+  "section_title": "Data & tokenization",
+  "id": "chat-template",
+  "term": "Chat template",
+  "core": false,
+  "also_known_as": [],
+  "definition": "The exact text format (role markers, special tokens) used to serialise a conversation into tokens. Each model family has its own.",
+  "why_it_matters": "A conversation is just one long token sequence with markers; getting the template wrong is a common cause of bad outputs with open models.",
+  "aliases": [],
+  "url": "glossary/05-data-tokenization.md#chat-template"
+ },
+ {
+  "section": 6,
+  "section_title": "The Transformer architecture",
+  "id": "transformer",
+  "term": "Transformer",
+  "core": true,
+  "also_known_as": [],
+  "definition": "The neural architecture from the 2017 paper \"Attention Is All You Need\": stacked blocks of attention plus feed-forward layers.",
+  "why_it_matters": "Processes all tokens in parallel (fast on GPUs) and lets any token look at any other (long-range context). Both are why it won.",
+  "aliases": [],
+  "url": "glossary/06-the-transformer-architecture.md#transformer"
+ },
+ {
+  "section": 6,
+  "section_title": "The Transformer architecture",
+  "id": "attention",
+  "term": "Attention",
+  "core": true,
+  "also_known_as": [],
+  "definition": "A mechanism that lets each token look at other tokens and weigh how relevant they are, so context flows across the whole sequence in one step.",
+  "why_it_matters": "How the model knows that \"it\" refers to \"the cat\" ten words earlier. The core idea of modern AI.",
+  "aliases": [],
+  "url": "glossary/06-the-transformer-architecture.md#attention"
+ },
+ {
+  "section": 6,
+  "section_title": "The Transformer architecture",
+  "id": "self-attention",
+  "term": "Self-attention",
+  "core": false,
+  "also_known_as": [],
+  "definition": "Attention where tokens attend to other tokens of the same sequence.",
+  "why_it_matters": "Lets every word be interpreted in the light of every other word in the text.",
+  "aliases": [],
+  "url": "glossary/06-the-transformer-architecture.md#self-attention"
+ },
+ {
+  "section": 6,
+  "section_title": "The Transformer architecture",
+  "id": "query-key-value",
+  "term": "Query, Key, Value",
+  "core": false,
+  "also_known_as": [
+   "Q",
+   "K",
+   "V"
+  ],
+  "definition": "Three projections of each token. A token's query is compared with every key to get weights, which are then applied to the values.",
+  "why_it_matters": "Think of a lookup: the query asks a question, keys say what each token offers, values are what gets returned.",
+  "aliases": [],
+  "url": "glossary/06-the-transformer-architecture.md#query-key-value"
+ },
+ {
+  "section": 6,
+  "section_title": "The Transformer architecture",
+  "id": "scaled-dot-product-attention",
+  "term": "Scaled dot-product attention",
+  "core": false,
+  "also_known_as": [],
+  "definition": "The actual attention formula: softmax(QKᵀ / √d) · V.",
+  "why_it_matters": "The one formula every video shows. Dividing by √d keeps the softmax from saturating so gradients stay healthy.",
+  "aliases": [],
+  "url": "glossary/06-the-transformer-architecture.md#scaled-dot-product-attention"
+ },
+ {
+  "section": 6,
+  "section_title": "The Transformer architecture",
+  "id": "multi-head-attention",
+  "term": "Multi-Head Attention (MHA)",
+  "core": false,
+  "also_known_as": [],
+  "definition": "Several attention operations run in parallel (heads), each free to focus on a different kind of relationship.",
+  "why_it_matters": "One head can track grammar while another tracks topic. More heads, richer understanding.",
+  "aliases": [
+   "MHA"
+  ],
+  "url": "glossary/06-the-transformer-architecture.md#multi-head-attention"
+ },
+ {
+  "section": 6,
+  "section_title": "The Transformer architecture",
+  "id": "multi-query-grouped-query-attention",
+  "term": "Multi-Query / Grouped-Query Attention",
+  "core": false,
+  "also_known_as": [
+   "MQA",
+   "GQA"
+  ],
+  "definition": "Variants that share key/value projections across heads. Llama 2 (70B), Llama 3, Mistral and most 2024+ models use GQA.",
+  "why_it_matters": "Shrinks the KV cache several-fold, so inference is faster and cheaper with almost no quality loss.",
+  "aliases": [],
+  "url": "glossary/06-the-transformer-architecture.md#multi-query-grouped-query-attention"
+ },
+ {
+  "section": 6,
+  "section_title": "The Transformer architecture",
+  "id": "multi-head-latent-attention",
+  "term": "Multi-head Latent Attention (MLA)",
+  "core": false,
+  "also_known_as": [],
+  "definition": "DeepSeek's alternative to GQA: keys and values are compressed into a small latent vector per token, which is what the KV cache stores; they are expanded again when attention runs (DeepSeek-V2, V3, R1).",
+  "why_it_matters": "Cuts the KV cache far more than GQA with no quality loss, which is how DeepSeek serves long contexts cheaply.",
+  "aliases": [
+   "MLA"
+  ],
+  "url": "glossary/06-the-transformer-architecture.md#multi-head-latent-attention"
+ },
+ {
+  "section": 6,
+  "section_title": "The Transformer architecture",
+  "id": "causal-masked-attention",
+  "term": "Causal (masked) attention",
+  "core": false,
+  "also_known_as": [],
+  "definition": "Masking so a token can only attend to earlier tokens.",
+  "why_it_matters": "Stops the model from cheating by looking at the answer during training, and is what makes it generate left to right.",
+  "aliases": [
+   "Causal mask",
+   "Masked attention"
+  ],
+  "url": "glossary/06-the-transformer-architecture.md#causal-masked-attention"
+ },
+ {
+  "section": 6,
+  "section_title": "The Transformer architecture",
+  "id": "attention-mask",
+  "term": "Attention mask",
+  "core": false,
+  "also_known_as": [],
+  "definition": "The tensor that marks which positions may attend to which (causal mask, padding mask).",
+  "why_it_matters": "The practical implementation of \"no peeking ahead\" and \"ignore padding\".",
+  "aliases": [],
+  "url": "glossary/06-the-transformer-architecture.md#attention-mask"
+ },
+ {
+  "section": 6,
+  "section_title": "The Transformer architecture",
+  "id": "quadratic-cost-of-attention",
+  "term": "Quadratic cost of attention (O(n²))",
+  "core": false,
+  "also_known_as": [],
+  "definition": "Every token compares itself with every other, so compute and memory grow with the square of the sequence length.",
+  "why_it_matters": "Why long context is expensive and why FlashAttention, sliding windows and state-space models exist.",
+  "aliases": [
+   "O(n²)",
+   "O(n²) attention"
+  ],
+  "url": "glossary/06-the-transformer-architecture.md#quadratic-cost-of-attention"
+ },
+ {
+  "section": 6,
+  "section_title": "The Transformer architecture",
+  "id": "sliding-window-attention-attention-sinks",
+  "term": "Sliding-window attention / attention sinks",
+  "core": false,
+  "also_known_as": [],
+  "definition": "Limiting each token to attend only to the last N tokens (sliding window), optionally keeping a few initial tokens always visible (attention sinks).",
+  "why_it_matters": "Makes very long inputs affordable at some cost in long-range recall; used in the original Mistral 7B and, mixed with global layers, in Gemma 2/3 and gpt-oss.",
+  "aliases": [
+   "SWA",
+   "Attention sinks"
+  ],
+  "url": "glossary/06-the-transformer-architecture.md#sliding-window-attention-attention-sinks"
+ },
+ {
+  "section": 6,
+  "section_title": "The Transformer architecture",
+  "id": "cross-attention",
+  "term": "Cross-attention",
+  "core": false,
+  "also_known_as": [],
+  "definition": "The decoder attending to the encoder's outputs, in encoder-decoder models.",
+  "why_it_matters": "How a translator model reads the source sentence while writing the target one.",
+  "aliases": [],
+  "url": "glossary/06-the-transformer-architecture.md#cross-attention"
+ },
+ {
+  "section": 6,
+  "section_title": "The Transformer architecture",
+  "id": "decoder-only-model",
+  "term": "Decoder-only model",
+  "core": false,
+  "also_known_as": [
+   "GPT",
+   "Llama",
+   "Claude",
+   "Gemini",
+   "Mistral"
+  ],
+  "definition": "A Transformer with causal self-attention only, trained to predict the next token. The dominant LLM design.",
+  "why_it_matters": "Simplest design that scales; one model does understanding and generation. Almost every chat model is this.",
+  "aliases": [],
+  "url": "glossary/06-the-transformer-architecture.md#decoder-only-model"
+ },
+ {
+  "section": 6,
+  "section_title": "The Transformer architecture",
+  "id": "encoder-only-model",
+  "term": "Encoder-only model",
+  "core": false,
+  "also_known_as": [
+   "BERT",
+   "RoBERTa"
+  ],
+  "definition": "A bidirectional Transformer good at understanding, classification and embeddings, but not at generating text.",
+  "why_it_matters": "Still the usual choice for cheap classification and small, fast embedding models, because it reads both directions at once; many top-scoring embedding models are now built on decoder-only LLMs.",
+  "aliases": [],
+  "url": "glossary/06-the-transformer-architecture.md#encoder-only-model"
+ },
+ {
+  "section": 6,
+  "section_title": "The Transformer architecture",
+  "id": "encoder-decoder-model",
+  "term": "Encoder-decoder model",
+  "core": false,
+  "also_known_as": [
+   "T5",
+   "BART",
+   "original Transformer"
+  ],
+  "definition": "An encoder reads the input, a decoder writes the output.",
+  "why_it_matters": "Natural for translation and summarisation; largely displaced by decoder-only models that do everything.",
+  "aliases": [
+   "T5 / BART"
+  ],
+  "url": "glossary/06-the-transformer-architecture.md#encoder-decoder-model"
+ },
+ {
+  "section": 6,
+  "section_title": "The Transformer architecture",
+  "id": "positional-encoding-embedding",
+  "term": "Positional encoding / embedding",
+  "core": false,
+  "also_known_as": [],
+  "definition": "How the model knows token order, since attention by itself is order-blind. Sinusoidal in 2017, learned in GPT-2.",
+  "why_it_matters": "Without it, \"dog bites man\" and \"man bites dog\" look identical to the model.",
+  "aliases": [
+   "Positional embedding"
+  ],
+  "url": "glossary/06-the-transformer-architecture.md#positional-encoding-embedding"
+ },
+ {
+  "section": 6,
+  "section_title": "The Transformer architecture",
+  "id": "rotary-positional-embedding",
+  "term": "Rotary Positional Embedding (RoPE)",
+  "core": false,
+  "also_known_as": [],
+  "definition": "Today's standard positional scheme: encodes position by rotating the Q and K vectors so attention depends on relative distance.",
+  "why_it_matters": "Does not extrapolate well on its own, but can be cheaply stretched to longer contexts (position interpolation, NTK-aware scaling, YaRN), which is what makes 128k-token contexts practical.",
+  "aliases": [
+   "RoPE"
+  ],
+  "url": "glossary/06-the-transformer-architecture.md#rotary-positional-embedding"
+ },
+ {
+  "section": 6,
+  "section_title": "The Transformer architecture",
+  "id": "alibi",
+  "term": "ALiBi",
+  "core": false,
+  "also_known_as": [
+   "Attention with Linear Biases"
+  ],
+  "definition": "A positional scheme with no position embeddings at all: a penalty proportional to the query–key distance is subtracted from each attention score, with a different slope per head (used by MPT and BLOOM).",
+  "why_it_matters": "Trains on short sequences and extrapolates to longer ones; the main rival to RoPE before RoPE won.",
+  "aliases": [
+   "ALiBi (positional biases)"
+  ],
+  "url": "glossary/06-the-transformer-architecture.md#alibi"
+ },
+ {
+  "section": 6,
+  "section_title": "The Transformer architecture",
+  "id": "hidden-state",
+  "term": "Hidden state",
+  "core": false,
+  "also_known_as": [],
+  "definition": "The vector representing a token at a given layer; the residual stream's value at that point.",
+  "why_it_matters": "What gets passed from block to block, and what the LM head reads at the end. \"Hidden size\" = its length.",
+  "aliases": [],
+  "url": "glossary/06-the-transformer-architecture.md#hidden-state"
+ },
+ {
+  "section": 6,
+  "section_title": "The Transformer architecture",
+  "id": "transformer-block-layer",
+  "term": "Transformer block / layer",
+  "core": false,
+  "also_known_as": [],
+  "definition": "One unit of [attention → add & norm → feed-forward → add & norm]. Models stack 32 to 100+ of them.",
+  "why_it_matters": "The repeating unit; a model is this block copied N times with different weights. See Map 5.",
+  "aliases": [],
+  "url": "glossary/06-the-transformer-architecture.md#transformer-block-layer"
+ },
+ {
+  "section": 6,
+  "section_title": "The Transformer architecture",
+  "id": "feed-forward-in-a-block",
+  "term": "Feed-forward in a block",
+  "core": false,
+  "also_known_as": [
+   "MLP",
+   "SwiGLU"
+  ],
+  "definition": "The per-token two-layer network after attention; it holds most of the parameters. SwiGLU is the gated variant most modern models use.",
+  "why_it_matters": "Attention moves information between tokens; the FFN processes it. Facts the model \"knows\" are mostly stored here.",
+  "aliases": [],
+  "url": "glossary/06-the-transformer-architecture.md#feed-forward-in-a-block"
+ },
+ {
+  "section": 6,
+  "section_title": "The Transformer architecture",
+  "id": "residual-stream",
+  "term": "Residual stream",
+  "core": false,
+  "also_known_as": [],
+  "definition": "The running vector per token that every block adds its contribution to.",
+  "why_it_matters": "Each block reads from and writes to it, so information from early layers survives to the end.",
+  "aliases": [],
+  "url": "glossary/06-the-transformer-architecture.md#residual-stream"
+ },
+ {
+  "section": 6,
+  "section_title": "The Transformer architecture",
+  "id": "attention-residuals",
+  "term": "Attention Residuals (AttnRes)",
+  "core": false,
+  "also_known_as": [],
+  "definition": "A 2026 variant of the residual stream (Moonshot AI): instead of adding every earlier layer's output with a fixed weight of 1, each layer attends over earlier outputs with learned, softmax-normalised weights.",
+  "why_it_matters": "Small but consistent gains for ~4% extra training cost; a sign that even the residual stream is still being redesigned.",
+  "aliases": [
+   "AttnRes"
+  ],
+  "url": "glossary/06-the-transformer-architecture.md#attention-residuals"
+ },
+ {
+  "section": 6,
+  "section_title": "The Transformer architecture",
+  "id": "pre-norm-vs-post-norm",
+  "term": "Pre-norm vs post-norm",
+  "core": false,
+  "also_known_as": [],
+  "definition": "Whether normalization happens before or after each sub-layer. Pre-norm with RMSNorm is the modern choice.",
+  "why_it_matters": "Pre-norm trains more stably at scale, which is why GPT-2 onward switched to it.",
+  "aliases": [
+   "Pre-norm"
+  ],
+  "url": "glossary/06-the-transformer-architecture.md#pre-norm-vs-post-norm"
+ },
+ {
+  "section": 6,
+  "section_title": "The Transformer architecture",
+  "id": "qk-norm",
+  "term": "QK-Norm",
+  "core": false,
+  "also_known_as": [
+   "query-key normalization"
+  ],
+  "definition": "Normalize the query and key vectors (RMSNorm or LayerNorm) before computing attention scores (Gemma 3, OLMo 2, Qwen3).",
+  "why_it_matters": "Stops attention logits from blowing up, which removes a common cause of loss spikes and allows higher learning rates.",
+  "aliases": [
+   "QKNorm"
+  ],
+  "url": "glossary/06-the-transformer-architecture.md#qk-norm"
+ },
+ {
+  "section": 6,
+  "section_title": "The Transformer architecture",
+  "id": "d-model-n-heads-n-layers",
+  "term": "d_model, n_heads, n_layers (hidden size)",
+  "core": false,
+  "also_known_as": [],
+  "definition": "The main shape hyperparameters of a Transformer: vector width per token, number of attention heads, number of stacked blocks.",
+  "why_it_matters": "Three numbers that describe a model's shape; parameter count follows from them (Map 5).",
+  "aliases": [
+   "Hidden size"
+  ],
+  "url": "glossary/06-the-transformer-architecture.md#d-model-n-heads-n-layers"
+ },
+ {
+  "section": 6,
+  "section_title": "The Transformer architecture",
+  "id": "language-model-head",
+  "term": "Language-model head",
+  "core": false,
+  "also_known_as": [
+   "LM head",
+   "unembedding"
+  ],
+  "definition": "The final linear layer mapping each token's hidden state to logits over the vocabulary.",
+  "why_it_matters": "Turns the model's internal vector into \"a score for every possible next token\".",
+  "aliases": [],
+  "url": "glossary/06-the-transformer-architecture.md#language-model-head"
+ },
+ {
+  "section": 6,
+  "section_title": "The Transformer architecture",
+  "id": "weight-tying",
+  "term": "Weight tying",
+  "core": false,
+  "also_known_as": [],
+  "definition": "Reusing the token-embedding matrix as the LM head.",
+  "why_it_matters": "Saves a large chunk of parameters in small models (a third of GPT-2's).",
+  "aliases": [],
+  "url": "glossary/06-the-transformer-architecture.md#weight-tying"
+ },
+ {
+  "section": 6,
+  "section_title": "The Transformer architecture",
+  "id": "mixture-of-experts",
+  "term": "Mixture of Experts (MoE)",
+  "core": false,
+  "also_known_as": [],
+  "definition": "Replaces each feed-forward layer with several experts and a router that activates only a few per token (Mixtral, DeepSeek-V3, Qwen3-MoE).",
+  "why_it_matters": "Huge knowledge capacity with the compute cost of a much smaller model: a 235B model that runs like a 22B one.",
+  "aliases": [
+   "MoE"
+  ],
+  "url": "glossary/06-the-transformer-architecture.md#mixture-of-experts"
+ },
+ {
+  "section": 6,
+  "section_title": "The Transformer architecture",
+  "id": "dense-vs-sparse-model",
+  "term": "Dense vs sparse model",
+  "core": false,
+  "also_known_as": [],
+  "definition": "A dense model uses all parameters for every token; a sparse (MoE) model uses a subset.",
+  "why_it_matters": "Explains names like \"235B-A22B\": 235B parameters total, 22B active per token.",
+  "aliases": [
+   "Sparse model",
+   "Dense model"
+  ],
+  "url": "glossary/06-the-transformer-architecture.md#dense-vs-sparse-model"
+ },
+ {
+  "section": 6,
+  "section_title": "The Transformer architecture",
+  "id": "flashattention",
+  "term": "FlashAttention",
+  "core": false,
+  "also_known_as": [],
+  "definition": "An exact but much faster, memory-efficient GPU implementation of attention.",
+  "why_it_matters": "Same maths, 2–4× faster and far less memory, by being clever about GPU memory traffic. An engineering trick, not a new architecture.",
+  "aliases": [],
+  "url": "glossary/06-the-transformer-architecture.md#flashattention"
+ },
+ {
+  "section": 6,
+  "section_title": "The Transformer architecture",
+  "id": "state-space-models-hybrids",
+  "term": "State-space models / hybrids",
+  "core": false,
+  "also_known_as": [
+   "Mamba",
+   "SSM"
+  ],
+  "definition": "Alternative sequence layers whose cost grows linearly with sequence length. Often mixed with attention layers.",
+  "why_it_matters": "A bet on cheaper long context; hybrids keep a few attention layers for precise recall.",
+  "aliases": [],
+  "url": "glossary/06-the-transformer-architecture.md#state-space-models-hybrids"
+ },
+ {
+  "section": 6,
+  "section_title": "The Transformer architecture",
+  "id": "vision-transformer",
+  "term": "Vision Transformer (ViT)",
+  "core": false,
+  "also_known_as": [],
+  "definition": "A Transformer applied to image patches as if they were tokens.",
+  "why_it_matters": "Showed the same architecture works for images, which is what makes multimodal models possible.",
+  "aliases": [
+   "ViT"
+  ],
+  "url": "glossary/06-the-transformer-architecture.md#vision-transformer"
+ },
+ {
+  "section": 7,
+  "section_title": "Pre-training",
+  "id": "pre-training",
+  "term": "Pre-training",
+  "core": true,
+  "also_known_as": [],
+  "definition": "The first and most expensive phase: train the randomly-initialised model on a massive corpus by predicting the next token.",
+  "why_it_matters": "Where the model learns language, facts and reasoning. Everything after only shapes how that knowledge is used.",
+  "aliases": [],
+  "url": "glossary/07-pre-training.md#pre-training"
+ },
+ {
+  "section": 7,
+  "section_title": "Pre-training",
+  "id": "next-token-prediction",
+  "term": "Next-token prediction",
+  "core": true,
+  "also_known_as": [
+   "causal language modelling",
+   "CLM"
+  ],
+  "definition": "The pre-training objective: given the tokens so far, output a probability distribution over the next one.",
+  "why_it_matters": "A deceptively simple task: predicting the next word well enough requires understanding grammar, facts and logic.",
+  "aliases": [
+   "Causal language modelling (CLM)"
+  ],
+  "url": "glossary/07-pre-training.md#next-token-prediction"
+ },
+ {
+  "section": 7,
+  "section_title": "Pre-training",
+  "id": "teacher-forcing",
+  "term": "Teacher forcing",
+  "core": false,
+  "also_known_as": [],
+  "definition": "During training the model sees the true previous tokens as input, not its own guesses, so all positions train in one parallel pass.",
+  "why_it_matters": "Why training is fast (whole sequence at once) while generation is slow (one token at a time).",
+  "aliases": [],
+  "url": "glossary/07-pre-training.md#teacher-forcing"
+ },
+ {
+  "section": 7,
+  "section_title": "Pre-training",
+  "id": "masked-language-modelling",
+  "term": "Masked language modelling (MLM)",
+  "core": false,
+  "also_known_as": [],
+  "definition": "The BERT-style objective: hide random tokens and predict them from both sides.",
+  "why_it_matters": "Produces excellent understanding models (and embeddings) but not text generators.",
+  "aliases": [
+   "MLM",
+   "MLM (masked language modelling)"
+  ],
+  "url": "glossary/07-pre-training.md#masked-language-modelling"
+ },
+ {
+  "section": 7,
+  "section_title": "Pre-training",
+  "id": "base-model",
+  "term": "Base model",
+  "core": true,
+  "also_known_as": [],
+  "definition": "The raw pre-trained model: continues text well, does not yet follow instructions or chat.",
+  "why_it_matters": "Ask it a question and it may continue with more questions. Post-training turns it into an assistant.",
+  "aliases": [],
+  "url": "glossary/07-pre-training.md#base-model"
+ },
+ {
+  "section": 7,
+  "section_title": "Pre-training",
+  "id": "checkpoint",
+  "term": "Checkpoint",
+  "core": false,
+  "also_known_as": [],
+  "definition": "A saved snapshot of the weights (and optimizer state) during or after training.",
+  "why_it_matters": "Lets a run resume after a crash and lets researchers compare the model at different points.",
+  "aliases": [],
+  "url": "glossary/07-pre-training.md#checkpoint"
+ },
+ {
+  "section": 7,
+  "section_title": "Pre-training",
+  "id": "perplexity",
+  "term": "Perplexity",
+  "core": false,
+  "also_known_as": [],
+  "definition": "The standard measure of how well a language model predicts text: exp(loss). Lower is better.",
+  "why_it_matters": "A perplexity of 10 means the model is, on average, as uncertain as choosing among 10 equally likely tokens.",
+  "aliases": [
+   "PPL"
+  ],
+  "url": "glossary/07-pre-training.md#perplexity"
+ },
+ {
+  "section": 7,
+  "section_title": "Pre-training",
+  "id": "loss-curve-validation-loss",
+  "term": "Loss curve / validation loss",
+  "core": false,
+  "also_known_as": [],
+  "definition": "Training loss over steps, alongside loss on held-out data. Validation loss rising while training loss falls means overfitting.",
+  "why_it_matters": "The main thing engineers watch during a run; a smooth downward curve means learning is working.",
+  "aliases": [
+   "Validation loss"
+  ],
+  "url": "glossary/07-pre-training.md#loss-curve-validation-loss"
+ },
+ {
+  "section": 7,
+  "section_title": "Pre-training",
+  "id": "loss-spikes-divergence",
+  "term": "Loss spikes / divergence",
+  "core": false,
+  "also_known_as": [],
+  "definition": "Sudden jumps in the loss during a long run: a bad batch, too high a learning rate or numerical trouble.",
+  "why_it_matters": "The nightmare of large training runs; gradient clipping, lower learning rates and restarting from a checkpoint are the usual fixes.",
+  "aliases": [
+   "Loss spike"
+  ],
+  "url": "glossary/07-pre-training.md#loss-spikes-divergence"
+ },
+ {
+  "section": 7,
+  "section_title": "Pre-training",
+  "id": "learning-rate-schedule",
+  "term": "Learning-rate schedule",
+  "core": false,
+  "also_known_as": [
+   "warmup",
+   "cosine decay",
+   "WSD"
+  ],
+  "definition": "Ramp the learning rate up at the start, hold, then decay it toward the end.",
+  "why_it_matters": "Warmup prevents early blow-ups; decay lets the model settle into a good minimum. Standard practice for every LLM run.",
+  "aliases": [
+   "Warmup / cosine decay"
+  ],
+  "url": "glossary/07-pre-training.md#learning-rate-schedule"
+ },
+ {
+  "section": 7,
+  "section_title": "Pre-training",
+  "id": "gradient-clipping",
+  "term": "Gradient clipping",
+  "core": false,
+  "also_known_as": [],
+  "definition": "Cap the gradient norm so one bad batch cannot blow up training.",
+  "why_it_matters": "A safety valve against exploding gradients and loss spikes.",
+  "aliases": [],
+  "url": "glossary/07-pre-training.md#gradient-clipping"
+ },
+ {
+  "section": 7,
+  "section_title": "Pre-training",
+  "id": "gradient-accumulation",
+  "term": "Gradient accumulation",
+  "core": false,
+  "also_known_as": [],
+  "definition": "Sum gradients over several mini-batches before updating.",
+  "why_it_matters": "Simulates a big batch on a small GPU, so you can train with less memory.",
+  "aliases": [],
+  "url": "glossary/07-pre-training.md#gradient-accumulation"
+ },
+ {
+  "section": 7,
+  "section_title": "Pre-training",
+  "id": "curriculum-learning",
+  "term": "Curriculum learning",
+  "core": false,
+  "also_known_as": [],
+  "definition": "Ordering training data from easy to hard, or changing the data mix over the course of training.",
+  "why_it_matters": "Can make training faster and the final model better than feeding everything in random order.",
+  "aliases": [],
+  "url": "glossary/07-pre-training.md#curriculum-learning"
+ },
+ {
+  "section": 7,
+  "section_title": "Pre-training",
+  "id": "mixed-precision",
+  "term": "Mixed precision",
+  "core": false,
+  "also_known_as": [
+   "FP32",
+   "FP16",
+   "BF16",
+   "FP8"
+  ],
+  "definition": "Using lower-precision numbers for speed and memory while keeping a master copy of the weights in FP32. BF16 is the norm; FP8 is arriving.",
+  "why_it_matters": "Roughly doubles throughput and halves activation memory versus FP32, with no loss in quality when done right; weight and optimizer memory stay similar because the FP32 master copy remains.",
+  "aliases": [
+   "BF16 / FP16 / FP8"
+  ],
+  "url": "glossary/07-pre-training.md#mixed-precision"
+ },
+ {
+  "section": 7,
+  "section_title": "Pre-training",
+  "id": "flops-compute-budget",
+  "term": "FLOPs / compute budget",
+  "core": false,
+  "also_known_as": [],
+  "definition": "The total floating-point operations a training run uses, roughly 6 × parameters × tokens.",
+  "why_it_matters": "Compute is the currency labs plan in; \"10²⁵ FLOPs\" is how regulators and papers describe a model's size of effort.",
+  "aliases": [],
+  "url": "glossary/07-pre-training.md#flops-compute-budget"
+ },
+ {
+  "section": 7,
+  "section_title": "Pre-training",
+  "id": "model-flops-utilization",
+  "term": "Model FLOPs Utilization (MFU)",
+  "core": false,
+  "also_known_as": [],
+  "definition": "What fraction of the GPUs' theoretical peak compute the training run actually achieves (typically 30–50%).",
+  "why_it_matters": "The efficiency score of a training run; low MFU means expensive GPUs sitting idle waiting for data or communication.",
+  "aliases": [
+   "MFU"
+  ],
+  "url": "glossary/07-pre-training.md#model-flops-utilization"
+ },
+ {
+  "section": 7,
+  "section_title": "Pre-training",
+  "id": "scaling-laws",
+  "term": "Scaling laws",
+  "core": false,
+  "also_known_as": [],
+  "definition": "The empirical finding that loss improves smoothly and predictably as you scale parameters, data and compute together.",
+  "why_it_matters": "Why labs bet billions: you can predict how much better a 10× bigger model will be before training it.",
+  "aliases": [],
+  "url": "glossary/07-pre-training.md#scaling-laws"
+ },
+ {
+  "section": 7,
+  "section_title": "Pre-training",
+  "id": "chinchilla-optimal",
+  "term": "Chinchilla-optimal",
+  "core": false,
+  "also_known_as": [],
+  "definition": "The 2022 rule of thumb of about 20 training tokens per parameter for a given training budget. Modern models are deliberately over-trained far beyond it.",
+  "why_it_matters": "Why an 8B model trained on 15T tokens beats older 70B models: small models are cheaper to serve, so extra training pays off.",
+  "aliases": [
+   "Chinchilla",
+   "Compute-optimal",
+   "Over-training"
+  ],
+  "url": "glossary/07-pre-training.md#chinchilla-optimal"
+ },
+ {
+  "section": 7,
+  "section_title": "Pre-training",
+  "id": "emergent-abilities",
+  "term": "Emergent abilities",
+  "core": false,
+  "also_known_as": [],
+  "definition": "Capabilities that appear only once models pass a certain scale (a contested idea).",
+  "why_it_matters": "The argument for scaling: arithmetic or multi-step reasoning seemed to switch on at size.",
+  "aliases": [],
+  "url": "glossary/07-pre-training.md#emergent-abilities"
+ },
+ {
+  "section": 7,
+  "section_title": "Pre-training",
+  "id": "data-tensor-pipeline-parallelism",
+  "term": "Data / tensor / pipeline parallelism",
+  "core": false,
+  "also_known_as": [],
+  "definition": "Three ways to split training across GPUs: by data batches, by slicing layers across devices, or by giving different layers to different devices.",
+  "why_it_matters": "How a model too big for one GPU is trained on thousands at once.",
+  "aliases": [
+   "Tensor parallelism",
+   "Pipeline parallelism",
+   "Data parallelism"
+  ],
+  "url": "glossary/07-pre-training.md#data-tensor-pipeline-parallelism"
+ },
+ {
+  "section": 7,
+  "section_title": "Pre-training",
+  "id": "fsdp-zero",
+  "term": "FSDP / ZeRO",
+  "core": false,
+  "also_known_as": [
+   "Fully Sharded Data Parallel"
+  ],
+  "definition": "Techniques that shard the weights, gradients and optimizer state across GPUs.",
+  "why_it_matters": "Lets models far bigger than one GPU's memory train without complex manual splitting.",
+  "aliases": [
+   "FSDP",
+   "ZeRO (DeepSpeed)"
+  ],
+  "url": "glossary/07-pre-training.md#fsdp-zero"
+ },
+ {
+  "section": 7,
+  "section_title": "Pre-training",
+  "id": "continued-pre-training",
+  "term": "Continued pre-training",
+  "core": false,
+  "also_known_as": [],
+  "definition": "Keep pre-training a base model on new domain data (medical, legal, a new language, your company's docs) before any instruction tuning.",
+  "why_it_matters": "The way to add deep domain knowledge or a new language; much cheaper than training from scratch, much heavier than fine-tuning.",
+  "aliases": [],
+  "url": "glossary/07-pre-training.md#continued-pre-training"
+ },
+ {
+  "section": 7,
+  "section_title": "Pre-training",
+  "id": "mid-training-annealing",
+  "term": "Mid-training / annealing",
+  "core": false,
+  "also_known_as": [],
+  "definition": "The final pre-training phase on a higher-quality data mix with a decaying learning rate.",
+  "why_it_matters": "Increasingly where labs tune knowledge quality and inject maths, code and long-context ability.",
+  "aliases": [
+   "Annealing",
+   "Mid-training"
+  ],
+  "url": "glossary/07-pre-training.md#mid-training-annealing"
+ },
+ {
+  "section": 8,
+  "section_title": "Post-training & alignment",
+  "id": "post-training",
+  "term": "Post-training",
+  "core": false,
+  "also_known_as": [],
+  "definition": "Everything the lab does after pre-training to make the model useful and safe: SFT, preference optimization, reinforcement learning.",
+  "why_it_matters": "Turns a text-completer into an assistant. Most of what you feel as the model's \"personality\" was shaped here.",
+  "aliases": [],
+  "url": "glossary/08-post-training-alignment.md#post-training"
+ },
+ {
+  "section": 8,
+  "section_title": "Post-training & alignment",
+  "id": "fine-tuning-general-meaning",
+  "term": "Fine-tuning (general meaning)",
+  "core": false,
+  "also_known_as": [],
+  "definition": "Continuing to train a pre-trained model on a smaller, targeted dataset. Labs do it (post-training) and you can do it (section 9).",
+  "why_it_matters": "Same mechanics as pre-training, far less data. The word means two different stages depending on who is speaking.",
+  "aliases": [],
+  "url": "glossary/08-post-training-alignment.md#fine-tuning-general-meaning"
+ },
+ {
+  "section": 8,
+  "section_title": "Post-training & alignment",
+  "id": "supervised-fine-tuning",
+  "term": "Supervised Fine-Tuning",
+  "core": true,
+  "also_known_as": [
+   "SFT",
+   "instruction tuning"
+  ],
+  "definition": "Train on curated prompt → ideal-answer pairs so the model learns to follow instructions and hold a conversation.",
+  "why_it_matters": "Teaches the model the format of being helpful: answer the question, use the chat template, stop when done.",
+  "aliases": [],
+  "url": "glossary/08-post-training-alignment.md#supervised-fine-tuning"
+ },
+ {
+  "section": 8,
+  "section_title": "Post-training & alignment",
+  "id": "instruct-chat-model",
+  "term": "Instruct / chat model",
+  "core": false,
+  "also_known_as": [],
+  "definition": "The model after post-training. What you actually talk to.",
+  "why_it_matters": "The \"-Instruct\" or \"-Chat\" suffix on a model name means it has been through this stage.",
+  "aliases": [
+   "Chat model",
+   "Instruct model"
+  ],
+  "url": "glossary/08-post-training-alignment.md#instruct-chat-model"
+ },
+ {
+  "section": 8,
+  "section_title": "Post-training & alignment",
+  "id": "alignment",
+  "term": "Alignment",
+  "core": false,
+  "also_known_as": [],
+  "definition": "Making the model's behaviour match human intentions and values; often summarised as helpful, harmless and honest (HHH).",
+  "why_it_matters": "Both a goal (the model behaves as intended) and the name of the RLHF / safety part of post-training.",
+  "aliases": [
+   "HHH (helpful",
+   "harmless",
+   "honest)"
+  ],
+  "url": "glossary/08-post-training-alignment.md#alignment"
+ },
+ {
+  "section": 8,
+  "section_title": "Post-training & alignment",
+  "id": "reinforcement-learning-from-human-feedback",
+  "term": "Reinforcement Learning from Human Feedback (RLHF)",
+  "core": true,
+  "also_known_as": [],
+  "definition": "Humans rank model outputs → train a reward model on those rankings → use RL (PPO) to push the model toward higher-reward answers.",
+  "why_it_matters": "Makes answers more helpful and polite than SFT alone, because it optimises for what people actually prefer. The technique behind ChatGPT.",
+  "aliases": [
+   "RLHF"
+  ],
+  "url": "glossary/08-post-training-alignment.md#reinforcement-learning-from-human-feedback"
+ },
+ {
+  "section": 8,
+  "section_title": "Post-training & alignment",
+  "id": "reward-model",
+  "term": "Reward model (RM)",
+  "core": false,
+  "also_known_as": [],
+  "definition": "A model trained to score how good an answer is, standing in for human judgement during reinforcement learning.",
+  "why_it_matters": "Lets RL run millions of times without a human in the loop: the reward model is the automated judge.",
+  "aliases": [
+   "RM",
+   "Reward model (RM)"
+  ],
+  "url": "glossary/08-post-training-alignment.md#reward-model"
+ },
+ {
+  "section": 8,
+  "section_title": "Post-training & alignment",
+  "id": "preference-data",
+  "term": "Preference data",
+  "core": false,
+  "also_known_as": [
+   "pairwise comparisons"
+  ],
+  "definition": "\"Answer A is better than answer B\" data used to train reward models or directly in DPO.",
+  "why_it_matters": "Cheaper to collect than ideal answers: comparing two outputs is easier than writing a perfect one.",
+  "aliases": [],
+  "url": "glossary/08-post-training-alignment.md#preference-data"
+ },
+ {
+  "section": 8,
+  "section_title": "Post-training & alignment",
+  "id": "proximal-policy-optimization",
+  "term": "Proximal Policy Optimization (PPO)",
+  "core": false,
+  "also_known_as": [],
+  "definition": "The RL algorithm classically used in RLHF. Updates the policy in small clipped steps.",
+  "why_it_matters": "Keeps RL training stable: small steps mean the model cannot suddenly wander into nonsense.",
+  "aliases": [
+   "PPO"
+  ],
+  "url": "glossary/08-post-training-alignment.md#proximal-policy-optimization"
+ },
+ {
+  "section": 8,
+  "section_title": "Post-training & alignment",
+  "id": "direct-preference-optimization",
+  "term": "Direct Preference Optimization (DPO)",
+  "core": false,
+  "also_known_as": [],
+  "definition": "Trains directly on preference pairs with a simple classification-style loss, skipping the reward model and the RL loop.",
+  "why_it_matters": "Gets most of RLHF's benefit with a fraction of the complexity, which is why open-model teams love it.",
+  "aliases": [
+   "DPO"
+  ],
+  "url": "glossary/08-post-training-alignment.md#direct-preference-optimization"
+ },
+ {
+  "section": 8,
+  "section_title": "Post-training & alignment",
+  "id": "group-relative-policy-optimization",
+  "term": "Group Relative Policy Optimization (GRPO)",
+  "core": false,
+  "also_known_as": [],
+  "definition": "A PPO variant that samples a group of answers to the same prompt and scores each relative to the group, with no separate value model. Used by DeepSeek-R1.",
+  "why_it_matters": "Cheaper and simpler than PPO, and it turned out to be the recipe for training reasoning models.",
+  "aliases": [
+   "GRPO",
+   "DeepSeek-R1"
+  ],
+  "url": "glossary/08-post-training-alignment.md#group-relative-policy-optimization"
+ },
+ {
+  "section": 8,
+  "section_title": "Post-training & alignment",
+  "id": "group-sequence-policy-optimization",
+  "term": "Group Sequence Policy Optimization (GSPO)",
+  "core": false,
+  "also_known_as": [],
+  "definition": "The Qwen team's 2025 successor to GRPO: the importance ratio and clipping are computed per whole sequence instead of per token. Used to train the Qwen3 Instruct, Coder and Thinking models.",
+  "why_it_matters": "More stable RL training, especially for Mixture-of-Experts models, where token-level GRPO tends to collapse.",
+  "aliases": [
+   "GSPO"
+  ],
+  "url": "glossary/08-post-training-alignment.md#group-sequence-policy-optimization"
+ },
+ {
+  "section": 8,
+  "section_title": "Post-training & alignment",
+  "id": "on-policy-vs-off-policy",
+  "term": "On-policy vs off-policy",
+  "core": false,
+  "also_known_as": [],
+  "definition": "On-policy methods (PPO, GRPO) learn from answers the current model just generated; off-policy methods (DPO on a fixed dataset) learn from stored data.",
+  "why_it_matters": "On-policy is more expensive but keeps improving the model on its own mistakes; off-policy is cheap but can go stale.",
+  "aliases": [],
+  "url": "glossary/08-post-training-alignment.md#on-policy-vs-off-policy"
+ },
+ {
+  "section": 8,
+  "section_title": "Post-training & alignment",
+  "id": "rlaif-constitutional-ai",
+  "term": "RLAIF / Constitutional AI",
+  "core": false,
+  "also_known_as": [],
+  "definition": "Use an AI, guided by a written set of principles (a constitution), to produce the feedback instead of, or alongside, humans. Anthropic's approach.",
+  "why_it_matters": "Scales feedback far beyond what human raters can produce, and makes the rules explicit and inspectable.",
+  "aliases": [
+   "Constitutional AI",
+   "RLAIF"
+  ],
+  "url": "glossary/08-post-training-alignment.md#rlaif-constitutional-ai"
+ },
+ {
+  "section": 8,
+  "section_title": "Post-training & alignment",
+  "id": "rl-with-verifiable-rewards",
+  "term": "RL with Verifiable Rewards (RLVR)",
+  "core": false,
+  "also_known_as": [],
+  "definition": "Reinforcement learning where the reward is an automatic check: did the maths answer match, did the unit tests pass.",
+  "why_it_matters": "No reward model to fool: when the answer is checkable, RL can push the model far beyond human demonstrations. The key ingredient of reasoning models.",
+  "aliases": [
+   "RLVR"
+  ],
+  "url": "glossary/08-post-training-alignment.md#rl-with-verifiable-rewards"
+ },
+ {
+  "section": 8,
+  "section_title": "Post-training & alignment",
+  "id": "outcome-vs-process-reward-model",
+  "term": "Outcome vs process reward model",
+  "core": false,
+  "also_known_as": [
+   "ORM",
+   "PRM"
+  ],
+  "definition": "An ORM scores only the final answer; a PRM scores each step of the reasoning.",
+  "why_it_matters": "Step-level rewards give the model more precise feedback on where it went wrong, at a higher labelling cost.",
+  "aliases": [
+   "PRM / ORM"
+  ],
+  "url": "glossary/08-post-training-alignment.md#outcome-vs-process-reward-model"
+ },
+ {
+  "section": 8,
+  "section_title": "Post-training & alignment",
+  "id": "reasoning-thinking-model",
+  "term": "Reasoning / thinking model",
+  "core": false,
+  "also_known_as": [],
+  "definition": "A model post-trained to produce a long chain of thought before answering (OpenAI o-series, DeepSeek-R1, Claude extended thinking, Gemini thinking).",
+  "why_it_matters": "Much more accurate on maths, code and multi-step problems, in exchange for more tokens and latency.",
+  "aliases": [
+   "o1 / o3",
+   "Extended thinking"
+  ],
+  "url": "glossary/08-post-training-alignment.md#reasoning-thinking-model"
+ },
+ {
+  "section": 8,
+  "section_title": "Post-training & alignment",
+  "id": "thinking-budget-reasoning-tokens",
+  "term": "Thinking budget / reasoning tokens",
+  "core": false,
+  "also_known_as": [],
+  "definition": "The number of tokens a reasoning model may spend thinking before it answers; often a setting you control. Reasoning tokens are usually billed as output.",
+  "why_it_matters": "Lets you trade cost and speed for accuracy per request.",
+  "aliases": [
+   "Reasoning tokens"
+  ],
+  "url": "glossary/08-post-training-alignment.md#thinking-budget-reasoning-tokens"
+ },
+ {
+  "section": 8,
+  "section_title": "Post-training & alignment",
+  "id": "test-time-compute-inference-time-scaling",
+  "term": "Test-time compute / inference-time scaling",
+  "core": false,
+  "also_known_as": [],
+  "definition": "Spending more compute at answer time (longer thinking, multiple samples, search) to get better answers, instead of only training a bigger model.",
+  "why_it_matters": "The second scaling axis: the same model gets smarter if you let it think longer.",
+  "aliases": [
+   "Inference-time scaling"
+  ],
+  "url": "glossary/08-post-training-alignment.md#test-time-compute-inference-time-scaling"
+ },
+ {
+  "section": 8,
+  "section_title": "Post-training & alignment",
+  "id": "agentic-multi-turn-rl",
+  "term": "Agentic / multi-turn RL",
+  "core": false,
+  "also_known_as": [],
+  "definition": "Reinforcement learning on whole tasks that involve many steps and tool calls, not single answers.",
+  "why_it_matters": "How models are trained to be good at long coding sessions and browsing, not only at one-shot replies.",
+  "aliases": [],
+  "url": "glossary/08-post-training-alignment.md#agentic-multi-turn-rl"
+ },
+ {
+  "section": 8,
+  "section_title": "Post-training & alignment",
+  "id": "kl-penalty-reference-model",
+  "term": "KL penalty / reference model",
+  "core": false,
+  "also_known_as": [],
+  "definition": "A term in the RL objective keeping the trained model close to the SFT model.",
+  "why_it_matters": "Stops the model from drifting into gibberish that happens to score well with the reward model.",
+  "aliases": [
+   "Reference model",
+   "KL divergence"
+  ],
+  "url": "glossary/08-post-training-alignment.md#kl-penalty-reference-model"
+ },
+ {
+  "section": 8,
+  "section_title": "Post-training & alignment",
+  "id": "reward-hacking",
+  "term": "Reward hacking",
+  "core": false,
+  "also_known_as": [],
+  "definition": "The model finding ways to get high reward without actually being good: verbosity, confident tone, telling the grader what it wants.",
+  "why_it_matters": "Why RL needs careful rewards: optimise a flawed score and you get a flawed model.",
+  "aliases": [],
+  "url": "glossary/08-post-training-alignment.md#reward-hacking"
+ },
+ {
+  "section": 8,
+  "section_title": "Post-training & alignment",
+  "id": "sycophancy",
+  "term": "Sycophancy",
+  "core": false,
+  "also_known_as": [],
+  "definition": "The tendency to agree with the user over telling the truth.",
+  "why_it_matters": "A known side effect of optimising for human approval; worth remembering when a model agrees with you too easily.",
+  "aliases": [],
+  "url": "glossary/08-post-training-alignment.md#sycophancy"
+ },
+ {
+  "section": 8,
+  "section_title": "Post-training & alignment",
+  "id": "rejection-sampling-best-of-n",
+  "term": "Rejection sampling / Best-of-N",
+  "core": false,
+  "also_known_as": [],
+  "definition": "Generate N answers, keep the best according to a judge or reward model, then train on those.",
+  "why_it_matters": "A simple, strong post-training method: let the model teach itself from its own best attempts.",
+  "aliases": [
+   "Best-of-N"
+  ],
+  "url": "glossary/08-post-training-alignment.md#rejection-sampling-best-of-n"
+ },
+ {
+  "section": 8,
+  "section_title": "Post-training & alignment",
+  "id": "distillation",
+  "term": "Distillation",
+  "core": false,
+  "also_known_as": [],
+  "definition": "Train a smaller student model to imitate a bigger teacher's outputs.",
+  "why_it_matters": "How small, cheap models get surprisingly capable: they copy the behaviour of a frontier model.",
+  "aliases": [],
+  "url": "glossary/08-post-training-alignment.md#distillation"
+ },
+ {
+  "section": 8,
+  "section_title": "Post-training & alignment",
+  "id": "model-merging",
+  "term": "Model merging",
+  "core": false,
+  "also_known_as": [],
+  "definition": "Averaging or combining the weights of several fine-tuned models into one.",
+  "why_it_matters": "Combines skills from different fine-tunes without retraining; cheap and oddly effective.",
+  "aliases": [],
+  "url": "glossary/08-post-training-alignment.md#model-merging"
+ },
+ {
+  "section": 8,
+  "section_title": "Post-training & alignment",
+  "id": "safety-training-refusals",
+  "term": "Safety training / refusals",
+  "core": false,
+  "also_known_as": [],
+  "definition": "Post-training the model to decline harmful requests and handle sensitive topics carefully.",
+  "why_it_matters": "Why a model says no to some requests; the behaviour is learned here, not hard-coded.",
+  "aliases": [],
+  "url": "glossary/08-post-training-alignment.md#safety-training-refusals"
+ },
+ {
+  "section": 9,
+  "section_title": "Adapting a model to your task",
+  "id": "fine-tuning-your-version",
+  "term": "Fine-tuning (your version)",
+  "core": true,
+  "also_known_as": [],
+  "definition": "Taking an open-weight model (or an API fine-tuning endpoint) and training it further on your own examples to change its style, format or domain behaviour.",
+  "why_it_matters": "Makes a general model behave your way: consistent format, your tone, your domain's conventions, often with a smaller and cheaper model.",
+  "aliases": [],
+  "url": "glossary/09-adapting-a-model-to-your-task.md#fine-tuning-your-version"
+ },
+ {
+  "section": 9,
+  "section_title": "Adapting a model to your task",
+  "id": "full-fine-tuning",
+  "term": "Full fine-tuning",
+  "core": false,
+  "also_known_as": [],
+  "definition": "Update all the weights.",
+  "why_it_matters": "Highest quality ceiling but needs the most GPU memory and risks forgetting general skills.",
+  "aliases": [],
+  "url": "glossary/09-adapting-a-model-to-your-task.md#full-fine-tuning"
+ },
+ {
+  "section": 9,
+  "section_title": "Adapting a model to your task",
+  "id": "parameter-efficient-fine-tuning",
+  "term": "Parameter-Efficient Fine-Tuning (PEFT)",
+  "core": false,
+  "also_known_as": [],
+  "definition": "A family of methods that freeze the model and train only a small set of extra parameters.",
+  "why_it_matters": "Fine-tune a big model on a single GPU and store the result as a tiny file.",
+  "aliases": [
+   "PEFT"
+  ],
+  "url": "glossary/09-adapting-a-model-to-your-task.md#parameter-efficient-fine-tuning"
+ },
+ {
+  "section": 9,
+  "section_title": "Adapting a model to your task",
+  "id": "low-rank-adaptation",
+  "term": "Low-Rank Adaptation (LoRA)",
+  "core": true,
+  "also_known_as": [],
+  "definition": "The most popular PEFT method: learn small low-rank matrices that are added to the attention and feed-forward weights.",
+  "why_it_matters": "Trains ~1% of the parameters for most of the benefit; the adapter is a small file (tens to a couple of hundred MB) you can swap in and out.",
+  "aliases": [
+   "LoRA"
+  ],
+  "url": "glossary/09-adapting-a-model-to-your-task.md#low-rank-adaptation"
+ },
+ {
+  "section": 9,
+  "section_title": "Adapting a model to your task",
+  "id": "qlora",
+  "term": "QLoRA",
+  "core": false,
+  "also_known_as": [],
+  "definition": "LoRA on top of a 4-bit quantized base model.",
+  "why_it_matters": "Lets you fine-tune a 65–70B model on a single 48 GB GPU, or a 7–13B model on a consumer card.",
+  "aliases": [
+   "QLoRA (4-bit LoRA)"
+  ],
+  "url": "glossary/09-adapting-a-model-to-your-task.md#qlora"
+ },
+ {
+  "section": 9,
+  "section_title": "Adapting a model to your task",
+  "id": "adapters-prompt-tuning-prefix-tuning",
+  "term": "Adapters, prompt tuning, prefix tuning",
+  "core": false,
+  "also_known_as": [],
+  "definition": "Other PEFT flavours: small bottleneck layers inserted in the network, or learned soft-prompt vectors prepended to the input.",
+  "why_it_matters": "Same goal as LoRA (cheap adaptation), different mechanics; LoRA won on simplicity.",
+  "aliases": [
+   "Prefix tuning / prompt tuning"
+  ],
+  "url": "glossary/09-adapting-a-model-to-your-task.md#adapters-prompt-tuning-prefix-tuning"
+ },
+ {
+  "section": 9,
+  "section_title": "Adapting a model to your task",
+  "id": "rank-r-and-alpha",
+  "term": "Rank (r) and alpha",
+  "core": false,
+  "also_known_as": [],
+  "definition": "LoRA hyperparameters controlling adapter size and how strongly it is scaled.",
+  "why_it_matters": "Higher rank = more capacity and memory; typical values are 8–64.",
+  "aliases": [
+   "Rank / alpha (LoRA)"
+  ],
+  "url": "glossary/09-adapting-a-model-to-your-task.md#rank-r-and-alpha"
+ },
+ {
+  "section": 9,
+  "section_title": "Adapting a model to your task",
+  "id": "merging-an-adapter",
+  "term": "Merging an adapter",
+  "core": false,
+  "also_known_as": [],
+  "definition": "Adding the trained LoRA matrices into the base weights to produce a single standalone model.",
+  "why_it_matters": "Removes the small inference overhead of a separate adapter and gives you one file to deploy.",
+  "aliases": [
+   "Adapter (LoRA)"
+  ],
+  "url": "glossary/09-adapting-a-model-to-your-task.md#merging-an-adapter"
+ },
+ {
+  "section": 9,
+  "section_title": "Adapting a model to your task",
+  "id": "task-classification-head",
+  "term": "Task / classification head",
+  "core": false,
+  "also_known_as": [],
+  "definition": "A small new output layer placed on top of the model for a specific task (e.g. spam / not spam), replacing the LM head. (Raschka chapter 6.)",
+  "why_it_matters": "The simplest fine-tune: reuse everything the model knows, train only the last layer for your labels.",
+  "aliases": [
+   "Classification head"
+  ],
+  "url": "glossary/09-adapting-a-model-to-your-task.md#task-classification-head"
+ },
+ {
+  "section": 9,
+  "section_title": "Adapting a model to your task",
+  "id": "catastrophic-forgetting",
+  "term": "Catastrophic forgetting",
+  "core": false,
+  "also_known_as": [],
+  "definition": "Fine-tuning on a narrow dataset erodes the general abilities the model had before.",
+  "why_it_matters": "Why you keep the learning rate low, mix in general data, and prefer LoRA: to add a skill without losing the others.",
+  "aliases": [],
+  "url": "glossary/09-adapting-a-model-to-your-task.md#catastrophic-forgetting"
+ },
+ {
+  "section": 9,
+  "section_title": "Adapting a model to your task",
+  "id": "domain-adaptation",
+  "term": "Domain adaptation",
+  "core": false,
+  "also_known_as": [],
+  "definition": "Specialising a general model to a field: legal, medical, your codebase, your product's tone.",
+  "why_it_matters": "Makes the model fluent in your world's vocabulary and conventions.",
+  "aliases": [],
+  "url": "glossary/09-adapting-a-model-to-your-task.md#domain-adaptation"
+ },
+ {
+  "section": 9,
+  "section_title": "Adapting a model to your task",
+  "id": "instruction-dataset",
+  "term": "Instruction dataset",
+  "core": false,
+  "also_known_as": [],
+  "definition": "The prompt → completion pairs you fine-tune on. Quality matters more than quantity; hundreds to a few thousand good examples often suffice.",
+  "why_it_matters": "Your main lever: the model will copy whatever these examples do, including their mistakes.",
+  "aliases": [],
+  "url": "glossary/09-adapting-a-model-to-your-task.md#instruction-dataset"
+ },
+ {
+  "section": 9,
+  "section_title": "Adapting a model to your task",
+  "id": "dataset-formats",
+  "term": "Dataset formats",
+  "core": false,
+  "also_known_as": [
+   "Alpaca",
+   "ShareGPT",
+   "messages / JSONL"
+  ],
+  "definition": "Standard JSON layouts for instruction data: Alpaca (instruction / input / output), ShareGPT (conversations), or OpenAI-style messages lists.",
+  "why_it_matters": "The format most fine-tuning tools expect; converting your data into one of these is step one.",
+  "aliases": [
+   "Alpaca / ShareGPT format"
+  ],
+  "url": "glossary/09-adapting-a-model-to-your-task.md#dataset-formats"
+ },
+ {
+  "section": 9,
+  "section_title": "Adapting a model to your task",
+  "id": "open-weights-vs-open-source",
+  "term": "Open weights vs open source",
+  "core": false,
+  "also_known_as": [],
+  "definition": "Open weights means you can download and fine-tune the parameters (Llama, Mistral, Qwen, Gemma). True open source also releases the data and training code (OLMo).",
+  "why_it_matters": "Open weights are what let you fine-tune and self-host; \"open source\" is usually a looser claim.",
+  "aliases": [
+   "Qwen",
+   "Open weights",
+   "Open source (models)"
+  ],
+  "url": "glossary/09-adapting-a-model-to-your-task.md#open-weights-vs-open-source"
+ },
+ {
+  "section": 9,
+  "section_title": "Adapting a model to your task",
+  "id": "api-fine-tuning",
+  "term": "API fine-tuning",
+  "core": false,
+  "also_known_as": [],
+  "definition": "Fine-tuning a closed model through the provider's API: you upload examples, they train and host the result.",
+  "why_it_matters": "Fine-tuning without GPUs or ops; the trade-off is lock-in and less control.",
+  "aliases": [],
+  "url": "glossary/09-adapting-a-model-to-your-task.md#api-fine-tuning"
+ },
+ {
+  "section": 9,
+  "section_title": "Adapting a model to your task",
+  "id": "hugging-face-peft-trl-unsloth-axolotl",
+  "term": "Hugging Face PEFT / TRL / Unsloth / Axolotl",
+  "core": false,
+  "also_known_as": [],
+  "definition": "The standard libraries and tools for running LoRA, SFT and DPO on open models.",
+  "why_it_matters": "The tools most fine-tuning tutorials use; Unsloth is the fast, memory-light one for single GPUs.",
+  "aliases": [
+   "Unsloth / Axolotl",
+   "TRL"
+  ],
+  "url": "glossary/09-adapting-a-model-to-your-task.md#hugging-face-peft-trl-unsloth-axolotl"
+ },
+ {
+  "section": 9,
+  "section_title": "Adapting a model to your task",
+  "id": "evaluation-set",
+  "term": "Evaluation set",
+  "core": false,
+  "also_known_as": [],
+  "definition": "A held-out slice of your own examples used to check the fine-tune actually improved things.",
+  "why_it_matters": "The only way to know your fine-tune helped and did not just overfit your examples.",
+  "aliases": [],
+  "url": "glossary/09-adapting-a-model-to-your-task.md#evaluation-set"
+ },
+ {
+  "section": 10,
+  "section_title": "Inference & serving",
+  "id": "inference",
+  "term": "Inference",
+  "core": true,
+  "also_known_as": [],
+  "definition": "Using a trained model to produce output. No weights change.",
+  "why_it_matters": "What every API call and chat message is. The cost and speed of AI products are decided here.",
+  "aliases": [],
+  "url": "glossary/10-inference-serving.md#inference"
+ },
+ {
+  "section": 10,
+  "section_title": "Inference & serving",
+  "id": "autoregressive-generation",
+  "term": "Autoregressive generation",
+  "core": false,
+  "also_known_as": [],
+  "definition": "Produce one token, append it to the input, run again, until a stop token or the max length is reached.",
+  "why_it_matters": "Why text appears word by word, and why long answers take proportionally longer.",
+  "aliases": [],
+  "url": "glossary/10-inference-serving.md#autoregressive-generation"
+ },
+ {
+  "section": 10,
+  "section_title": "Inference & serving",
+  "id": "prefill-vs-decode",
+  "term": "Prefill vs decode",
+  "core": false,
+  "also_known_as": [],
+  "definition": "Prefill processes the whole prompt in one parallel pass (compute-bound). Decode produces tokens one at a time (memory-bound).",
+  "why_it_matters": "Explains the two numbers you feel: a pause before the first token (prefill), then a steady stream (decode).",
+  "aliases": [
+   "Prefill",
+   "Decode"
+  ],
+  "url": "glossary/10-inference-serving.md#prefill-vs-decode"
+ },
+ {
+  "section": 10,
+  "section_title": "Inference & serving",
+  "id": "kv-cache",
+  "term": "KV cache",
+  "core": false,
+  "also_known_as": [],
+  "definition": "Storing the keys and values of all previous tokens so each new token does not recompute them.",
+  "why_it_matters": "Makes generation many times faster; its memory size is the main limit on long contexts and many parallel users.",
+  "aliases": [],
+  "url": "glossary/10-inference-serving.md#kv-cache"
+ },
+ {
+  "section": 10,
+  "section_title": "Inference & serving",
+  "id": "decoding-strategy",
+  "term": "Decoding strategy",
+  "core": false,
+  "also_known_as": [],
+  "definition": "How the next token is chosen from the probability distribution the model outputs.",
+  "why_it_matters": "The same model can sound careful or creative depending only on this choice.",
+  "aliases": [],
+  "url": "glossary/10-inference-serving.md#decoding-strategy"
+ },
+ {
+  "section": 10,
+  "section_title": "Inference & serving",
+  "id": "greedy-decoding",
+  "term": "Greedy decoding",
+  "core": false,
+  "also_known_as": [],
+  "definition": "Always pick the most probable token.",
+  "why_it_matters": "Deterministic and fast, but tends to repeat itself and miss better overall sentences.",
+  "aliases": [],
+  "url": "glossary/10-inference-serving.md#greedy-decoding"
+ },
+ {
+  "section": 10,
+  "section_title": "Inference & serving",
+  "id": "sampling",
+  "term": "Sampling",
+  "core": false,
+  "also_known_as": [],
+  "definition": "Pick the next token randomly according to the model's probabilities.",
+  "why_it_matters": "Gives variety and more natural text; the reason the same prompt gives different answers.",
+  "aliases": [],
+  "url": "glossary/10-inference-serving.md#sampling"
+ },
+ {
+  "section": 10,
+  "section_title": "Inference & serving",
+  "id": "temperature",
+  "term": "Temperature",
+  "core": true,
+  "also_known_as": [],
+  "definition": "Scales the logits before softmax. Low values make output focused and near-deterministic, high values make it diverse and random. 0 is effectively greedy.",
+  "why_it_matters": "Your main creativity knob: low for code and facts, higher for brainstorming.",
+  "aliases": [],
+  "url": "glossary/10-inference-serving.md#temperature"
+ },
+ {
+  "section": 10,
+  "section_title": "Inference & serving",
+  "id": "top-k-top-p-nucleus-sampling",
+  "term": "Top-k / Top-p (nucleus) sampling",
+  "core": false,
+  "also_known_as": [],
+  "definition": "Only sample from the k most likely tokens, or from the smallest set of tokens whose probabilities add up to p.",
+  "why_it_matters": "Cuts off the long tail of nonsense tokens so sampling stays creative but coherent.",
+  "aliases": [
+   "Nucleus sampling",
+   "Top-p",
+   "Top-k"
+  ],
+  "url": "glossary/10-inference-serving.md#top-k-top-p-nucleus-sampling"
+ },
+ {
+  "section": 10,
+  "section_title": "Inference & serving",
+  "id": "beam-search",
+  "term": "Beam search",
+  "core": false,
+  "also_known_as": [],
+  "definition": "Keep several candidate sequences and expand the best ones.",
+  "why_it_matters": "Finds higher-probability whole sentences; common in translation, rarely used in chat because it sounds bland.",
+  "aliases": [],
+  "url": "glossary/10-inference-serving.md#beam-search"
+ },
+ {
+  "section": 10,
+  "section_title": "Inference & serving",
+  "id": "repetition-frequency-penalty",
+  "term": "Repetition / frequency penalty",
+  "core": false,
+  "also_known_as": [],
+  "definition": "Lower the probability of tokens that have already appeared.",
+  "why_it_matters": "Stops the model from looping on the same phrase.",
+  "aliases": [
+   "Frequency penalty"
+  ],
+  "url": "glossary/10-inference-serving.md#repetition-frequency-penalty"
+ },
+ {
+  "section": 10,
+  "section_title": "Inference & serving",
+  "id": "constrained-grammar-based-decoding",
+  "term": "Constrained / grammar-based decoding",
+  "core": false,
+  "also_known_as": [],
+  "definition": "Restricting sampling so the output must follow a grammar or JSON schema.",
+  "why_it_matters": "Guarantees valid JSON or a fixed set of choices, rather than hoping the model complies.",
+  "aliases": [
+   "Grammar-constrained decoding"
+  ],
+  "url": "glossary/10-inference-serving.md#constrained-grammar-based-decoding"
+ },
+ {
+  "section": 10,
+  "section_title": "Inference & serving",
+  "id": "logprobs",
+  "term": "Logprobs",
+  "core": false,
+  "also_known_as": [],
+  "definition": "The log-probabilities of generated tokens, which APIs can expose.",
+  "why_it_matters": "A cheap confidence signal: low probability on a key token is a hint the model is guessing.",
+  "aliases": [],
+  "url": "glossary/10-inference-serving.md#logprobs"
+ },
+ {
+  "section": 10,
+  "section_title": "Inference & serving",
+  "id": "max-tokens-stop-sequences",
+  "term": "Max tokens / stop sequences",
+  "core": false,
+  "also_known_as": [],
+  "definition": "The limit on output length, and strings that end generation early.",
+  "why_it_matters": "Controls cost and prevents run-on answers.",
+  "aliases": [
+   "Stop sequence",
+   "Max tokens"
+  ],
+  "url": "glossary/10-inference-serving.md#max-tokens-stop-sequences"
+ },
+ {
+  "section": 10,
+  "section_title": "Inference & serving",
+  "id": "streaming",
+  "term": "Streaming",
+  "core": false,
+  "also_known_as": [],
+  "definition": "Sending tokens to the client as they are generated.",
+  "why_it_matters": "Makes a 10-second answer feel instant because the user starts reading immediately.",
+  "aliases": [],
+  "url": "glossary/10-inference-serving.md#streaming"
+ },
+ {
+  "section": 10,
+  "section_title": "Inference & serving",
+  "id": "latency-ttft-tpot-tokens-sec",
+  "term": "Latency: TTFT, TPOT, tokens/sec",
+  "core": false,
+  "also_known_as": [
+   "time to first token",
+   "time per output token"
+  ],
+  "definition": "Time to first token measures prefill. Time per output token (the gap between tokens, also called inter-token latency) measures decode; tokens per second is its inverse.",
+  "why_it_matters": "The numbers users feel: optimise TTFT for chat, TPOT for long outputs.",
+  "aliases": [
+   "TPOT",
+   "Inter-token latency",
+   "TTFT",
+   "Tokens per second"
+  ],
+  "url": "glossary/10-inference-serving.md#latency-ttft-tpot-tokens-sec"
+ },
+ {
+  "section": 10,
+  "section_title": "Inference & serving",
+  "id": "throughput-batching-continuous-batching",
+  "term": "Throughput / batching / continuous batching",
+  "core": false,
+  "also_known_as": [],
+  "definition": "Serving many requests at once by batching their decode steps. Continuous batching slots new requests in mid-stream.",
+  "why_it_matters": "Serves many more users per GPU, which is what makes API prices possible.",
+  "aliases": [
+   "Continuous batching"
+  ],
+  "url": "glossary/10-inference-serving.md#throughput-batching-continuous-batching"
+ },
+ {
+  "section": 10,
+  "section_title": "Inference & serving",
+  "id": "pagedattention-vllm",
+  "term": "PagedAttention / vLLM",
+  "core": false,
+  "also_known_as": [],
+  "definition": "Managing the KV cache like virtual-memory pages so GPU memory is not wasted. vLLM is the open-source engine that popularised it.",
+  "why_it_matters": "Fits more simultaneous requests in the same GPU memory, roughly 2–4× the throughput.",
+  "aliases": [
+   "vLLM",
+   "PagedAttention"
+  ],
+  "url": "glossary/10-inference-serving.md#pagedattention-vllm"
+ },
+ {
+  "section": 10,
+  "section_title": "Inference & serving",
+  "id": "quantization",
+  "term": "Quantization",
+  "core": false,
+  "also_known_as": [
+   "INT8",
+   "INT4",
+   "FP8"
+  ],
+  "definition": "Storing weights (and sometimes activations) in fewer bits.",
+  "why_it_matters": "Cuts memory 2–4× and speeds up inference, at a small quality cost; how a 70B model fits on one GPU or a laptop.",
+  "aliases": [
+   "INT8 / INT4"
+  ],
+  "url": "glossary/10-inference-serving.md#quantization"
+ },
+ {
+  "section": 10,
+  "section_title": "Inference & serving",
+  "id": "gguf-gptq-awq",
+  "term": "GGUF, GPTQ, AWQ",
+  "core": false,
+  "also_known_as": [],
+  "definition": "Common quantized formats and methods. GGUF is the format llama.cpp, Ollama and LM Studio use.",
+  "why_it_matters": "When a download page lists \"Q4_K_M\", it is a 4-bit GGUF file ready for local use.",
+  "aliases": [
+   "GGUF",
+   "GPTQ / AWQ"
+  ],
+  "url": "glossary/10-inference-serving.md#gguf-gptq-awq"
+ },
+ {
+  "section": 10,
+  "section_title": "Inference & serving",
+  "id": "speculative-decoding",
+  "term": "Speculative decoding",
+  "core": false,
+  "also_known_as": [],
+  "definition": "A small draft model proposes several tokens, the big model verifies them in one pass.",
+  "why_it_matters": "Same output as the big model, noticeably faster, because verifying is cheaper than generating.",
+  "aliases": [],
+  "url": "glossary/10-inference-serving.md#speculative-decoding"
+ },
+ {
+  "section": 10,
+  "section_title": "Inference & serving",
+  "id": "serving-engines",
+  "term": "Serving engines",
+  "core": false,
+  "also_known_as": [
+   "vLLM",
+   "SGLang",
+   "TensorRT-LLM",
+   "TGI",
+   "llama.cpp",
+   "Ollama"
+  ],
+  "definition": "Software that loads weights and serves requests efficiently: the first four for servers, the last two for laptops.",
+  "why_it_matters": "The difference between a demo and a production service; they handle batching, caching and memory for you.",
+  "aliases": [],
+  "url": "glossary/10-inference-serving.md#serving-engines"
+ },
+ {
+  "section": 10,
+  "section_title": "Inference & serving",
+  "id": "prompt-caching",
+  "term": "Prompt caching",
+  "core": false,
+  "also_known_as": [],
+  "definition": "Reusing the KV cache for a repeated prefix (a long system prompt, a set of documents) across requests.",
+  "why_it_matters": "Cuts cost and latency sharply when many requests share the same long beginning.",
+  "aliases": [],
+  "url": "glossary/10-inference-serving.md#prompt-caching"
+ },
+ {
+  "section": 10,
+  "section_title": "Inference & serving",
+  "id": "semantic-caching",
+  "term": "Semantic caching",
+  "core": false,
+  "also_known_as": [],
+  "definition": "Caching whole answers keyed by the meaning of the question, so a similar question returns the stored answer without calling the model.",
+  "why_it_matters": "Avoids paying for the same answer twice when users ask the same thing in different words.",
+  "aliases": [],
+  "url": "glossary/10-inference-serving.md#semantic-caching"
+ },
+ {
+  "section": 10,
+  "section_title": "Inference & serving",
+  "id": "model-routing-cascades",
+  "term": "Model routing / cascades",
+  "core": false,
+  "also_known_as": [],
+  "definition": "Sending each request to the cheapest model likely to handle it, escalating to a bigger one only when needed.",
+  "why_it_matters": "Big cost savings with little quality loss, because most requests are easy.",
+  "aliases": [
+   "Cascades"
+  ],
+  "url": "glossary/10-inference-serving.md#model-routing-cascades"
+ },
+ {
+  "section": 10,
+  "section_title": "Inference & serving",
+  "id": "batch-api-rate-limits",
+  "term": "Batch API, rate limits",
+  "core": false,
+  "also_known_as": [],
+  "definition": "Providers offer discounted non-urgent batch processing, and cap how many requests and tokens you can send per minute.",
+  "why_it_matters": "Shapes system design: batch what can wait, queue and retry for the rest.",
+  "aliases": [
+   "Rate limits"
+  ],
+  "url": "glossary/10-inference-serving.md#batch-api-rate-limits"
+ },
+ {
+  "section": 10,
+  "section_title": "Inference & serving",
+  "id": "long-context-context-extension",
+  "term": "Long context / context extension",
+  "core": false,
+  "also_known_as": [],
+  "definition": "Running models beyond their trained length with positional scaling tricks (RoPE scaling, YaRN) and better attention kernels.",
+  "why_it_matters": "How 4k-context models became 128k; recall at the far end of the window is still weaker.",
+  "aliases": [
+   "YaRN / RoPE scaling"
+  ],
+  "url": "glossary/10-inference-serving.md#long-context-context-extension"
+ },
+ {
+  "section": 10,
+  "section_title": "Inference & serving",
+  "id": "on-device-edge-inference",
+  "term": "On-device / edge inference",
+  "core": false,
+  "also_known_as": [],
+  "definition": "Running small quantized models on phones and laptops with no server.",
+  "why_it_matters": "Private, offline and free per use; the trade-off is a much smaller model.",
+  "aliases": [
+   "Edge inference"
+  ],
+  "url": "glossary/10-inference-serving.md#on-device-edge-inference"
+ },
+ {
+  "section": 10,
+  "section_title": "Inference & serving",
+  "id": "model-size-vs-memory",
+  "term": "Model size vs memory",
+  "core": false,
+  "also_known_as": [],
+  "definition": "Rule of thumb: parameters × bytes per weight. A 7B model is about 14 GB in 16-bit and about 4 GB at 4-bit, plus the KV cache.",
+  "why_it_matters": "Quick way to know whether a model fits your GPU or laptop before downloading it.",
+  "aliases": [],
+  "url": "glossary/10-inference-serving.md#model-size-vs-memory"
+ },
+ {
+  "section": 11,
+  "section_title": "Building applications",
+  "id": "prompt",
+  "term": "Prompt",
+  "core": false,
+  "also_known_as": [],
+  "definition": "The text you send to the model: instructions, context, question.",
+  "why_it_matters": "The model's entire view of your task; everything it does not say, the model does not know.",
+  "aliases": [],
+  "url": "glossary/11-building-applications.md#prompt"
+ },
+ {
+  "section": 11,
+  "section_title": "Building applications",
+  "id": "system-prompt",
+  "term": "System prompt",
+  "core": true,
+  "also_known_as": [],
+  "definition": "Instructions set by the developer that frame the whole conversation: persona, rules, available tools, output format.",
+  "why_it_matters": "Your main control surface as an engineer; most product behaviour is written here, not trained.",
+  "aliases": [],
+  "url": "glossary/11-building-applications.md#system-prompt"
+ },
+ {
+  "section": 11,
+  "section_title": "Building applications",
+  "id": "prompt-engineering",
+  "term": "Prompt engineering",
+  "core": false,
+  "also_known_as": [],
+  "definition": "Crafting prompts to get reliable results: clear instructions, examples, explicit output format, role, constraints. Prompts are versioned and tested like code.",
+  "why_it_matters": "The cheapest and fastest way to improve a model's output; always the first thing to try.",
+  "aliases": [
+   "Prompt template"
+  ],
+  "url": "glossary/11-building-applications.md#prompt-engineering"
+ },
+ {
+  "section": 11,
+  "section_title": "Building applications",
+  "id": "zero-shot-few-shot",
+  "term": "Zero-shot / few-shot",
+  "core": false,
+  "also_known_as": [],
+  "definition": "Asking with no examples versus including a few worked examples in the prompt.",
+  "why_it_matters": "A couple of examples in the prompt often beat pages of instructions.",
+  "aliases": [
+   "Few-shot",
+   "Zero-shot"
+  ],
+  "url": "glossary/11-building-applications.md#zero-shot-few-shot"
+ },
+ {
+  "section": 11,
+  "section_title": "Building applications",
+  "id": "in-context-learning",
+  "term": "In-context learning (ICL)",
+  "core": false,
+  "also_known_as": [],
+  "definition": "The model's ability to pick up a task from examples in the prompt without any weight updates.",
+  "why_it_matters": "Why few-shot works: the model adapts on the fly, no training needed.",
+  "aliases": [
+   "ICL"
+  ],
+  "url": "glossary/11-building-applications.md#in-context-learning"
+ },
+ {
+  "section": 11,
+  "section_title": "Building applications",
+  "id": "chain-of-thought",
+  "term": "Chain-of-Thought (CoT)",
+  "core": false,
+  "also_known_as": [],
+  "definition": "Asking the model to reason step by step before answering.",
+  "why_it_matters": "Noticeably more accurate on reasoning tasks because the model gets to \"use scratch paper\"; reasoning models bake this in.",
+  "aliases": [
+   "CoT"
+  ],
+  "url": "glossary/11-building-applications.md#chain-of-thought"
+ },
+ {
+  "section": 11,
+  "section_title": "Building applications",
+  "id": "self-consistency-majority-voting",
+  "term": "Self-consistency / majority voting",
+  "core": false,
+  "also_known_as": [],
+  "definition": "Sample several answers and take the most common one.",
+  "why_it_matters": "A simple way to buy accuracy with more compute; a form of test-time scaling you can do from the outside.",
+  "aliases": [
+   "Majority voting"
+  ],
+  "url": "glossary/11-building-applications.md#self-consistency-majority-voting"
+ },
+ {
+  "section": 11,
+  "section_title": "Building applications",
+  "id": "tree-of-thoughts-search",
+  "term": "Tree of Thoughts / search",
+  "core": false,
+  "also_known_as": [],
+  "definition": "Explore several reasoning paths, evaluate them, and expand the promising ones, instead of one linear chain.",
+  "why_it_matters": "Better on hard planning problems; the application-level cousin of MCTS.",
+  "aliases": [
+   "Tree of Thoughts"
+  ],
+  "url": "glossary/11-building-applications.md#tree-of-thoughts-search"
+ },
+ {
+  "section": 11,
+  "section_title": "Building applications",
+  "id": "structured-outputs-json-mode",
+  "term": "Structured outputs / JSON mode",
+  "core": false,
+  "also_known_as": [],
+  "definition": "Forcing the model to answer in a machine-readable format, often validated against a schema.",
+  "why_it_matters": "Makes model output safe to parse in code, which any real integration needs.",
+  "aliases": [
+   "JSON mode"
+  ],
+  "url": "glossary/11-building-applications.md#structured-outputs-json-mode"
+ },
+ {
+  "section": 11,
+  "section_title": "Building applications",
+  "id": "function-calling-tool-use",
+  "term": "Function calling / tool use",
+  "core": false,
+  "also_known_as": [],
+  "definition": "The model emits a structured request (call get_weather with city = Kraków), your code runs it and returns the result for the model to continue.",
+  "why_it_matters": "Lets the model act on the world and fetch live data instead of guessing from memory.",
+  "aliases": [
+   "Tool use",
+   "Function calling"
+  ],
+  "url": "glossary/11-building-applications.md#function-calling-tool-use"
+ },
+ {
+  "section": 11,
+  "section_title": "Building applications",
+  "id": "agent",
+  "term": "Agent",
+  "core": true,
+  "also_known_as": [],
+  "definition": "An LLM in a loop: observe → decide → act with tools → observe the result, until the task is done.",
+  "why_it_matters": "Turns a chatbot into something that completes multi-step tasks: fixing a bug, booking a trip, researching a question.",
+  "aliases": [],
+  "url": "glossary/11-building-applications.md#agent"
+ },
+ {
+  "section": 11,
+  "section_title": "Building applications",
+  "id": "workflows-vs-agents",
+  "term": "Workflows vs agents",
+  "core": false,
+  "also_known_as": [],
+  "definition": "A workflow is a fixed sequence of LLM calls you program; an agent decides its own next step at runtime.",
+  "why_it_matters": "Workflows are predictable and cheap; agents are flexible and harder to control. Use the simplest one that works.",
+  "aliases": [],
+  "url": "glossary/11-building-applications.md#workflows-vs-agents"
+ },
+ {
+  "section": 11,
+  "section_title": "Building applications",
+  "id": "agentic-workflow-react-planning",
+  "term": "Agentic workflow, ReAct, planning",
+  "core": false,
+  "also_known_as": [],
+  "definition": "Patterns for structuring agents: interleaving reasoning and actions (ReAct), explicit plans, decomposition into sub-tasks, reflection.",
+  "why_it_matters": "Known recipes that make agents more reliable than a bare loop.",
+  "aliases": [
+   "ReAct"
+  ],
+  "url": "glossary/11-building-applications.md#agentic-workflow-react-planning"
+ },
+ {
+  "section": 11,
+  "section_title": "Building applications",
+  "id": "multi-agent-system",
+  "term": "Multi-agent system",
+  "core": false,
+  "also_known_as": [],
+  "definition": "Several specialised agents (planner, coder, reviewer, researcher) coordinating on one task.",
+  "why_it_matters": "Splits a big job into roles with separate contexts; helps on long tasks, adds coordination overhead.",
+  "aliases": [
+   "Multi-agent"
+  ],
+  "url": "glossary/11-building-applications.md#multi-agent-system"
+ },
+ {
+  "section": 11,
+  "section_title": "Building applications",
+  "id": "model-context-protocol",
+  "term": "Model Context Protocol (MCP)",
+  "core": false,
+  "also_known_as": [],
+  "definition": "An open standard for connecting models to tools and data sources through a common server interface, so any MCP client can use any MCP server.",
+  "why_it_matters": "Write a tool once, use it from every assistant: the \"USB-C of AI tools\". Your Spring AI servers speak this.",
+  "aliases": [
+   "MCP"
+  ],
+  "url": "glossary/11-building-applications.md#model-context-protocol"
+ },
+ {
+  "section": 11,
+  "section_title": "Building applications",
+  "id": "agent-to-agent-protocol",
+  "term": "Agent-to-Agent protocol (A2A)",
+  "core": false,
+  "also_known_as": [],
+  "definition": "A standard for agents from different vendors to discover each other and exchange tasks.",
+  "why_it_matters": "MCP connects an agent to tools; A2A connects agents to agents.",
+  "aliases": [
+   "A2A"
+  ],
+  "url": "glossary/11-building-applications.md#agent-to-agent-protocol"
+ },
+ {
+  "section": 11,
+  "section_title": "Building applications",
+  "id": "computer-use-browser-agents",
+  "term": "Computer-use / browser agents",
+  "core": false,
+  "also_known_as": [],
+  "definition": "Agents that operate a screen, browser or terminal through screenshots, clicks and keystrokes.",
+  "why_it_matters": "Lets a model use software that has no API, which is most software.",
+  "aliases": [
+   "Computer use",
+   "Browser agent"
+  ],
+  "url": "glossary/11-building-applications.md#computer-use-browser-agents"
+ },
+ {
+  "section": 11,
+  "section_title": "Building applications",
+  "id": "agentic-coding",
+  "term": "Agentic coding",
+  "core": false,
+  "also_known_as": [
+   "Claude Code",
+   "Cursor",
+   "Copilot agent mode"
+  ],
+  "definition": "Coding assistants that read a repository, edit files, run tests and iterate on their own. \"Vibe coding\" is building by describing what you want and accepting the result.",
+  "why_it_matters": "The most widely adopted agent use case; changes how software gets written.",
+  "aliases": [
+   "Vibe coding",
+   "Cursor / Copilot"
+  ],
+  "url": "glossary/11-building-applications.md#agentic-coding"
+ },
+ {
+  "section": 11,
+  "section_title": "Building applications",
+  "id": "sandboxing",
+  "term": "Sandboxing",
+  "core": false,
+  "also_known_as": [],
+  "definition": "Running an agent's code and tool calls in an isolated environment with limited permissions.",
+  "why_it_matters": "Contains the damage when an agent makes a mistake or is tricked by prompt injection.",
+  "aliases": [
+   "Sandbox"
+  ],
+  "url": "glossary/11-building-applications.md#sandboxing"
+ },
+ {
+  "section": 11,
+  "section_title": "Building applications",
+  "id": "human-in-the-loop",
+  "term": "Human-in-the-loop (HITL)",
+  "core": false,
+  "also_known_as": [],
+  "definition": "Requiring a person to approve certain steps (sending the email, deleting the file, paying).",
+  "why_it_matters": "The standard safety net for agents taking real actions.",
+  "aliases": [
+   "HITL"
+  ],
+  "url": "glossary/11-building-applications.md#human-in-the-loop"
+ },
+ {
+  "section": 11,
+  "section_title": "Building applications",
+  "id": "retrieval-augmented-generation",
+  "term": "Retrieval-Augmented Generation (RAG)",
+  "core": true,
+  "also_known_as": [],
+  "definition": "Fetch relevant documents (search or vector database) and put them in the prompt so the model answers from your data.",
+  "why_it_matters": "Gives the model knowledge it was never trained on, kept up to date, with sources, without any training.",
+  "aliases": [
+   "RAG",
+   "Agentic RAG"
+  ],
+  "url": "glossary/11-building-applications.md#retrieval-augmented-generation"
+ },
+ {
+  "section": 11,
+  "section_title": "Building applications",
+  "id": "text-embeddings",
+  "term": "Text embeddings",
+  "core": false,
+  "also_known_as": [],
+  "definition": "Vectors representing the meaning of a text chunk; similar texts land near each other. Produced by a separate embedding model.",
+  "why_it_matters": "The basis of semantic search: find documents by meaning, not by matching keywords.",
+  "aliases": [
+   "Embedding model"
+  ],
+  "url": "glossary/11-building-applications.md#text-embeddings"
+ },
+ {
+  "section": 11,
+  "section_title": "Building applications",
+  "id": "vector-database",
+  "term": "Vector database",
+  "core": false,
+  "also_known_as": [
+   "pgvector",
+   "Pinecone",
+   "Weaviate",
+   "Qdrant; FAISS is the underlying index library"
+  ],
+  "definition": "A store that indexes embeddings for fast nearest-neighbour search.",
+  "why_it_matters": "Finds the 10 most relevant chunks out of millions in milliseconds.",
+  "aliases": [
+   "Pinecone / Weaviate / Qdrant",
+   "FAISS"
+  ],
+  "url": "glossary/11-building-applications.md#vector-database"
+ },
+ {
+  "section": 11,
+  "section_title": "Building applications",
+  "id": "chunking",
+  "term": "Chunking",
+  "core": false,
+  "also_known_as": [],
+  "definition": "Splitting documents into pieces small enough to embed and retrieve.",
+  "why_it_matters": "Chunk size and overlap decide whether retrieval finds the right passage; one of the most-tuned RAG knobs.",
+  "aliases": [],
+  "url": "glossary/11-building-applications.md#chunking"
+ },
+ {
+  "section": 11,
+  "section_title": "Building applications",
+  "id": "semantic-hybrid-search",
+  "term": "Semantic / hybrid search",
+  "core": false,
+  "also_known_as": [],
+  "definition": "Searching by embedding similarity; hybrid search combines it with classic keyword search (BM25).",
+  "why_it_matters": "Hybrid catches both \"same meaning, different words\" and exact identifiers like error codes.",
+  "aliases": [
+   "BM25 / keyword search",
+   "Hybrid search"
+  ],
+  "url": "glossary/11-building-applications.md#semantic-hybrid-search"
+ },
+ {
+  "section": 11,
+  "section_title": "Building applications",
+  "id": "reranker",
+  "term": "Reranker",
+  "core": false,
+  "also_known_as": [],
+  "definition": "A second model that re-orders retrieved chunks by relevance before they go into the prompt.",
+  "why_it_matters": "Cheap accuracy boost for RAG: retrieve 50 loosely, keep the best 5 precisely.",
+  "aliases": [],
+  "url": "glossary/11-building-applications.md#reranker"
+ },
+ {
+  "section": 11,
+  "section_title": "Building applications",
+  "id": "grounding-citations",
+  "term": "Grounding / citations",
+  "core": false,
+  "also_known_as": [],
+  "definition": "Tying answers to retrieved sources so claims can be checked.",
+  "why_it_matters": "Reduces hallucination and lets users verify; does not eliminate it.",
+  "aliases": [
+   "Citations"
+  ],
+  "url": "glossary/11-building-applications.md#grounding-citations"
+ },
+ {
+  "section": 11,
+  "section_title": "Building applications",
+  "id": "context-engineering",
+  "term": "Context engineering",
+  "core": false,
+  "also_known_as": [],
+  "definition": "Managing everything in the context window (system prompt, retrieved docs, tool results, memory) so the model has what it needs and nothing more.",
+  "why_it_matters": "Too little context and the model guesses; too much and it gets lost and costs more. Good agents are mostly good context management.",
+  "aliases": [],
+  "url": "glossary/11-building-applications.md#context-engineering"
+ },
+ {
+  "section": 11,
+  "section_title": "Building applications",
+  "id": "memory-short-and-long-term",
+  "term": "Memory (short- and long-term)",
+  "core": false,
+  "also_known_as": [],
+  "definition": "Conversation history inside the context window versus facts stored outside and retrieved later.",
+  "why_it_matters": "How an assistant remembers you across sessions: it is retrieval, not training.",
+  "aliases": [],
+  "url": "glossary/11-building-applications.md#memory-short-and-long-term"
+ },
+ {
+  "section": 11,
+  "section_title": "Building applications",
+  "id": "guardrails",
+  "term": "Guardrails",
+  "core": false,
+  "also_known_as": [],
+  "definition": "Input and output checks (classifiers, rules, schemas) placed around the model.",
+  "why_it_matters": "Catches bad inputs and bad outputs the model itself might let through.",
+  "aliases": [
+   "Guardrail"
+  ],
+  "url": "glossary/11-building-applications.md#guardrails"
+ },
+ {
+  "section": 11,
+  "section_title": "Building applications",
+  "id": "prompt-injection",
+  "term": "Prompt injection",
+  "core": false,
+  "also_known_as": [],
+  "definition": "An attack where untrusted content (a web page, an email, a document) contains instructions the model wrongly follows.",
+  "why_it_matters": "The top security risk for agents: anything the model reads can try to give it orders.",
+  "aliases": [],
+  "url": "glossary/11-building-applications.md#prompt-injection"
+ },
+ {
+  "section": 11,
+  "section_title": "Building applications",
+  "id": "llm-as-a-judge",
+  "term": "LLM-as-a-judge",
+  "core": false,
+  "also_known_as": [],
+  "definition": "Using a strong model to grade another model's outputs at scale.",
+  "why_it_matters": "Makes evaluation cheap enough to run on every change, like unit tests for prompts.",
+  "aliases": [
+   "LaaJ",
+   "Judge model"
+  ],
+  "url": "glossary/11-building-applications.md#llm-as-a-judge"
+ },
+ {
+  "section": 11,
+  "section_title": "Building applications",
+  "id": "orchestration-frameworks",
+  "term": "Orchestration frameworks",
+  "core": false,
+  "also_known_as": [
+   "LangChain",
+   "LlamaIndex",
+   "Spring AI",
+   "Semantic Kernel",
+   "Agent SDKs"
+  ],
+  "definition": "Libraries wiring prompts, tools, retrieval and agents together.",
+  "why_it_matters": "Save boilerplate; the concepts underneath are the ones in this section.",
+  "aliases": [
+   "LangChain / LlamaIndex"
+  ],
+  "url": "glossary/11-building-applications.md#orchestration-frameworks"
+ },
+ {
+  "section": 11,
+  "section_title": "Building applications",
+  "id": "observability-tracing",
+  "term": "Observability / tracing",
+  "core": false,
+  "also_known_as": [
+   "LangSmith",
+   "Langfuse",
+   "OpenTelemetry"
+  ],
+  "definition": "Logging prompts, tool calls, tokens, cost and latency per request.",
+  "why_it_matters": "You cannot improve an LLM app you cannot see; tracing shows why a given answer went wrong.",
+  "aliases": [
+   "LangSmith / Langfuse"
+  ],
+  "url": "glossary/11-building-applications.md#observability-tracing"
+ },
+ {
+  "section": 11,
+  "section_title": "Building applications",
+  "id": "hallucination",
+  "term": "Hallucination",
+  "core": true,
+  "also_known_as": [],
+  "definition": "Confident, fluent, wrong output.",
+  "why_it_matters": "The model is predicting plausible text, not checking facts. RAG, tools and grounding reduce it; nothing eliminates it.",
+  "aliases": [],
+  "url": "glossary/11-building-applications.md#hallucination"
+ },
+ {
+  "section": 11,
+  "section_title": "Building applications",
+  "id": "token-pricing",
+  "term": "Token pricing",
+  "core": false,
+  "also_known_as": [],
+  "definition": "APIs bill per input token and per output token. Output tokens cost more; cached input tokens cost less.",
+  "why_it_matters": "Why prompt length, answer length and caching are the three cost levers.",
+  "aliases": [],
+  "url": "glossary/11-building-applications.md#token-pricing"
+ },
+ {
+  "section": 12,
+  "section_title": "Evaluation, safety & interpretability",
+  "id": "evals-evaluation",
+  "term": "Evals / evaluation",
+  "core": false,
+  "also_known_as": [],
+  "definition": "Any systematic measurement of model quality: benchmarks, human ratings, your own test sets.",
+  "why_it_matters": "The only way to know whether a change helped; \"it feels better\" is not evidence.",
+  "aliases": [],
+  "url": "glossary/12-evaluation-safety-interpretability.md#evals-evaluation"
+ },
+ {
+  "section": 12,
+  "section_title": "Evaluation, safety & interpretability",
+  "id": "benchmark",
+  "term": "Benchmark",
+  "core": false,
+  "also_known_as": [],
+  "definition": "A fixed dataset plus a scoring rule for comparing models.",
+  "why_it_matters": "How leaderboards are made; useful, and easy to game.",
+  "aliases": [],
+  "url": "glossary/12-evaluation-safety-interpretability.md#benchmark"
+ },
+ {
+  "section": 12,
+  "section_title": "Evaluation, safety & interpretability",
+  "id": "mmlu-mmlu-pro",
+  "term": "MMLU / MMLU-Pro",
+  "core": false,
+  "also_known_as": [],
+  "definition": "Multiple-choice knowledge questions across 57 subjects; MMLU-Pro is the harder successor with 10 answer options across 14 disciplines.",
+  "why_it_matters": "The classic general-knowledge score; now saturated for top models.",
+  "aliases": [
+   "MMLU"
+  ],
+  "url": "glossary/12-evaluation-safety-interpretability.md#mmlu-mmlu-pro"
+ },
+ {
+  "section": 12,
+  "section_title": "Evaluation, safety & interpretability",
+  "id": "gsm8k-math-aime",
+  "term": "GSM8K, MATH, AIME",
+  "core": false,
+  "also_known_as": [],
+  "definition": "Maths benchmarks from grade-school word problems up to competition level.",
+  "why_it_matters": "Where reasoning models show the biggest jumps.",
+  "aliases": [
+   "GSM8K",
+   "AIME"
+  ],
+  "url": "glossary/12-evaluation-safety-interpretability.md#gsm8k-math-aime"
+ },
+ {
+  "section": 12,
+  "section_title": "Evaluation, safety & interpretability",
+  "id": "humaneval-swe-bench",
+  "term": "HumanEval, SWE-bench",
+  "core": false,
+  "also_known_as": [],
+  "definition": "Code benchmarks: generating functions from docstrings, and fixing real GitHub issues end to end.",
+  "why_it_matters": "SWE-bench (Verified) is the number to watch for coding agents.",
+  "aliases": [
+   "SWE-bench",
+   "HumanEval"
+  ],
+  "url": "glossary/12-evaluation-safety-interpretability.md#humaneval-swe-bench"
+ },
+ {
+  "section": 12,
+  "section_title": "Evaluation, safety & interpretability",
+  "id": "gpqa",
+  "term": "GPQA",
+  "core": false,
+  "also_known_as": [],
+  "definition": "Graduate-level science questions designed to be Google-proof.",
+  "why_it_matters": "Tests deep expertise rather than memorised trivia.",
+  "aliases": [],
+  "url": "glossary/12-evaluation-safety-interpretability.md#gpqa"
+ },
+ {
+  "section": 12,
+  "section_title": "Evaluation, safety & interpretability",
+  "id": "arc-agi-humanity-s-last-exam",
+  "term": "ARC-AGI, Humanity's Last Exam",
+  "core": false,
+  "also_known_as": [],
+  "definition": "Benchmarks designed to stay hard: abstract visual puzzles (ARC-AGI) and expert questions across every field (HLE).",
+  "why_it_matters": "The current frontier benchmarks; when older ones saturate, these are what headlines quote.",
+  "aliases": [
+   "HLE (Humanity's Last Exam)",
+   "ARC-AGI"
+  ],
+  "url": "glossary/12-evaluation-safety-interpretability.md#arc-agi-humanity-s-last-exam"
+ },
+ {
+  "section": 12,
+  "section_title": "Evaluation, safety & interpretability",
+  "id": "agentic-benchmarks",
+  "term": "Agentic benchmarks",
+  "core": false,
+  "also_known_as": [
+   "SWE-bench Verified",
+   "τ-bench",
+   "Terminal-Bench"
+  ],
+  "definition": "Benchmarks scoring a model on multi-step tasks with tools, not single answers.",
+  "why_it_matters": "Measure what matters for agents: finishing the job, not answering a question.",
+  "aliases": [
+   "τ-bench / Terminal-Bench"
+  ],
+  "url": "glossary/12-evaluation-safety-interpretability.md#agentic-benchmarks"
+ },
+ {
+  "section": 12,
+  "section_title": "Evaluation, safety & interpretability",
+  "id": "needle-in-a-haystack",
+  "term": "Needle in a haystack",
+  "core": false,
+  "also_known_as": [],
+  "definition": "Hide one fact in a very long document and check whether the model can retrieve it.",
+  "why_it_matters": "The standard test of whether a long context window really works.",
+  "aliases": [
+   "NIAH"
+  ],
+  "url": "glossary/12-evaluation-safety-interpretability.md#needle-in-a-haystack"
+ },
+ {
+  "section": 12,
+  "section_title": "Evaluation, safety & interpretability",
+  "id": "pass-k",
+  "term": "pass@k",
+  "core": false,
+  "also_known_as": [],
+  "definition": "The chance that at least one of k generated attempts is correct.",
+  "why_it_matters": "Used for code and maths; pass@1 is what a user experiences, pass@10 shows the model's potential with search.",
+  "aliases": [],
+  "url": "glossary/12-evaluation-safety-interpretability.md#pass-k"
+ },
+ {
+  "section": 12,
+  "section_title": "Evaluation, safety & interpretability",
+  "id": "chatbot-arena-lmarena-elo",
+  "term": "Chatbot Arena / LMArena / Elo",
+  "core": false,
+  "also_known_as": [],
+  "definition": "Crowd-sourced blind comparisons of models, producing an Elo-style leaderboard.",
+  "why_it_matters": "The closest thing to \"which model do people prefer\".",
+  "aliases": [
+   "LMArena / Chatbot Arena",
+   "Elo rating"
+  ],
+  "url": "glossary/12-evaluation-safety-interpretability.md#chatbot-arena-lmarena-elo"
+ },
+ {
+  "section": 12,
+  "section_title": "Evaluation, safety & interpretability",
+  "id": "data-contamination",
+  "term": "Data contamination",
+  "core": false,
+  "also_known_as": [],
+  "definition": "Benchmark questions leaking into training data, inflating scores.",
+  "why_it_matters": "Why benchmark numbers are treated with suspicion and why private test sets exist.",
+  "aliases": [
+   "Contamination"
+  ],
+  "url": "glossary/12-evaluation-safety-interpretability.md#data-contamination"
+ },
+ {
+  "section": 12,
+  "section_title": "Evaluation, safety & interpretability",
+  "id": "factuality-hallucination-rate",
+  "term": "Factuality / hallucination rate",
+  "core": false,
+  "also_known_as": [],
+  "definition": "The fraction of generated claims that are unsupported or false.",
+  "why_it_matters": "The metric that matters most for RAG and research assistants.",
+  "aliases": [
+   "Factuality"
+  ],
+  "url": "glossary/12-evaluation-safety-interpretability.md#factuality-hallucination-rate"
+ },
+ {
+  "section": 12,
+  "section_title": "Evaluation, safety & interpretability",
+  "id": "bias-and-fairness",
+  "term": "Bias and fairness",
+  "core": false,
+  "also_known_as": [],
+  "definition": "Systematic differences in model behaviour across groups of people.",
+  "why_it_matters": "A legal and ethical requirement in hiring, lending and medicine.",
+  "aliases": [],
+  "url": "glossary/12-evaluation-safety-interpretability.md#bias-and-fairness"
+ },
+ {
+  "section": 12,
+  "section_title": "Evaluation, safety & interpretability",
+  "id": "robustness",
+  "term": "Robustness",
+  "core": false,
+  "also_known_as": [],
+  "definition": "Stability of answers under rephrasing, typos, noise and adversarial inputs.",
+  "why_it_matters": "A model that changes its answer over a comma is not production-ready.",
+  "aliases": [],
+  "url": "glossary/12-evaluation-safety-interpretability.md#robustness"
+ },
+ {
+  "section": 12,
+  "section_title": "Evaluation, safety & interpretability",
+  "id": "explainability",
+  "term": "Explainability",
+  "core": false,
+  "also_known_as": [
+   "SHAP",
+   "LIME"
+  ],
+  "definition": "Methods that attribute a classic-ML prediction to the features that drove it.",
+  "why_it_matters": "Required in regulated decisions; the classic-ML cousin of LLM interpretability.",
+  "aliases": [
+   "SHAP / LIME",
+   "Explainability (SHAP",
+   "LIME)"
+  ],
+  "url": "glossary/12-evaluation-safety-interpretability.md#explainability"
+ },
+ {
+  "section": 12,
+  "section_title": "Evaluation, safety & interpretability",
+  "id": "red-teaming",
+  "term": "Red teaming",
+  "core": false,
+  "also_known_as": [],
+  "definition": "Deliberately attacking a model to find harmful or broken behaviour before release.",
+  "why_it_matters": "Finds failures before users (or attackers) do.",
+  "aliases": [
+   "Red team"
+  ],
+  "url": "glossary/12-evaluation-safety-interpretability.md#red-teaming"
+ },
+ {
+  "section": 12,
+  "section_title": "Evaluation, safety & interpretability",
+  "id": "jailbreak",
+  "term": "Jailbreak",
+  "core": false,
+  "also_known_as": [],
+  "definition": "A prompt that tricks the model into ignoring its safety training.",
+  "why_it_matters": "Safety behaviour is learned, not enforced, so defences are layered.",
+  "aliases": [
+   "Jailbreaking"
+  ],
+  "url": "glossary/12-evaluation-safety-interpretability.md#jailbreak"
+ },
+ {
+  "section": 12,
+  "section_title": "Evaluation, safety & interpretability",
+  "id": "over-refusal",
+  "term": "Over-refusal",
+  "core": false,
+  "also_known_as": [],
+  "definition": "A model declining harmless requests because they superficially resemble harmful ones.",
+  "why_it_matters": "The other side of safety training; labs tune to minimise both harm and over-refusal.",
+  "aliases": [],
+  "url": "glossary/12-evaluation-safety-interpretability.md#over-refusal"
+ },
+ {
+  "section": 12,
+  "section_title": "Evaluation, safety & interpretability",
+  "id": "ai-safety-responsible-scaling",
+  "term": "AI safety / responsible scaling",
+  "core": false,
+  "also_known_as": [
+   "RSP",
+   "safety levels"
+  ],
+  "definition": "The field concerned with preventing harm from AI systems, from today's misuse to risks at larger scale. Responsible-scaling policies tie capability thresholds to the safeguards required before release.",
+  "why_it_matters": "Where alignment, red teaming and safety levels come from; how labs commit to not shipping a model until matching safeguards exist.",
+  "aliases": [
+   "Responsible Scaling Policy",
+   "ASL (AI Safety Level)",
+   "AI safety"
+  ],
+  "url": "glossary/12-evaluation-safety-interpretability.md#ai-safety-responsible-scaling"
+ },
+ {
+  "section": 12,
+  "section_title": "Evaluation, safety & interpretability",
+  "id": "sandbagging-evaluation-awareness",
+  "term": "Sandbagging / evaluation awareness",
+  "core": false,
+  "also_known_as": [],
+  "definition": "A model behaving differently when it suspects it is being tested, even hiding capabilities.",
+  "why_it_matters": "A newer safety concern: evals are only trustworthy if the model cannot tell it is being evaluated.",
+  "aliases": [
+   "Evaluation awareness",
+   "Sandbagging"
+  ],
+  "url": "glossary/12-evaluation-safety-interpretability.md#sandbagging-evaluation-awareness"
+ },
+ {
+  "section": 12,
+  "section_title": "Evaluation, safety & interpretability",
+  "id": "scalable-oversight",
+  "term": "Scalable oversight",
+  "core": false,
+  "also_known_as": [],
+  "definition": "Techniques for humans to supervise models on tasks they cannot fully judge themselves (debate, AI-assisted review).",
+  "why_it_matters": "The long-term question of alignment: how to check work better than yours.",
+  "aliases": [],
+  "url": "glossary/12-evaluation-safety-interpretability.md#scalable-oversight"
+ },
+ {
+  "section": 12,
+  "section_title": "Evaluation, safety & interpretability",
+  "id": "interpretability-mechanistic-interpretability",
+  "term": "Interpretability / mechanistic interpretability",
+  "core": false,
+  "also_known_as": [],
+  "definition": "Studying what happens inside the network: which neurons, features and circuits do what.",
+  "why_it_matters": "Lets researchers see why a model answered as it did, instead of a black box.",
+  "aliases": [
+   "Mechanistic interpretability"
+  ],
+  "url": "glossary/12-evaluation-safety-interpretability.md#interpretability-mechanistic-interpretability"
+ },
+ {
+  "section": 12,
+  "section_title": "Evaluation, safety & interpretability",
+  "id": "features-superposition-sparse-autoencoders",
+  "term": "Features, superposition, Sparse Autoencoders (SAE)",
+  "core": false,
+  "also_known_as": [],
+  "definition": "Features are the interpretable concepts a model represents; superposition is the finding that it packs more features than it has neurons; Sparse Autoencoders are the tool that unmixes activations into those features.",
+  "why_it_matters": "Found concrete concepts inside models (a \"Golden Gate Bridge\" feature); a path to steering and auditing.",
+  "aliases": [
+   "SAE",
+   "Sparse Autoencoder (SAE)",
+   "Superposition"
+  ],
+  "url": "glossary/12-evaluation-safety-interpretability.md#features-superposition-sparse-autoencoders"
+ },
+ {
+  "section": 12,
+  "section_title": "Evaluation, safety & interpretability",
+  "id": "model-card-system-card",
+  "term": "Model card / system card",
+  "core": false,
+  "also_known_as": [],
+  "definition": "Documentation of a model's training, capabilities, limits and safety testing.",
+  "why_it_matters": "Where to look before trusting a model.",
+  "aliases": [
+   "System card"
+  ],
+  "url": "glossary/12-evaluation-safety-interpretability.md#model-card-system-card"
+ },
+ {
+  "section": 13,
+  "section_title": "Infrastructure & ecosystem",
+  "id": "gpu",
+  "term": "GPU",
+  "core": false,
+  "also_known_as": [
+   "NVIDIA H100 / B200",
+   "AMD MI300"
+  ],
+  "definition": "The massively parallel processor that does nearly all training and inference.",
+  "why_it_matters": "Neural networks are mostly matrix multiplication, and GPUs do thousands of those in parallel; the reason AI progress tracks GPU supply.",
+  "aliases": [
+   "H100 / B200",
+   "NVIDIA"
+  ],
+  "url": "glossary/13-infrastructure-ecosystem.md#gpu"
+ },
+ {
+  "section": 13,
+  "section_title": "Infrastructure & ecosystem",
+  "id": "tpu",
+  "term": "TPU",
+  "core": false,
+  "also_known_as": [],
+  "definition": "Google's custom accelerator, used for Gemini and available on Google Cloud.",
+  "why_it_matters": "The main non-NVIDIA option at frontier scale.",
+  "aliases": [
+   "TPU (Google)"
+  ],
+  "url": "glossary/13-infrastructure-ecosystem.md#tpu"
+ },
+ {
+  "section": 13,
+  "section_title": "Infrastructure & ecosystem",
+  "id": "custom-inference-chips",
+  "term": "Custom inference chips",
+  "core": false,
+  "also_known_as": [
+   "Groq LPU",
+   "Cerebras",
+   "Trainium",
+   "Inferentia"
+  ],
+  "definition": "Accelerators designed specifically for running (or training) models, often with very high token speed.",
+  "why_it_matters": "Why some providers serve 500+ tokens per second. (NVIDIA licensed Groq's technology in late 2025.)",
+  "aliases": [
+   "Groq / Cerebras"
+  ],
+  "url": "glossary/13-infrastructure-ecosystem.md#custom-inference-chips"
+ },
+ {
+  "section": 13,
+  "section_title": "Infrastructure & ecosystem",
+  "id": "cuda",
+  "term": "CUDA",
+  "core": false,
+  "also_known_as": [],
+  "definition": "NVIDIA's GPU programming platform.",
+  "why_it_matters": "The software moat: most frameworks and kernels target CUDA first, which keeps the ecosystem NVIDIA-first.",
+  "aliases": [],
+  "url": "glossary/13-infrastructure-ecosystem.md#cuda"
+ },
+ {
+  "section": 13,
+  "section_title": "Infrastructure & ecosystem",
+  "id": "vram-hbm",
+  "term": "VRAM / HBM (GPU memory)",
+  "core": false,
+  "also_known_as": [],
+  "definition": "The GPU's memory. 80 GB on an H100, 24 GB on a consumer RTX 4090.",
+  "why_it_matters": "The hard limit on which models fit; most \"can I run this?\" questions are about VRAM.",
+  "aliases": [
+   "VRAM",
+   "HBM"
+  ],
+  "url": "glossary/13-infrastructure-ecosystem.md#vram-hbm"
+ },
+ {
+  "section": 13,
+  "section_title": "Infrastructure & ecosystem",
+  "id": "out-of-memory",
+  "term": "Out of memory",
+  "core": false,
+  "also_known_as": [
+   "OOM",
+   "CUDA OOM"
+  ],
+  "definition": "The error when a model, batch or KV cache does not fit in GPU memory.",
+  "why_it_matters": "The most common error in any training or serving tutorial; fixes are smaller batch, quantization, gradient accumulation or a bigger GPU.",
+  "aliases": [
+   "OOM (out of memory)"
+  ],
+  "url": "glossary/13-infrastructure-ecosystem.md#out-of-memory"
+ },
+ {
+  "section": 13,
+  "section_title": "Infrastructure & ecosystem",
+  "id": "nvlink-infiniband-cluster",
+  "term": "NVLink, InfiniBand, cluster",
+  "core": false,
+  "also_known_as": [],
+  "definition": "High-speed interconnects joining thousands of GPUs into one training machine.",
+  "why_it_matters": "Training a frontier model is as much a networking problem as a maths problem.",
+  "aliases": [
+   "InfiniBand / NVLink"
+  ],
+  "url": "glossary/13-infrastructure-ecosystem.md#nvlink-infiniband-cluster"
+ },
+ {
+  "section": 13,
+  "section_title": "Infrastructure & ecosystem",
+  "id": "pytorch",
+  "term": "PyTorch",
+  "core": false,
+  "also_known_as": [],
+  "definition": "The dominant deep-learning framework, and what Raschka's book uses. JAX (Google) and TensorFlow are the alternatives.",
+  "why_it_matters": "Nearly every tutorial, paper and model release is in PyTorch; learn it first.",
+  "aliases": [
+   "JAX / TensorFlow"
+  ],
+  "url": "glossary/13-infrastructure-ecosystem.md#pytorch"
+ },
+ {
+  "section": 13,
+  "section_title": "Infrastructure & ecosystem",
+  "id": "hugging-face",
+  "term": "Hugging Face",
+  "core": false,
+  "also_known_as": [
+   "Transformers library",
+   "Hub"
+  ],
+  "definition": "The de-facto library and repository for open models, datasets and tokenizers.",
+  "why_it_matters": "The GitHub of models: where you download weights and the library that loads them in three lines.",
+  "aliases": [
+   "Hugging Face Hub"
+  ],
+  "url": "glossary/13-infrastructure-ecosystem.md#hugging-face"
+ },
+ {
+  "section": 13,
+  "section_title": "Infrastructure & ecosystem",
+  "id": "safetensors-weights-file",
+  "term": "Safetensors / weights file",
+  "core": false,
+  "also_known_as": [],
+  "definition": "The standard file format for storing model parameters safely (no arbitrary code on load).",
+  "why_it_matters": "The file you actually download; safe to open unlike the older pickle format.",
+  "aliases": [
+   "Safetensors"
+  ],
+  "url": "glossary/13-infrastructure-ecosystem.md#safetensors-weights-file"
+ },
+ {
+  "section": 13,
+  "section_title": "Infrastructure & ecosystem",
+  "id": "parameter-count",
+  "term": "Parameter count",
+  "core": false,
+  "also_known_as": [
+   "7B",
+   "70B",
+   "405B"
+  ],
+  "definition": "Model size in billions of weights.",
+  "why_it_matters": "A quick proxy for capability, memory and cost; the first number anyone quotes about a model.",
+  "aliases": [],
+  "url": "glossary/13-infrastructure-ecosystem.md#parameter-count"
+ },
+ {
+  "section": 13,
+  "section_title": "Infrastructure & ecosystem",
+  "id": "model-api",
+  "term": "Model API",
+  "core": false,
+  "also_known_as": [
+   "Anthropic",
+   "OpenAI",
+   "Google",
+   "Bedrock",
+   "Vertex"
+  ],
+  "definition": "Hosted access to a model: you send tokens, you get tokens, you pay per token.",
+  "why_it_matters": "The way most products use frontier models: no GPUs, no ops, pay per use.",
+  "aliases": [],
+  "url": "glossary/13-infrastructure-ecosystem.md#model-api"
+ },
+ {
+  "section": 13,
+  "section_title": "Infrastructure & ecosystem",
+  "id": "inference-providers",
+  "term": "Inference providers",
+  "core": false,
+  "also_known_as": [
+   "Together",
+   "Fireworks",
+   "Groq; OpenRouter"
+  ],
+  "definition": "Companies that host open-weight models behind an API, often cheaper or faster than running them yourself. OpenRouter is an aggregator: one API that routes to many providers, closed and open.",
+  "why_it_matters": "The middle path between a frontier API and self-hosting.",
+  "aliases": [
+   "Together / Fireworks / OpenRouter"
+  ],
+  "url": "glossary/13-infrastructure-ecosystem.md#inference-providers"
+ },
+ {
+  "section": 13,
+  "section_title": "Infrastructure & ecosystem",
+  "id": "gpu-kernel-triton",
+  "term": "GPU kernel / Triton",
+  "core": false,
+  "also_known_as": [],
+  "definition": "A low-level program that runs on the GPU. FlashAttention is a kernel; Triton lets you write them in Python.",
+  "why_it_matters": "Where the big speed-ups come from; most engineers never write one, but the names come up.",
+  "aliases": [
+   "Triton"
+  ],
+  "url": "glossary/13-infrastructure-ecosystem.md#gpu-kernel-triton"
+ },
+ {
+  "section": 13,
+  "section_title": "Infrastructure & ecosystem",
+  "id": "serving-on-kubernetes",
+  "term": "Serving on Kubernetes",
+  "core": false,
+  "also_known_as": [
+   "GPU node pools",
+   "KServe",
+   "vLLM on GKE"
+  ],
+  "definition": "Running inference engines as containers on GPU nodes, with autoscaling and the usual K8s plumbing.",
+  "why_it_matters": "How a self-hosted model becomes a production service; the same platform skills you already have apply.",
+  "aliases": [
+   "KServe / GKE GPU nodes"
+  ],
+  "url": "glossary/13-infrastructure-ecosystem.md#serving-on-kubernetes"
+ },
+ {
+  "section": 13,
+  "section_title": "Infrastructure & ecosystem",
+  "id": "local-inference-stack",
+  "term": "Local inference stack",
+  "core": false,
+  "also_known_as": [
+   "llama.cpp",
+   "Ollama",
+   "LM Studio"
+  ],
+  "definition": "Tools for running open-weight models on your own laptop or server.",
+  "why_it_matters": "The fastest way to try an open model: one command, no cloud, full privacy.",
+  "aliases": [],
+  "url": "glossary/13-infrastructure-ecosystem.md#local-inference-stack"
+ },
+ {
+  "section": 13,
+  "section_title": "Infrastructure & ecosystem",
+  "id": "apple-silicon-mlx",
+  "term": "Apple Silicon / MLX",
+  "core": false,
+  "also_known_as": [],
+  "definition": "Macs share memory between CPU and GPU, so a Mac with 64–512 GB of unified memory can run models that need several consumer GPUs; MLX is Apple's framework for it.",
+  "why_it_matters": "Why Mac laptops are popular for local LLMs despite having no NVIDIA GPU.",
+  "aliases": [
+   "MLX"
+  ],
+  "url": "glossary/13-infrastructure-ecosystem.md#apple-silicon-mlx"
+ },
+ {
+  "section": 13,
+  "section_title": "Infrastructure & ecosystem",
+  "id": "experiment-tracking",
+  "term": "Experiment tracking",
+  "core": false,
+  "also_known_as": [
+   "Weights & Biases",
+   "MLflow"
+  ],
+  "definition": "Tools that log every training run's settings, loss curves and results.",
+  "why_it_matters": "How teams compare hundreds of runs without losing track of what worked.",
+  "aliases": [],
+  "url": "glossary/13-infrastructure-ecosystem.md#experiment-tracking"
+ },
+ {
+  "section": 13,
+  "section_title": "Infrastructure & ecosystem",
+  "id": "notebooks",
+  "term": "Notebooks",
+  "core": false,
+  "also_known_as": [
+   "Jupyter",
+   "Colab",
+   "Kaggle"
+  ],
+  "definition": "Interactive Python environments; Colab and Kaggle give free GPU time.",
+  "why_it_matters": "Where most tutorials (and Raschka's code) run; the cheapest way to get a GPU for an hour.",
+  "aliases": [
+   "Colab / Kaggle"
+  ],
+  "url": "glossary/13-infrastructure-ecosystem.md#notebooks"
+ },
+ {
+  "section": 14,
+  "section_title": "Beyond text: vision, audio, video",
+  "id": "clip",
+  "term": "CLIP",
+  "core": false,
+  "also_known_as": [
+   "Contrastive Language-Image Pre-training"
+  ],
+  "definition": "A pair of encoders (image and text) trained so matching image–caption pairs get similar embeddings.",
+  "why_it_matters": "Lets you search images with words and is the glue inside most image generators and vision-language models.",
+  "aliases": [],
+  "url": "glossary/14-beyond-text-vision-audio-video.md#clip"
+ },
+ {
+  "section": 14,
+  "section_title": "Beyond text: vision, audio, video",
+  "id": "vision-language-model",
+  "term": "Vision-Language Model (VLM)",
+  "core": false,
+  "also_known_as": [],
+  "definition": "An LLM with a vision encoder attached, so it can take images as input (GPT-4o, Claude, Gemini, Qwen-VL, LLaVA).",
+  "why_it_matters": "Why you can paste a screenshot or a chart into a chat and ask about it.",
+  "aliases": [
+   "VLM"
+  ],
+  "url": "glossary/14-beyond-text-vision-audio-video.md#vision-language-model"
+ },
+ {
+  "section": 14,
+  "section_title": "Beyond text: vision, audio, video",
+  "id": "vision-encoder-image-tokens",
+  "term": "Vision encoder / image tokens",
+  "core": false,
+  "also_known_as": [],
+  "definition": "Images are cut into patches, encoded (usually by a ViT) and projected into the LLM's token space; a typical image becomes a few hundred to a few thousand tokens.",
+  "why_it_matters": "Images are billed and context-limited as tokens, just like text.",
+  "aliases": [
+   "Image tokens"
+  ],
+  "url": "glossary/14-beyond-text-vision-audio-video.md#vision-encoder-image-tokens"
+ },
+ {
+  "section": 14,
+  "section_title": "Beyond text: vision, audio, video",
+  "id": "latent-diffusion",
+  "term": "Latent diffusion",
+  "core": false,
+  "also_known_as": [
+   "Stable Diffusion"
+  ],
+  "definition": "Diffusion run in the compressed latent space of a VAE instead of on raw pixels.",
+  "why_it_matters": "Makes image generation many times cheaper, which is what put it on consumer GPUs.",
+  "aliases": [],
+  "url": "glossary/14-beyond-text-vision-audio-video.md#latent-diffusion"
+ },
+ {
+  "section": 14,
+  "section_title": "Beyond text: vision, audio, video",
+  "id": "u-net-diffusion-transformer",
+  "term": "U-Net / Diffusion Transformer (DiT)",
+  "core": false,
+  "also_known_as": [],
+  "definition": "The denoising network inside a diffusion model: a U-Net in older models, a Transformer (DiT) in newer ones (Stable Diffusion 3, Flux, Sora).",
+  "why_it_matters": "Another case of \"Transformers ate the architecture\"; same scaling story as LLMs.",
+  "aliases": [
+   "DiT",
+   "U-Net"
+  ],
+  "url": "glossary/14-beyond-text-vision-audio-video.md#u-net-diffusion-transformer"
+ },
+ {
+  "section": 14,
+  "section_title": "Beyond text: vision, audio, video",
+  "id": "text-encoder-guidance-scale",
+  "term": "Text encoder / guidance scale (CFG)",
+  "core": false,
+  "also_known_as": [],
+  "definition": "The text model that turns the prompt into conditioning vectors, and the knob (classifier-free guidance) controlling how strictly the image follows the prompt.",
+  "why_it_matters": "Guidance scale is the image-generation equivalent of temperature: higher is more literal, lower is more creative.",
+  "aliases": [
+   "CFG",
+   "Guidance scale"
+  ],
+  "url": "glossary/14-beyond-text-vision-audio-video.md#text-encoder-guidance-scale"
+ },
+ {
+  "section": 14,
+  "section_title": "Beyond text: vision, audio, video",
+  "id": "controlnet-image-conditioning",
+  "term": "ControlNet / image conditioning",
+  "core": false,
+  "also_known_as": [],
+  "definition": "Add-ons that steer image generation with a sketch, pose, depth map or edge map in addition to text.",
+  "why_it_matters": "Gives precise control over composition instead of hoping the prompt lands.",
+  "aliases": [
+   "ControlNet"
+  ],
+  "url": "glossary/14-beyond-text-vision-audio-video.md#controlnet-image-conditioning"
+ },
+ {
+  "section": 14,
+  "section_title": "Beyond text: vision, audio, video",
+  "id": "image-lora-style-fine-tunes",
+  "term": "Image LoRA / style fine-tunes",
+  "core": false,
+  "also_known_as": [],
+  "definition": "LoRA adapters trained on a few dozen images to teach a diffusion model a style, product or face.",
+  "why_it_matters": "The same LoRA idea from section 9, applied to images; the basis of the custom-model marketplaces.",
+  "aliases": [],
+  "url": "glossary/14-beyond-text-vision-audio-video.md#image-lora-style-fine-tunes"
+ },
+ {
+  "section": 14,
+  "section_title": "Beyond text: vision, audio, video",
+  "id": "inpainting-outpainting-img2img",
+  "term": "Inpainting, outpainting, img2img",
+  "core": false,
+  "also_known_as": [],
+  "definition": "Regenerating part of an image, extending beyond its borders, or transforming an existing image guided by a prompt.",
+  "why_it_matters": "The editing operations behind \"generative fill\" features.",
+  "aliases": [
+   "Inpainting",
+   "img2img"
+  ],
+  "url": "glossary/14-beyond-text-vision-audio-video.md#inpainting-outpainting-img2img"
+ },
+ {
+  "section": 14,
+  "section_title": "Beyond text: vision, audio, video",
+  "id": "automatic-speech-recognition",
+  "term": "Automatic Speech Recognition",
+  "core": false,
+  "also_known_as": [
+   "ASR",
+   "Whisper"
+  ],
+  "definition": "Speech to text. Whisper is the widely used open model.",
+  "why_it_matters": "The first step of every voice assistant and the way meeting transcripts are made.",
+  "aliases": [],
+  "url": "glossary/14-beyond-text-vision-audio-video.md#automatic-speech-recognition"
+ },
+ {
+  "section": 14,
+  "section_title": "Beyond text: vision, audio, video",
+  "id": "text-to-speech-voice-cloning",
+  "term": "Text-to-Speech / voice cloning (TTS)",
+  "core": false,
+  "also_known_as": [],
+  "definition": "Generating natural speech from text; cloning reproduces a specific voice from a short sample.",
+  "why_it_matters": "The output side of voice assistants, audiobooks and dubbing; cloning is also why voice-based fraud is rising.",
+  "aliases": [
+   "TTS",
+   "Voice cloning"
+  ],
+  "url": "glossary/14-beyond-text-vision-audio-video.md#text-to-speech-voice-cloning"
+ },
+ {
+  "section": 14,
+  "section_title": "Beyond text: vision, audio, video",
+  "id": "speech-to-speech-realtime-models",
+  "term": "Speech-to-speech / realtime models",
+  "core": false,
+  "also_known_as": [],
+  "definition": "Models that take audio in and produce audio out directly, with low latency, instead of chaining ASR → LLM → TTS.",
+  "why_it_matters": "Makes natural, interruptible voice conversation possible.",
+  "aliases": [
+   "Realtime voice models"
+  ],
+  "url": "glossary/14-beyond-text-vision-audio-video.md#speech-to-speech-realtime-models"
+ },
+ {
+  "section": 14,
+  "section_title": "Beyond text: vision, audio, video",
+  "id": "omni-models",
+  "term": "Omni models",
+  "core": false,
+  "also_known_as": [],
+  "definition": "Single models trained on text, images, audio and video as input, producing text and speech (and sometimes images) as output.",
+  "why_it_matters": "Where the frontier is heading: one model for every modality instead of a pipeline of specialists.",
+  "aliases": [
+   "Omni model"
+  ],
+  "url": "glossary/14-beyond-text-vision-audio-video.md#omni-models"
+ },
+ {
+  "section": 14,
+  "section_title": "Beyond text: vision, audio, video",
+  "id": "text-to-video",
+  "term": "Text-to-video",
+  "core": false,
+  "also_known_as": [
+   "Veo",
+   "Runway",
+   "Kling; OpenAI's Sora",
+   "discontinued in 2026"
+  ],
+  "definition": "Diffusion or transformer models that generate video clips from a prompt or an image.",
+  "why_it_matters": "Same ideas as image generation, far more compute; the current showcase of generative AI, and a crowded market.",
+  "aliases": [
+   "Sora",
+   "Veo / Runway"
+  ],
+  "url": "glossary/14-beyond-text-vision-audio-video.md#text-to-video"
+ },
+ {
+  "section": 14,
+  "section_title": "Beyond text: vision, audio, video",
+  "id": "world-models",
+  "term": "World models",
+  "core": false,
+  "also_known_as": [],
+  "definition": "Models that learn to predict how an environment evolves (the next frame, the result of an action), used in robotics and games.",
+  "why_it_matters": "The argument that video generation is a step toward models that understand physics and planning.",
+  "aliases": [
+   "World model"
+  ],
+  "url": "glossary/14-beyond-text-vision-audio-video.md#world-models"
+ },
+ {
+  "section": 14,
+  "section_title": "Beyond text: vision, audio, video",
+  "id": "ocr-document-ai",
+  "term": "OCR / document AI",
+  "core": false,
+  "also_known_as": [],
+  "definition": "Extracting text and structure from scanned documents and PDFs; increasingly done by VLMs directly.",
+  "why_it_matters": "How invoices, forms and old archives get into RAG pipelines.",
+  "aliases": [
+   "Document AI"
+  ],
+  "url": "glossary/14-beyond-text-vision-audio-video.md#ocr-document-ai"
+ },
+ {
+  "section": 14,
+  "section_title": "Beyond text: vision, audio, video",
+  "id": "multimodal-embeddings",
+  "term": "Multimodal embeddings",
+  "core": false,
+  "also_known_as": [],
+  "definition": "Embedding models that map images, text and audio into one shared vector space.",
+  "why_it_matters": "Search a photo library with a sentence, or a product catalogue with a picture.",
+  "aliases": [],
+  "url": "glossary/14-beyond-text-vision-audio-video.md#multimodal-embeddings"
+ },
+ {
+  "section": 14,
+  "section_title": "Beyond text: vision, audio, video",
+  "id": "deepfake-synthetic-media-detection",
+  "term": "Deepfake / synthetic media detection",
+  "core": false,
+  "also_known_as": [],
+  "definition": "Generated images, voices and videos impersonating real people, and the tools that try to detect or watermark them.",
+  "why_it_matters": "The main misuse of generative media; provenance standards (C2PA) and watermarks are the response.",
+  "aliases": [
+   "Deepfake",
+   "C2PA / watermarking"
+  ],
+  "url": "glossary/14-beyond-text-vision-audio-video.md#deepfake-synthetic-media-detection"
+ }
+]

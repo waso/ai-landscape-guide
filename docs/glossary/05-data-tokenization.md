@@ -1,0 +1,130 @@
+# 5. Data & tokenization
+
+*Stage 1 of the LLM lifecycle: what the model reads, and in what units*
+
+Before any training, text is turned into tokens. The tokenizer is built once and frozen with the model, which is why every model counts tokens slightly differently.
+
+!!! info "How to read this section"
+    Each entry is a short definition followed by a **Why it matters** line that says, in plain words, what the idea buys you. Terms marked ★ belong to the [30 to learn first](../index.md#learn-these-30-first). The **Also known as** line lists the acronyms and other names you may hear in videos; all of them appear in the [A–Z index](../index-a-z.md).
+
+### Corpus / training data { #corpus-training-data }
+
+The collection of text (web pages, books, code, transcripts) the model learns from. Trillions of tokens for frontier models.
+
+**Why it matters:** The model knows only what was in here. Quality and mix of the corpus decide much of the model's quality.
+
+### Token ★ { #token }
+
+The unit the model actually reads and writes. Usually a word piece; roughly ¾ of an English word on average.
+
+**Why it matters:** Everything is counted in tokens: context limits, speed, and your API bill.
+
+### Tokenizer { #tokenizer }
+
+Converts text to token IDs and back. Built before pre-training and frozen with the model.
+
+**Why it matters:** Explains odd behaviour like miscounting letters in a word: the model never sees letters, only token IDs.
+
+### Token IDs / detokenization { #token-ids-detokenization }
+
+Each token has an integer ID in the vocabulary. The model consumes and produces IDs; detokenization turns IDs back into text.
+
+**Why it matters:** The model is a function from integers to integers; text is only at the edges.
+
+### Byte-Pair Encoding (BPE) { #byte-pair-encoding }
+
+The most common tokenizer algorithm: start from bytes or characters and repeatedly merge the most frequent adjacent pair. Used by GPT and Llama models.
+
+**Why it matters:** Lets the model handle any string (even emoji and typos) with a fixed vocabulary, while keeping common words as single tokens.
+
+<small>*Index aliases:* BPE</small>
+
+### WordPiece, SentencePiece, tiktoken { #wordpiece-sentencepiece-tiktoken }
+
+Other tokenizer algorithms and libraries: BERT uses WordPiece, many open models use SentencePiece, OpenAI models use tiktoken.
+
+**Why it matters:** Different names in different tutorials, same job: text ↔ tokens.
+
+<small>*Index aliases:* tiktoken, SentencePiece, WordPiece</small>
+
+### Vocabulary / vocab size { #vocabulary-vocab-size }
+
+The set of all tokens the model knows, typically 32k to 200k entries.
+
+**Why it matters:** A bigger vocabulary means fewer tokens per sentence (cheaper, faster) but a bigger output layer.
+
+### Multilingual token cost { #multilingual-token-cost }
+
+Tokenizers are trained mostly on English, so other languages split into more tokens per word. Polish text typically costs about 2× the tokens of the same text in English (1.5–2.5× depending on the tokenizer; newer 200k+ vocabularies do better, older 32k ones worse).
+
+**Why it matters:** The same prompt in Polish uses more of the context window and costs more than in English.
+
+### Special tokens { #special-tokens }
+
+*Also known as:* BOS, EOS, PAD
+
+Control tokens marking beginning / end of sequence, padding, or chat roles (user, assistant, tool).
+
+**Why it matters:** How the model knows where a message starts and ends, and when to stop generating.
+
+<small>*Index aliases:* BOS / EOS / PAD</small>
+
+### Context window / context length ★ { #context-window-context-length }
+
+The maximum number of tokens the model can take in at once (prompt plus answer): 8k, 128k, 1M.
+
+**Why it matters:** The model's working memory. Anything outside it does not exist for the model; everything inside costs compute and money.
+
+### Sequence / sequence length { #sequence-sequence-length }
+
+An ordered list of tokens. Models are trained on fixed-length chunks of the corpus.
+
+**Why it matters:** "Sequence length" in a training script is how much text the model sees per example.
+
+### Input–target pairs / sliding window { #inputtarget-pairs-sliding-window }
+
+Training data is cut into chunks; the target is the same chunk shifted by one token, so every position has a "next token" to predict. (Raschka chapter 2.)
+
+**Why it matters:** How free labels are created from raw text: the text itself is the answer key.
+
+### Data cleaning, deduplication, filtering { #data-cleaning-deduplication-filtering }
+
+Removing junk, duplicates and low-quality text before training.
+
+**Why it matters:** One of the biggest levers on model quality: cleaner data makes a smarter model at the same size.
+
+<small>*Index aliases:* Dedup</small>
+
+### Data mixture { #data-mixture }
+
+The proportions of web, code, books, maths, multilingual text in the training set.
+
+**Why it matters:** Decides what the model is good at: more code in the mix makes a better coder.
+
+### Synthetic data { #synthetic-data }
+
+Training text generated by another model.
+
+**Why it matters:** Fills gaps where real data is scarce (maths steps, rare languages) and is now a major ingredient of both pre- and post-training.
+
+### Data annotation / human raters { #data-annotation-human-raters }
+
+People who write ideal answers, rank outputs or label data for SFT and reward models (companies like Scale AI and Surge AI).
+
+**Why it matters:** The human work behind "human feedback"; its quality shapes how the model behaves.
+
+<small>*Index aliases:* Human raters, Scale AI</small>
+
+### Common Crawl, The Pile, FineWeb { #common-crawl-the-pile-fineweb }
+
+Well-known public web-scale datasets used as pre-training corpora.
+
+**Why it matters:** When a video says a model was trained on "the internet", these are the concrete datasets it means.
+
+<small>*Index aliases:* Common Crawl, FineWeb, The Pile</small>
+
+### Chat template { #chat-template }
+
+The exact text format (role markers, special tokens) used to serialise a conversation into tokens. Each model family has its own.
+
+**Why it matters:** A conversation is just one long token sequence with markers; getting the template wrong is a common cause of bad outputs with open models.

@@ -1,0 +1,88 @@
+site_name: The AI landscape field guide
+site_description: About 340 AI and machine-learning terms explained in plain language, placed on a map of where they sit in the AI world.
+site_url: https://<your-github-user>.github.io/ai-landscape-field-guide/
+repo_url: https://github.com/<your-github-user>/ai-landscape-field-guide
+repo_name: ai-landscape-field-guide
+edit_uri: edit/main/docs/
+copyright: Content CC BY 4.0 · code MIT
+
+theme:
+  name: material
+  language: en
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.top
+    - navigation.indexes
+    - search.suggest
+    - search.highlight
+    - content.action.edit
+    - toc.follow
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/weather-night
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to light mode
+  icon:
+    repo: fontawesome/brands/github
+
+markdown_extensions:
+  - attr_list
+  - md_in_html
+  - admonition
+  - tables
+  - toc:
+      permalink: true
+      toc_depth: 3
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.superfences
+
+plugins:
+  - search
+
+nav:
+  - Home: index.md
+  - Maps:
+      - maps/big-picture.md
+      - maps/lifecycle.md
+      - maps/training-loop.md
+      - maps/life-of-a-request.md
+      - maps/transformer-block.md
+      - maps/rag-and-agents.md
+      - maps/decision-guide.md
+  - Glossary:
+      - glossary/01-the-big-picture.md
+      - glossary/02-learning-paradigms.md
+      - glossary/03-classic-ml-toolbox.md
+      - glossary/04-neural-network-foundations.md
+      - glossary/05-data-tokenization.md
+      - glossary/06-the-transformer-architecture.md
+      - glossary/07-pre-training.md
+      - glossary/08-post-training-alignment.md
+      - glossary/09-adapting-a-model-to-your-task.md
+      - glossary/10-inference-serving.md
+      - glossary/11-building-applications.md
+      - glossary/12-evaluation-safety-interpretability.md
+      - glossary/13-infrastructure-ecosystem.md
+      - glossary/14-beyond-text-vision-audio-video.md
+  - A–Z index: index-a-z.md
+  - Reference:
+      - reference/translation-table.md
+      - reference/orders-of-magnitude.md
+      - reference/math-notation.md
+      - reference/model-families.md
+      - reference/raschka-book.md
+      - guides/stanford-cme295-slide.md
+  - Contributing: contributing.md
