@@ -2,7 +2,7 @@
 
 **About 340 AI and machine-learning terms — from classic ML to LLM agents — explained in plain language and placed on a map of where they sit: pre-training, post-training, fine-tuning, inference, applications.**
 
-📖 **Read it online:** https://<your-github-user>.github.io/ai-landscape-field-guide/
+📖 **Read it online:** https://github.com/waso/ai-landscape-guide
 
 Made for people who learn from videos and courses and keep meeting new acronyms. Every entry has a short definition and a **why it matters** line; seven maps show how the pieces fit together.
 

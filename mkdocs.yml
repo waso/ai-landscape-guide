@@ -1,7 +1,7 @@
 site_name: The AI landscape field guide
 site_description: About 340 AI and machine-learning terms explained in plain language, placed on a map of where they sit in the AI world.
-site_url: https://<your-github-user>.github.io/ai-landscape-field-guide/
-repo_url: https://github.com/<your-github-user>/ai-landscape-field-guide
+site_url: https://github.com/waso/ai-landscape-guide
+repo_url: https://github.com/waso/ai-landscape-guide
 repo_name: ai-landscape-field-guide
 edit_uri: edit/main/docs/
 copyright: Content CC BY 4.0 · code MIT
