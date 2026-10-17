@@ -1,0 +1,2518 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="About 340 AI and machine-learning terms explained in plain language, placed on a map of where they sit in the AI world.">
+      
+      
+      
+        <link rel="canonical" href="https://waso.github.io/ai-landscape-guide/glossary/06-the-transformer-architecture/">
+      
+      
+        <link rel="prev" href="../05-data-tokenization/">
+      
+      
+        <link rel="next" href="../07-pre-training/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>6. The Transformer architecture - The AI landscape field guide</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#6-the-transformer-architecture" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="The AI landscape field guide" class="md-header__button md-logo" aria-label="The AI landscape field guide" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            The AI landscape field guide
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              6. The Transformer architecture
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/waso/ai-landscape-guide" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    waso/ai-landscape-guide
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../maps/big-picture/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Maps
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../01-the-big-picture/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Glossary
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../index-a-z/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  A–Z index
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../reference/translation-table/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Reference
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../contributing/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Contributing
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="The AI landscape field guide" class="md-nav__button md-logo" aria-label="The AI landscape field guide" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    The AI landscape field guide
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/waso/ai-landscape-guide" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    waso/ai-landscape-guide
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Maps
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Maps
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../maps/big-picture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Map 1 — The big picture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../maps/lifecycle/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Map 2 — The LLM lifecycle
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../maps/training-loop/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Map 3 — Neural-network foundations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../maps/life-of-a-request/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Map 4 — Life of a request
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../maps/transformer-block/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Map 5 — Inside one Transformer block
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../maps/rag-and-agents/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Map 6 — RAG and the agent loop
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../maps/decision-guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Map 7 — Decision guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Glossary
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Glossary
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01-the-big-picture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1. The big picture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02-learning-paradigms/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2. Learning paradigms
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03-classic-ml-toolbox/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3. Classic ML toolbox
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04-neural-network-foundations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4. Neural-network foundations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05-data-tokenization/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5. Data &amp; tokenization
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6. The Transformer architecture
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6. The Transformer architecture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#transformer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Transformer ★
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#attention" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Attention ★
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#self-attention" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Self-attention
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#query-key-value" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Query, Key, Value
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#scaled-dot-product-attention" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Scaled dot-product attention
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#multi-head-attention" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Multi-Head Attention (MHA)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#multi-query-grouped-query-attention" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Multi-Query / Grouped-Query Attention
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#multi-head-latent-attention" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Multi-head Latent Attention (MLA)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#causal-masked-attention" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Causal (masked) attention
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#attention-mask" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Attention mask
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quadratic-cost-of-attention" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Quadratic cost of attention (O(n²))
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sliding-window-attention-attention-sinks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sliding-window attention / attention sinks
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cross-attention" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cross-attention
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#decoder-only-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Decoder-only model
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#encoder-only-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Encoder-only model
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#encoder-decoder-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Encoder-decoder model
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#positional-encoding-embedding" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Positional encoding / embedding
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rotary-positional-embedding" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Rotary Positional Embedding (RoPE)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#alibi" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ALiBi
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hidden-state" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Hidden state
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#transformer-block-layer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Transformer block / layer
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#feed-forward-in-a-block" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Feed-forward in a block
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#residual-stream" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Residual stream
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#attention-residuals" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Attention Residuals (AttnRes)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pre-norm-vs-post-norm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pre-norm vs post-norm
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#qk-norm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        QK-Norm
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#d-model-n-heads-n-layers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        d_model, n_heads, n_layers (hidden size)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#language-model-head" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Language-model head
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#weight-tying" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Weight tying
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mixture-of-experts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mixture of Experts (MoE)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dense-vs-sparse-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dense vs sparse model
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#flashattention" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        FlashAttention
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#state-space-models-hybrids" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        State-space models / hybrids
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vision-transformer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Vision Transformer (ViT)
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../07-pre-training/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7. Pre-training
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../08-post-training-alignment/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    8. Post-training &amp; alignment
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../09-adapting-a-model-to-your-task/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    9. Adapting a model to your task
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../10-inference-serving/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10. Inference &amp; serving
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../11-building-applications/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    11. Building applications
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../12-evaluation-safety-interpretability/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    12. Evaluation, safety &amp; interpretability
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../13-infrastructure-ecosystem/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    13. Infrastructure &amp; ecosystem
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../14-beyond-text-vision-audio-video/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    14. Beyond text: vision, audio, video
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../index-a-z/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    A–Z index
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reference
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Reference
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/translation-table/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Software engineer's translation table
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/orders-of-magnitude/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Orders of magnitude
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/math-notation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Math-notation decoder
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/model-families/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Model families and how to read a model name
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/raschka-book/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Raschka's Build a Large Language Model (From Scratch) → this guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guides/stanford-cme295-slide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    The Stanford CME295 slide, decoded
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contributing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Contributing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#transformer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Transformer ★
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#attention" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Attention ★
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#self-attention" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Self-attention
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#query-key-value" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Query, Key, Value
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#scaled-dot-product-attention" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Scaled dot-product attention
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#multi-head-attention" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Multi-Head Attention (MHA)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#multi-query-grouped-query-attention" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Multi-Query / Grouped-Query Attention
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#multi-head-latent-attention" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Multi-head Latent Attention (MLA)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#causal-masked-attention" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Causal (masked) attention
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#attention-mask" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Attention mask
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quadratic-cost-of-attention" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Quadratic cost of attention (O(n²))
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sliding-window-attention-attention-sinks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sliding-window attention / attention sinks
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cross-attention" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cross-attention
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#decoder-only-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Decoder-only model
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#encoder-only-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Encoder-only model
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#encoder-decoder-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Encoder-decoder model
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#positional-encoding-embedding" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Positional encoding / embedding
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rotary-positional-embedding" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Rotary Positional Embedding (RoPE)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#alibi" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ALiBi
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hidden-state" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Hidden state
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#transformer-block-layer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Transformer block / layer
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#feed-forward-in-a-block" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Feed-forward in a block
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#residual-stream" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Residual stream
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#attention-residuals" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Attention Residuals (AttnRes)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pre-norm-vs-post-norm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pre-norm vs post-norm
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#qk-norm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        QK-Norm
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#d-model-n-heads-n-layers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        d_model, n_heads, n_layers (hidden size)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#language-model-head" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Language-model head
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#weight-tying" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Weight tying
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mixture-of-experts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mixture of Experts (MoE)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dense-vs-sparse-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dense vs sparse model
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#flashattention" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        FlashAttention
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#state-space-models-hybrids" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        State-space models / hybrids
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vision-transformer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Vision Transformer (ViT)
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+    <a href="https://github.com/waso/ai-landscape-guide/edit/main/docs/glossary/06-the-transformer-architecture.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
+    </a>
+  
+  
+
+
+<h1 id="6-the-transformer-architecture">6. The Transformer architecture<a class="headerlink" href="#6-the-transformer-architecture" title="Permanent link">&para;</a></h1>
+<p><em>Stage 2: the shape of the network before any weights are learned</em></p>
+<p>Nearly every LLM is a stack of identical Transformer blocks (Map 5). The terms here describe the parts of a block and the design choices between model families.</p>
+<div class="admonition info">
+<p class="admonition-title">How to read this section</p>
+<p>Each entry is a short definition followed by a <strong>Why it matters</strong> line that says, in plain words, what the idea buys you. Terms marked ★ belong to the <a href="../../#learn-these-30-first">30 to learn first</a>. The <strong>Also known as</strong> line lists the acronyms and other names you may hear in videos; all of them appear in the <a href="../../index-a-z/">A–Z index</a>.</p>
+</div>
+<h3 id="transformer">Transformer ★<a class="headerlink" href="#transformer" title="Permanent link">&para;</a></h3>
+<p>The neural architecture from the 2017 paper "Attention Is All You Need": stacked blocks of attention plus feed-forward layers.</p>
+<p><strong>Why it matters:</strong> Processes all tokens in parallel (fast on GPUs) and lets any token look at any other (long-range context). Both are why it won.</p>
+<h3 id="attention">Attention ★<a class="headerlink" href="#attention" title="Permanent link">&para;</a></h3>
+<p>A mechanism that lets each token look at other tokens and weigh how relevant they are, so context flows across the whole sequence in one step.</p>
+<p><strong>Why it matters:</strong> How the model knows that "it" refers to "the cat" ten words earlier. The core idea of modern AI.</p>
+<h3 id="self-attention">Self-attention<a class="headerlink" href="#self-attention" title="Permanent link">&para;</a></h3>
+<p>Attention where tokens attend to other tokens of the same sequence.</p>
+<p><strong>Why it matters:</strong> Lets every word be interpreted in the light of every other word in the text.</p>
+<h3 id="query-key-value">Query, Key, Value<a class="headerlink" href="#query-key-value" title="Permanent link">&para;</a></h3>
+<p><em>Also known as:</em> Q, K, V</p>
+<p>Three projections of each token. A token's query is compared with every key to get weights, which are then applied to the values.</p>
+<p><strong>Why it matters:</strong> Think of a lookup: the query asks a question, keys say what each token offers, values are what gets returned.</p>
+<h3 id="scaled-dot-product-attention">Scaled dot-product attention<a class="headerlink" href="#scaled-dot-product-attention" title="Permanent link">&para;</a></h3>
+<p>The actual attention formula: softmax(QKᵀ / √d) · V.</p>
+<p><strong>Why it matters:</strong> The one formula every video shows. Dividing by √d keeps the softmax from saturating so gradients stay healthy.</p>
+<h3 id="multi-head-attention">Multi-Head Attention (MHA)<a class="headerlink" href="#multi-head-attention" title="Permanent link">&para;</a></h3>
+<p>Several attention operations run in parallel (heads), each free to focus on a different kind of relationship.</p>
+<p><strong>Why it matters:</strong> One head can track grammar while another tracks topic. More heads, richer understanding.</p>
+<p><small><em>Index aliases:</em> MHA</small></p>
+<h3 id="multi-query-grouped-query-attention">Multi-Query / Grouped-Query Attention<a class="headerlink" href="#multi-query-grouped-query-attention" title="Permanent link">&para;</a></h3>
+<p><em>Also known as:</em> MQA, GQA</p>
+<p>Variants that share key/value projections across heads. Llama 2 (70B), Llama 3, Mistral and most 2024+ models use GQA.</p>
+<p><strong>Why it matters:</strong> Shrinks the KV cache several-fold, so inference is faster and cheaper with almost no quality loss.</p>
+<h3 id="multi-head-latent-attention">Multi-head Latent Attention (MLA)<a class="headerlink" href="#multi-head-latent-attention" title="Permanent link">&para;</a></h3>
+<p>DeepSeek's alternative to GQA: keys and values are compressed into a small latent vector per token, which is what the KV cache stores; they are expanded again when attention runs (DeepSeek-V2, V3, R1).</p>
+<p><strong>Why it matters:</strong> Cuts the KV cache far more than GQA with no quality loss, which is how DeepSeek serves long contexts cheaply.</p>
+<p><small><em>Index aliases:</em> MLA</small></p>
+<h3 id="causal-masked-attention">Causal (masked) attention<a class="headerlink" href="#causal-masked-attention" title="Permanent link">&para;</a></h3>
+<p>Masking so a token can only attend to earlier tokens.</p>
+<p><strong>Why it matters:</strong> Stops the model from cheating by looking at the answer during training, and is what makes it generate left to right.</p>
+<p><small><em>Index aliases:</em> Causal mask, Masked attention</small></p>
+<h3 id="attention-mask">Attention mask<a class="headerlink" href="#attention-mask" title="Permanent link">&para;</a></h3>
+<p>The tensor that marks which positions may attend to which (causal mask, padding mask).</p>
+<p><strong>Why it matters:</strong> The practical implementation of "no peeking ahead" and "ignore padding".</p>
+<h3 id="quadratic-cost-of-attention">Quadratic cost of attention (O(n²))<a class="headerlink" href="#quadratic-cost-of-attention" title="Permanent link">&para;</a></h3>
+<p>Every token compares itself with every other, so compute and memory grow with the square of the sequence length.</p>
+<p><strong>Why it matters:</strong> Why long context is expensive and why FlashAttention, sliding windows and state-space models exist.</p>
+<p><small><em>Index aliases:</em> O(n²), O(n²) attention</small></p>
+<h3 id="sliding-window-attention-attention-sinks">Sliding-window attention / attention sinks<a class="headerlink" href="#sliding-window-attention-attention-sinks" title="Permanent link">&para;</a></h3>
+<p>Limiting each token to attend only to the last N tokens (sliding window), optionally keeping a few initial tokens always visible (attention sinks).</p>
+<p><strong>Why it matters:</strong> Makes very long inputs affordable at some cost in long-range recall; used in the original Mistral 7B and, mixed with global layers, in Gemma 2/3 and gpt-oss.</p>
+<p><small><em>Index aliases:</em> SWA, Attention sinks</small></p>
+<h3 id="cross-attention">Cross-attention<a class="headerlink" href="#cross-attention" title="Permanent link">&para;</a></h3>
+<p>The decoder attending to the encoder's outputs, in encoder-decoder models.</p>
+<p><strong>Why it matters:</strong> How a translator model reads the source sentence while writing the target one.</p>
+<h3 id="decoder-only-model">Decoder-only model<a class="headerlink" href="#decoder-only-model" title="Permanent link">&para;</a></h3>
+<p><em>Also known as:</em> GPT, Llama, Claude, Gemini, Mistral</p>
+<p>A Transformer with causal self-attention only, trained to predict the next token. The dominant LLM design.</p>
+<p><strong>Why it matters:</strong> Simplest design that scales; one model does understanding and generation. Almost every chat model is this.</p>
+<h3 id="encoder-only-model">Encoder-only model<a class="headerlink" href="#encoder-only-model" title="Permanent link">&para;</a></h3>
+<p><em>Also known as:</em> BERT, RoBERTa</p>
+<p>A bidirectional Transformer good at understanding, classification and embeddings, but not at generating text.</p>
+<p><strong>Why it matters:</strong> Still the usual choice for cheap classification and small, fast embedding models, because it reads both directions at once; many top-scoring embedding models are now built on decoder-only LLMs.</p>
+<h3 id="encoder-decoder-model">Encoder-decoder model<a class="headerlink" href="#encoder-decoder-model" title="Permanent link">&para;</a></h3>
+<p><em>Also known as:</em> T5, BART, original Transformer</p>
+<p>An encoder reads the input, a decoder writes the output.</p>
+<p><strong>Why it matters:</strong> Natural for translation and summarisation; largely displaced by decoder-only models that do everything.</p>
+<p><small><em>Index aliases:</em> T5 / BART</small></p>
+<h3 id="positional-encoding-embedding">Positional encoding / embedding<a class="headerlink" href="#positional-encoding-embedding" title="Permanent link">&para;</a></h3>
+<p>How the model knows token order, since attention by itself is order-blind. Sinusoidal in 2017, learned in GPT-2.</p>
+<p><strong>Why it matters:</strong> Without it, "dog bites man" and "man bites dog" look identical to the model.</p>
+<p><small><em>Index aliases:</em> Positional embedding</small></p>
+<h3 id="rotary-positional-embedding">Rotary Positional Embedding (RoPE)<a class="headerlink" href="#rotary-positional-embedding" title="Permanent link">&para;</a></h3>
+<p>Today's standard positional scheme: encodes position by rotating the Q and K vectors so attention depends on relative distance.</p>
+<p><strong>Why it matters:</strong> Does not extrapolate well on its own, but can be cheaply stretched to longer contexts (position interpolation, NTK-aware scaling, YaRN), which is what makes 128k-token contexts practical.</p>
+<p><small><em>Index aliases:</em> RoPE</small></p>
+<h3 id="alibi">ALiBi<a class="headerlink" href="#alibi" title="Permanent link">&para;</a></h3>
+<p><em>Also known as:</em> Attention with Linear Biases</p>
+<p>A positional scheme with no position embeddings at all: a penalty proportional to the query–key distance is subtracted from each attention score, with a different slope per head (used by MPT and BLOOM).</p>
+<p><strong>Why it matters:</strong> Trains on short sequences and extrapolates to longer ones; the main rival to RoPE before RoPE won.</p>
+<p><small><em>Index aliases:</em> ALiBi (positional biases)</small></p>
+<h3 id="hidden-state">Hidden state<a class="headerlink" href="#hidden-state" title="Permanent link">&para;</a></h3>
+<p>The vector representing a token at a given layer; the residual stream's value at that point.</p>
+<p><strong>Why it matters:</strong> What gets passed from block to block, and what the LM head reads at the end. "Hidden size" = its length.</p>
+<h3 id="transformer-block-layer">Transformer block / layer<a class="headerlink" href="#transformer-block-layer" title="Permanent link">&para;</a></h3>
+<p>One unit of [attention → add &amp; norm → feed-forward → add &amp; norm]. Models stack 32 to 100+ of them.</p>
+<p><strong>Why it matters:</strong> The repeating unit; a model is this block copied N times with different weights. See Map 5.</p>
+<h3 id="feed-forward-in-a-block">Feed-forward in a block<a class="headerlink" href="#feed-forward-in-a-block" title="Permanent link">&para;</a></h3>
+<p><em>Also known as:</em> MLP, SwiGLU</p>
+<p>The per-token two-layer network after attention; it holds most of the parameters. SwiGLU is the gated variant most modern models use.</p>
+<p><strong>Why it matters:</strong> Attention moves information between tokens; the FFN processes it. Facts the model "knows" are mostly stored here.</p>
+<h3 id="residual-stream">Residual stream<a class="headerlink" href="#residual-stream" title="Permanent link">&para;</a></h3>
+<p>The running vector per token that every block adds its contribution to.</p>
+<p><strong>Why it matters:</strong> Each block reads from and writes to it, so information from early layers survives to the end.</p>
+<h3 id="attention-residuals">Attention Residuals (AttnRes)<a class="headerlink" href="#attention-residuals" title="Permanent link">&para;</a></h3>
+<p>A 2026 variant of the residual stream (Moonshot AI): instead of adding every earlier layer's output with a fixed weight of 1, each layer attends over earlier outputs with learned, softmax-normalised weights.</p>
+<p><strong>Why it matters:</strong> Small but consistent gains for ~4% extra training cost; a sign that even the residual stream is still being redesigned.</p>
+<p><small><em>Index aliases:</em> AttnRes</small></p>
+<h3 id="pre-norm-vs-post-norm">Pre-norm vs post-norm<a class="headerlink" href="#pre-norm-vs-post-norm" title="Permanent link">&para;</a></h3>
+<p>Whether normalization happens before or after each sub-layer. Pre-norm with RMSNorm is the modern choice.</p>
+<p><strong>Why it matters:</strong> Pre-norm trains more stably at scale, which is why GPT-2 onward switched to it.</p>
+<p><small><em>Index aliases:</em> Pre-norm</small></p>
+<h3 id="qk-norm">QK-Norm<a class="headerlink" href="#qk-norm" title="Permanent link">&para;</a></h3>
+<p><em>Also known as:</em> query-key normalization</p>
+<p>Normalize the query and key vectors (RMSNorm or LayerNorm) before computing attention scores (Gemma 3, OLMo 2, Qwen3).</p>
+<p><strong>Why it matters:</strong> Stops attention logits from blowing up, which removes a common cause of loss spikes and allows higher learning rates.</p>
+<p><small><em>Index aliases:</em> QKNorm</small></p>
+<h3 id="d-model-n-heads-n-layers">d_model, n_heads, n_layers (hidden size)<a class="headerlink" href="#d-model-n-heads-n-layers" title="Permanent link">&para;</a></h3>
+<p>The main shape hyperparameters of a Transformer: vector width per token, number of attention heads, number of stacked blocks.</p>
+<p><strong>Why it matters:</strong> Three numbers that describe a model's shape; parameter count follows from them (Map 5).</p>
+<p><small><em>Index aliases:</em> Hidden size</small></p>
+<h3 id="language-model-head">Language-model head<a class="headerlink" href="#language-model-head" title="Permanent link">&para;</a></h3>
+<p><em>Also known as:</em> LM head, unembedding</p>
+<p>The final linear layer mapping each token's hidden state to logits over the vocabulary.</p>
+<p><strong>Why it matters:</strong> Turns the model's internal vector into "a score for every possible next token".</p>
+<h3 id="weight-tying">Weight tying<a class="headerlink" href="#weight-tying" title="Permanent link">&para;</a></h3>
+<p>Reusing the token-embedding matrix as the LM head.</p>
+<p><strong>Why it matters:</strong> Saves a large chunk of parameters in small models (a third of GPT-2's).</p>
+<h3 id="mixture-of-experts">Mixture of Experts (MoE)<a class="headerlink" href="#mixture-of-experts" title="Permanent link">&para;</a></h3>
+<p>Replaces each feed-forward layer with several experts and a router that activates only a few per token (Mixtral, DeepSeek-V3, Qwen3-MoE).</p>
+<p><strong>Why it matters:</strong> Huge knowledge capacity with the compute cost of a much smaller model: a 235B model that runs like a 22B one.</p>
+<p><small><em>Index aliases:</em> MoE</small></p>
+<h3 id="dense-vs-sparse-model">Dense vs sparse model<a class="headerlink" href="#dense-vs-sparse-model" title="Permanent link">&para;</a></h3>
+<p>A dense model uses all parameters for every token; a sparse (MoE) model uses a subset.</p>
+<p><strong>Why it matters:</strong> Explains names like "235B-A22B": 235B parameters total, 22B active per token.</p>
+<p><small><em>Index aliases:</em> Sparse model, Dense model</small></p>
+<h3 id="flashattention">FlashAttention<a class="headerlink" href="#flashattention" title="Permanent link">&para;</a></h3>
+<p>An exact but much faster, memory-efficient GPU implementation of attention.</p>
+<p><strong>Why it matters:</strong> Same maths, 2–4× faster and far less memory, by being clever about GPU memory traffic. An engineering trick, not a new architecture.</p>
+<h3 id="state-space-models-hybrids">State-space models / hybrids<a class="headerlink" href="#state-space-models-hybrids" title="Permanent link">&para;</a></h3>
+<p><em>Also known as:</em> Mamba, SSM</p>
+<p>Alternative sequence layers whose cost grows linearly with sequence length. Often mixed with attention layers.</p>
+<p><strong>Why it matters:</strong> A bet on cheaper long context; hybrids keep a few attention layers for precise recall.</p>
+<h3 id="vision-transformer">Vision Transformer (ViT)<a class="headerlink" href="#vision-transformer" title="Permanent link">&para;</a></h3>
+<p>A Transformer applied to image patches as if they were tokens.</p>
+<p><strong>Why it matters:</strong> Showed the same architecture works for images, which is what makes multimodal models possible.</p>
+<p><small><em>Index aliases:</em> ViT</small></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Content CC BY 4.0 · code MIT
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.sections", "navigation.top", "navigation.indexes", "search.suggest", "search.highlight", "content.action.edit", "toc.follow"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>
