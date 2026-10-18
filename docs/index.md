@@ -6,25 +6,25 @@ Made for people who learn from videos and courses and keep meeting new acronyms.
 
 <div class="grid cards" markdown>
 
--   :material-magnify: **Heard a term?**
+-   🔍 **Heard a term?**
 
     ---
 
     Use the search box or the [A–Z index](index-a-z.md). Every acronym from the videos is there, including the ones that are only nicknames.
 
--   :material-map: **Want the big picture?**
+-   🗺️ **Want the big picture?**
 
     ---
 
     Start with the [seven maps](maps/big-picture.md): the nested circles of AI, the LLM lifecycle, the training loop, the life of one request, inside a Transformer block, RAG and agents, and a decision guide.
 
--   :material-book-open-variant: **Want it explained?**
+-   📖 **Want it explained?**
 
     ---
 
     The [glossary](glossary/01-the-big-picture.md) has 14 sections ordered like the lifecycle, so neighbours on the map are neighbours on the page.
 
--   :material-source-pull: **Found a mistake, or a missing term?**
+-   🛠️ **Found a mistake, or a missing term?**
 
     ---
 
