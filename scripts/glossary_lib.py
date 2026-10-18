@@ -4,7 +4,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 GLOSSARY_DIR = ROOT / "docs" / "glossary"
-HEAD = re.compile(r"^### (?P<name>.+?)(?P<core> ★)? \{ #(?P<id>[a-z0-9-]+) \}\s*$")
+HEAD = re.compile(r'^### (?P<name>.+?)(?P<core> ★)? <a id="(?P<id>[a-z0-9-]+)"></a>\s*$')
 AKA = re.compile(r"^\*Also known as:\* (?P<aka>.+)$")
 WHY = re.compile(r"^\*\*Why it matters:\*\* (?P<why>.+)$")
 ALIASES = re.compile(r"^<small>\*Index aliases:\* (?P<al>.+)</small>$")

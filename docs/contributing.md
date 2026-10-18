@@ -27,8 +27,7 @@ scripts/
 Every term in `docs/glossary/` follows the same shape. Copy it exactly; the checker and the index generator rely on it.
 
 ```markdown
-### Rotary Positional Embedding (RoPE) { #rotary-positional-embedding }
-
+### Rotary Positional Embedding (RoPE) <a id="rotary-positional-embedding"></a>
 Today's standard positional scheme: encodes position by rotating the Q and K vectors so attention depends on relative distance.
 
 **Why it matters:** Does not extrapolate well on its own, but can be cheaply stretched to longer contexts (position interpolation, NTK-aware scaling, YaRN), which is what makes 128k-token contexts practical.
@@ -36,7 +35,7 @@ Today's standard positional scheme: encodes position by rotating the Q and K vec
 <small>*Index aliases:* rotary embeddings</small>
 ```
 
-- **Heading**: the term as people say it, with a short acronym in parentheses if there is one, and a stable id in `{ #kebab-case }`. Add ` ★` before the id only for the “learn these first” terms (keep that list to about 30).
+- **Heading**: the term as people say it, with a short acronym in parentheses if there is one, and a stable id as an empty anchor at the end, `<a id="kebab-case"></a>`. The anchor form works both on the website and when the file is viewed on GitHub. Add ` ★` before the anchor only for the “learn these first” terms (keep that list to about 30).
 - ***Also known as***: longer expansions, several acronyms, or product names, comma-separated. Optional; use it when the acronym does not fit in the heading.
 - **Definition**: one to three plain sentences. Say what it is and, if useful, who uses it. Numbers and dates are welcome when they help (“Llama-3-8B has 32 query heads and 8 KV heads”).
 - ***Why it matters***: one sentence, in the reader’s interest: faster, cheaper, more accurate, safer, or “explains why videos say X”. This line is mandatory.

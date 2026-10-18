@@ -30,7 +30,7 @@ for sec in sections:
 for path in sorted(GLOSSARY_DIR.glob("*.md")):
     for i, ln in enumerate(path.read_text(encoding="utf-8").splitlines(), 1):
         if ln.startswith("### ") and not HEAD.match(ln):
-            errors.append(f"{path.name}:{i}: entry heading does not match '### Term {{ #id }}': {ln}")
+            errors.append(f"{path.name}:{i}: entry heading does not match ### Term <a id='id'></a>: {ln}")
 core = [e for sec in sections for e in sec["entries"] if e["core"]]
 if not 20 <= len(core) <= 40:
     errors.append(f"{len(core)} terms are marked ★; keep the 'learn these first' list between 20 and 40")
