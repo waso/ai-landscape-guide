@@ -1042,7 +1042,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#masked-language-modelling" class="md-nav__link">
+  <a href="#masked-language-modelling-mlm" class="md-nav__link">
     <span class="md-ellipsis">
       
         Masked language modelling (MLM)
@@ -1174,7 +1174,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#model-flops-utilization" class="md-nav__link">
+  <a href="#model-flops-utilization-mfu" class="md-nav__link">
     <span class="md-ellipsis">
       
         Model FLOPs Utilization (MFU)
@@ -1828,7 +1828,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#masked-language-modelling" class="md-nav__link">
+  <a href="#masked-language-modelling-mlm" class="md-nav__link">
     <span class="md-ellipsis">
       
         Masked language modelling (MLM)
@@ -1960,7 +1960,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#model-flops-utilization" class="md-nav__link">
+  <a href="#model-flops-utilization-mfu" class="md-nav__link">
     <span class="md-ellipsis">
       
         Model FLOPs Utilization (MFU)
@@ -2079,88 +2079,88 @@
 <p class="admonition-title">How to read this section</p>
 <p>Each entry is a short definition followed by a <strong>Why it matters</strong> line that says, in plain words, what the idea buys you. Terms marked ★ belong to the <a href="../../#learn-these-30-first">30 to learn first</a>. The <strong>Also known as</strong> line lists the acronyms and other names you may hear in videos; all of them appear in the <a href="../../index-a-z/">A–Z index</a>.</p>
 </div>
-<h3 id="pre-training">Pre-training ★<a class="headerlink" href="#pre-training" title="Permanent link">&para;</a></h3>
+<h3 id="pre-training">Pre-training ★ <a id="pre-training"></a><a class="headerlink" href="#pre-training" title="Permanent link">&para;</a></h3>
 <p>The first and most expensive phase: train the randomly-initialised model on a massive corpus by predicting the next token.</p>
 <p><strong>Why it matters:</strong> Where the model learns language, facts and reasoning. Everything after only shapes how that knowledge is used.</p>
-<h3 id="next-token-prediction">Next-token prediction ★<a class="headerlink" href="#next-token-prediction" title="Permanent link">&para;</a></h3>
+<h3 id="next-token-prediction">Next-token prediction ★ <a id="next-token-prediction"></a><a class="headerlink" href="#next-token-prediction" title="Permanent link">&para;</a></h3>
 <p><em>Also known as:</em> causal language modelling, CLM</p>
 <p>The pre-training objective: given the tokens so far, output a probability distribution over the next one.</p>
 <p><strong>Why it matters:</strong> A deceptively simple task: predicting the next word well enough requires understanding grammar, facts and logic.</p>
 <p><small><em>Index aliases:</em> Causal language modelling (CLM)</small></p>
-<h3 id="teacher-forcing">Teacher forcing<a class="headerlink" href="#teacher-forcing" title="Permanent link">&para;</a></h3>
+<h3 id="teacher-forcing">Teacher forcing <a id="teacher-forcing"></a><a class="headerlink" href="#teacher-forcing" title="Permanent link">&para;</a></h3>
 <p>During training the model sees the true previous tokens as input, not its own guesses, so all positions train in one parallel pass.</p>
 <p><strong>Why it matters:</strong> Why training is fast (whole sequence at once) while generation is slow (one token at a time).</p>
-<h3 id="masked-language-modelling">Masked language modelling (MLM)<a class="headerlink" href="#masked-language-modelling" title="Permanent link">&para;</a></h3>
+<h3 id="masked-language-modelling-mlm">Masked language modelling (MLM) <a id="masked-language-modelling"></a><a class="headerlink" href="#masked-language-modelling-mlm" title="Permanent link">&para;</a></h3>
 <p>The BERT-style objective: hide random tokens and predict them from both sides.</p>
 <p><strong>Why it matters:</strong> Produces excellent understanding models (and embeddings) but not text generators.</p>
 <p><small><em>Index aliases:</em> MLM, MLM (masked language modelling)</small></p>
-<h3 id="base-model">Base model ★<a class="headerlink" href="#base-model" title="Permanent link">&para;</a></h3>
+<h3 id="base-model">Base model ★ <a id="base-model"></a><a class="headerlink" href="#base-model" title="Permanent link">&para;</a></h3>
 <p>The raw pre-trained model: continues text well, does not yet follow instructions or chat.</p>
 <p><strong>Why it matters:</strong> Ask it a question and it may continue with more questions. Post-training turns it into an assistant.</p>
-<h3 id="checkpoint">Checkpoint<a class="headerlink" href="#checkpoint" title="Permanent link">&para;</a></h3>
+<h3 id="checkpoint">Checkpoint <a id="checkpoint"></a><a class="headerlink" href="#checkpoint" title="Permanent link">&para;</a></h3>
 <p>A saved snapshot of the weights (and optimizer state) during or after training.</p>
 <p><strong>Why it matters:</strong> Lets a run resume after a crash and lets researchers compare the model at different points.</p>
-<h3 id="perplexity">Perplexity<a class="headerlink" href="#perplexity" title="Permanent link">&para;</a></h3>
+<h3 id="perplexity">Perplexity <a id="perplexity"></a><a class="headerlink" href="#perplexity" title="Permanent link">&para;</a></h3>
 <p>The standard measure of how well a language model predicts text: exp(loss). Lower is better.</p>
 <p><strong>Why it matters:</strong> A perplexity of 10 means the model is, on average, as uncertain as choosing among 10 equally likely tokens.</p>
 <p><small><em>Index aliases:</em> PPL</small></p>
-<h3 id="loss-curve-validation-loss">Loss curve / validation loss<a class="headerlink" href="#loss-curve-validation-loss" title="Permanent link">&para;</a></h3>
+<h3 id="loss-curve-validation-loss">Loss curve / validation loss <a id="loss-curve-validation-loss"></a><a class="headerlink" href="#loss-curve-validation-loss" title="Permanent link">&para;</a></h3>
 <p>Training loss over steps, alongside loss on held-out data. Validation loss rising while training loss falls means overfitting.</p>
 <p><strong>Why it matters:</strong> The main thing engineers watch during a run; a smooth downward curve means learning is working.</p>
 <p><small><em>Index aliases:</em> Validation loss</small></p>
-<h3 id="loss-spikes-divergence">Loss spikes / divergence<a class="headerlink" href="#loss-spikes-divergence" title="Permanent link">&para;</a></h3>
+<h3 id="loss-spikes-divergence">Loss spikes / divergence <a id="loss-spikes-divergence"></a><a class="headerlink" href="#loss-spikes-divergence" title="Permanent link">&para;</a></h3>
 <p>Sudden jumps in the loss during a long run: a bad batch, too high a learning rate or numerical trouble.</p>
 <p><strong>Why it matters:</strong> The nightmare of large training runs; gradient clipping, lower learning rates and restarting from a checkpoint are the usual fixes.</p>
 <p><small><em>Index aliases:</em> Loss spike</small></p>
-<h3 id="learning-rate-schedule">Learning-rate schedule<a class="headerlink" href="#learning-rate-schedule" title="Permanent link">&para;</a></h3>
+<h3 id="learning-rate-schedule">Learning-rate schedule <a id="learning-rate-schedule"></a><a class="headerlink" href="#learning-rate-schedule" title="Permanent link">&para;</a></h3>
 <p><em>Also known as:</em> warmup, cosine decay, WSD</p>
 <p>Ramp the learning rate up at the start, hold, then decay it toward the end.</p>
 <p><strong>Why it matters:</strong> Warmup prevents early blow-ups; decay lets the model settle into a good minimum. Standard practice for every LLM run.</p>
 <p><small><em>Index aliases:</em> Warmup / cosine decay</small></p>
-<h3 id="gradient-clipping">Gradient clipping<a class="headerlink" href="#gradient-clipping" title="Permanent link">&para;</a></h3>
+<h3 id="gradient-clipping">Gradient clipping <a id="gradient-clipping"></a><a class="headerlink" href="#gradient-clipping" title="Permanent link">&para;</a></h3>
 <p>Cap the gradient norm so one bad batch cannot blow up training.</p>
 <p><strong>Why it matters:</strong> A safety valve against exploding gradients and loss spikes.</p>
-<h3 id="gradient-accumulation">Gradient accumulation<a class="headerlink" href="#gradient-accumulation" title="Permanent link">&para;</a></h3>
+<h3 id="gradient-accumulation">Gradient accumulation <a id="gradient-accumulation"></a><a class="headerlink" href="#gradient-accumulation" title="Permanent link">&para;</a></h3>
 <p>Sum gradients over several mini-batches before updating.</p>
 <p><strong>Why it matters:</strong> Simulates a big batch on a small GPU, so you can train with less memory.</p>
-<h3 id="curriculum-learning">Curriculum learning<a class="headerlink" href="#curriculum-learning" title="Permanent link">&para;</a></h3>
+<h3 id="curriculum-learning">Curriculum learning <a id="curriculum-learning"></a><a class="headerlink" href="#curriculum-learning" title="Permanent link">&para;</a></h3>
 <p>Ordering training data from easy to hard, or changing the data mix over the course of training.</p>
 <p><strong>Why it matters:</strong> Can make training faster and the final model better than feeding everything in random order.</p>
-<h3 id="mixed-precision">Mixed precision<a class="headerlink" href="#mixed-precision" title="Permanent link">&para;</a></h3>
+<h3 id="mixed-precision">Mixed precision <a id="mixed-precision"></a><a class="headerlink" href="#mixed-precision" title="Permanent link">&para;</a></h3>
 <p><em>Also known as:</em> FP32, FP16, BF16, FP8</p>
 <p>Using lower-precision numbers for speed and memory while keeping a master copy of the weights in FP32. BF16 is the norm; FP8 is arriving.</p>
 <p><strong>Why it matters:</strong> Roughly doubles throughput and halves activation memory versus FP32, with no loss in quality when done right; weight and optimizer memory stay similar because the FP32 master copy remains.</p>
 <p><small><em>Index aliases:</em> BF16 / FP16 / FP8</small></p>
-<h3 id="flops-compute-budget">FLOPs / compute budget<a class="headerlink" href="#flops-compute-budget" title="Permanent link">&para;</a></h3>
+<h3 id="flops-compute-budget">FLOPs / compute budget <a id="flops-compute-budget"></a><a class="headerlink" href="#flops-compute-budget" title="Permanent link">&para;</a></h3>
 <p>The total floating-point operations a training run uses, roughly 6 × parameters × tokens.</p>
 <p><strong>Why it matters:</strong> Compute is the currency labs plan in; "10²⁵ FLOPs" is how regulators and papers describe a model's size of effort.</p>
-<h3 id="model-flops-utilization">Model FLOPs Utilization (MFU)<a class="headerlink" href="#model-flops-utilization" title="Permanent link">&para;</a></h3>
+<h3 id="model-flops-utilization-mfu">Model FLOPs Utilization (MFU) <a id="model-flops-utilization"></a><a class="headerlink" href="#model-flops-utilization-mfu" title="Permanent link">&para;</a></h3>
 <p>What fraction of the GPUs' theoretical peak compute the training run actually achieves (typically 30–50%).</p>
 <p><strong>Why it matters:</strong> The efficiency score of a training run; low MFU means expensive GPUs sitting idle waiting for data or communication.</p>
 <p><small><em>Index aliases:</em> MFU</small></p>
-<h3 id="scaling-laws">Scaling laws<a class="headerlink" href="#scaling-laws" title="Permanent link">&para;</a></h3>
+<h3 id="scaling-laws">Scaling laws <a id="scaling-laws"></a><a class="headerlink" href="#scaling-laws" title="Permanent link">&para;</a></h3>
 <p>The empirical finding that loss improves smoothly and predictably as you scale parameters, data and compute together.</p>
 <p><strong>Why it matters:</strong> Why labs bet billions: you can predict how much better a 10× bigger model will be before training it.</p>
-<h3 id="chinchilla-optimal">Chinchilla-optimal<a class="headerlink" href="#chinchilla-optimal" title="Permanent link">&para;</a></h3>
+<h3 id="chinchilla-optimal">Chinchilla-optimal <a id="chinchilla-optimal"></a><a class="headerlink" href="#chinchilla-optimal" title="Permanent link">&para;</a></h3>
 <p>The 2022 rule of thumb of about 20 training tokens per parameter for a given training budget. Modern models are deliberately over-trained far beyond it.</p>
 <p><strong>Why it matters:</strong> Why an 8B model trained on 15T tokens beats older 70B models: small models are cheaper to serve, so extra training pays off.</p>
 <p><small><em>Index aliases:</em> Chinchilla, Compute-optimal, Over-training</small></p>
-<h3 id="emergent-abilities">Emergent abilities<a class="headerlink" href="#emergent-abilities" title="Permanent link">&para;</a></h3>
+<h3 id="emergent-abilities">Emergent abilities <a id="emergent-abilities"></a><a class="headerlink" href="#emergent-abilities" title="Permanent link">&para;</a></h3>
 <p>Capabilities that appear only once models pass a certain scale (a contested idea).</p>
 <p><strong>Why it matters:</strong> The argument for scaling: arithmetic or multi-step reasoning seemed to switch on at size.</p>
-<h3 id="data-tensor-pipeline-parallelism">Data / tensor / pipeline parallelism<a class="headerlink" href="#data-tensor-pipeline-parallelism" title="Permanent link">&para;</a></h3>
+<h3 id="data-tensor-pipeline-parallelism">Data / tensor / pipeline parallelism <a id="data-tensor-pipeline-parallelism"></a><a class="headerlink" href="#data-tensor-pipeline-parallelism" title="Permanent link">&para;</a></h3>
 <p>Three ways to split training across GPUs: by data batches, by slicing layers across devices, or by giving different layers to different devices.</p>
 <p><strong>Why it matters:</strong> How a model too big for one GPU is trained on thousands at once.</p>
 <p><small><em>Index aliases:</em> Tensor parallelism, Pipeline parallelism, Data parallelism</small></p>
-<h3 id="fsdp-zero">FSDP / ZeRO<a class="headerlink" href="#fsdp-zero" title="Permanent link">&para;</a></h3>
+<h3 id="fsdp-zero">FSDP / ZeRO <a id="fsdp-zero"></a><a class="headerlink" href="#fsdp-zero" title="Permanent link">&para;</a></h3>
 <p><em>Also known as:</em> Fully Sharded Data Parallel</p>
 <p>Techniques that shard the weights, gradients and optimizer state across GPUs.</p>
 <p><strong>Why it matters:</strong> Lets models far bigger than one GPU's memory train without complex manual splitting.</p>
 <p><small><em>Index aliases:</em> FSDP, ZeRO (DeepSpeed)</small></p>
-<h3 id="continued-pre-training">Continued pre-training<a class="headerlink" href="#continued-pre-training" title="Permanent link">&para;</a></h3>
+<h3 id="continued-pre-training">Continued pre-training <a id="continued-pre-training"></a><a class="headerlink" href="#continued-pre-training" title="Permanent link">&para;</a></h3>
 <p>Keep pre-training a base model on new domain data (medical, legal, a new language, your company's docs) before any instruction tuning.</p>
 <p><strong>Why it matters:</strong> The way to add deep domain knowledge or a new language; much cheaper than training from scratch, much heavier than fine-tuning.</p>
-<h3 id="mid-training-annealing">Mid-training / annealing<a class="headerlink" href="#mid-training-annealing" title="Permanent link">&para;</a></h3>
+<h3 id="mid-training-annealing">Mid-training / annealing <a id="mid-training-annealing"></a><a class="headerlink" href="#mid-training-annealing" title="Permanent link">&para;</a></h3>
 <p>The final pre-training phase on a higher-quality data mix with a decaying learning rate.</p>
 <p><strong>Why it matters:</strong> Increasingly where labs tune knowledge quality and inject maths, code and long-context ability.</p>
 <p><small><em>Index aliases:</em> Annealing, Mid-training</small></p>

@@ -1216,7 +1216,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#vision-language-model" class="md-nav__link">
+  <a href="#vision-language-model-vlm" class="md-nav__link">
     <span class="md-ellipsis">
       
         Vision-Language Model (VLM)
@@ -1249,7 +1249,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#u-net-diffusion-transformer" class="md-nav__link">
+  <a href="#u-net-diffusion-transformer-dit" class="md-nav__link">
     <span class="md-ellipsis">
       
         U-Net / Diffusion Transformer (DiT)
@@ -1260,7 +1260,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#text-encoder-guidance-scale" class="md-nav__link">
+  <a href="#text-encoder-guidance-scale-cfg" class="md-nav__link">
     <span class="md-ellipsis">
       
         Text encoder / guidance scale (CFG)
@@ -1315,7 +1315,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#text-to-speech-voice-cloning" class="md-nav__link">
+  <a href="#text-to-speech-voice-cloning-tts" class="md-nav__link">
     <span class="md-ellipsis">
       
         Text-to-Speech / voice cloning (TTS)
@@ -1751,7 +1751,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#vision-language-model" class="md-nav__link">
+  <a href="#vision-language-model-vlm" class="md-nav__link">
     <span class="md-ellipsis">
       
         Vision-Language Model (VLM)
@@ -1784,7 +1784,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#u-net-diffusion-transformer" class="md-nav__link">
+  <a href="#u-net-diffusion-transformer-dit" class="md-nav__link">
     <span class="md-ellipsis">
       
         U-Net / Diffusion Transformer (DiT)
@@ -1795,7 +1795,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#text-encoder-guidance-scale" class="md-nav__link">
+  <a href="#text-encoder-guidance-scale-cfg" class="md-nav__link">
     <span class="md-ellipsis">
       
         Text encoder / guidance scale (CFG)
@@ -1850,7 +1850,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#text-to-speech-voice-cloning" class="md-nav__link">
+  <a href="#text-to-speech-voice-cloning-tts" class="md-nav__link">
     <span class="md-ellipsis">
       
         Text-to-Speech / voice cloning (TTS)
@@ -1969,74 +1969,74 @@
 <p class="admonition-title">How to read this section</p>
 <p>Each entry is a short definition followed by a <strong>Why it matters</strong> line that says, in plain words, what the idea buys you. Terms marked ★ belong to the <a href="../../#learn-these-30-first">30 to learn first</a>. The <strong>Also known as</strong> line lists the acronyms and other names you may hear in videos; all of them appear in the <a href="../../index-a-z/">A–Z index</a>.</p>
 </div>
-<h3 id="clip">CLIP<a class="headerlink" href="#clip" title="Permanent link">&para;</a></h3>
+<h3 id="clip">CLIP <a id="clip"></a><a class="headerlink" href="#clip" title="Permanent link">&para;</a></h3>
 <p><em>Also known as:</em> Contrastive Language-Image Pre-training</p>
 <p>A pair of encoders (image and text) trained so matching image–caption pairs get similar embeddings.</p>
 <p><strong>Why it matters:</strong> Lets you search images with words and is the glue inside most image generators and vision-language models.</p>
-<h3 id="vision-language-model">Vision-Language Model (VLM)<a class="headerlink" href="#vision-language-model" title="Permanent link">&para;</a></h3>
+<h3 id="vision-language-model-vlm">Vision-Language Model (VLM) <a id="vision-language-model"></a><a class="headerlink" href="#vision-language-model-vlm" title="Permanent link">&para;</a></h3>
 <p>An LLM with a vision encoder attached, so it can take images as input (GPT-4o, Claude, Gemini, Qwen-VL, LLaVA).</p>
 <p><strong>Why it matters:</strong> Why you can paste a screenshot or a chart into a chat and ask about it.</p>
 <p><small><em>Index aliases:</em> VLM</small></p>
-<h3 id="vision-encoder-image-tokens">Vision encoder / image tokens<a class="headerlink" href="#vision-encoder-image-tokens" title="Permanent link">&para;</a></h3>
+<h3 id="vision-encoder-image-tokens">Vision encoder / image tokens <a id="vision-encoder-image-tokens"></a><a class="headerlink" href="#vision-encoder-image-tokens" title="Permanent link">&para;</a></h3>
 <p>Images are cut into patches, encoded (usually by a ViT) and projected into the LLM's token space; a typical image becomes a few hundred to a few thousand tokens.</p>
 <p><strong>Why it matters:</strong> Images are billed and context-limited as tokens, just like text.</p>
 <p><small><em>Index aliases:</em> Image tokens</small></p>
-<h3 id="latent-diffusion">Latent diffusion<a class="headerlink" href="#latent-diffusion" title="Permanent link">&para;</a></h3>
+<h3 id="latent-diffusion">Latent diffusion <a id="latent-diffusion"></a><a class="headerlink" href="#latent-diffusion" title="Permanent link">&para;</a></h3>
 <p><em>Also known as:</em> Stable Diffusion</p>
 <p>Diffusion run in the compressed latent space of a VAE instead of on raw pixels.</p>
 <p><strong>Why it matters:</strong> Makes image generation many times cheaper, which is what put it on consumer GPUs.</p>
-<h3 id="u-net-diffusion-transformer">U-Net / Diffusion Transformer (DiT)<a class="headerlink" href="#u-net-diffusion-transformer" title="Permanent link">&para;</a></h3>
+<h3 id="u-net-diffusion-transformer-dit">U-Net / Diffusion Transformer (DiT) <a id="u-net-diffusion-transformer"></a><a class="headerlink" href="#u-net-diffusion-transformer-dit" title="Permanent link">&para;</a></h3>
 <p>The denoising network inside a diffusion model: a U-Net in older models, a Transformer (DiT) in newer ones (Stable Diffusion 3, Flux, Sora).</p>
 <p><strong>Why it matters:</strong> Another case of "Transformers ate the architecture"; same scaling story as LLMs.</p>
 <p><small><em>Index aliases:</em> DiT, U-Net</small></p>
-<h3 id="text-encoder-guidance-scale">Text encoder / guidance scale (CFG)<a class="headerlink" href="#text-encoder-guidance-scale" title="Permanent link">&para;</a></h3>
+<h3 id="text-encoder-guidance-scale-cfg">Text encoder / guidance scale (CFG) <a id="text-encoder-guidance-scale"></a><a class="headerlink" href="#text-encoder-guidance-scale-cfg" title="Permanent link">&para;</a></h3>
 <p>The text model that turns the prompt into conditioning vectors, and the knob (classifier-free guidance) controlling how strictly the image follows the prompt.</p>
 <p><strong>Why it matters:</strong> Guidance scale is the image-generation equivalent of temperature: higher is more literal, lower is more creative.</p>
 <p><small><em>Index aliases:</em> CFG, Guidance scale</small></p>
-<h3 id="controlnet-image-conditioning">ControlNet / image conditioning<a class="headerlink" href="#controlnet-image-conditioning" title="Permanent link">&para;</a></h3>
+<h3 id="controlnet-image-conditioning">ControlNet / image conditioning <a id="controlnet-image-conditioning"></a><a class="headerlink" href="#controlnet-image-conditioning" title="Permanent link">&para;</a></h3>
 <p>Add-ons that steer image generation with a sketch, pose, depth map or edge map in addition to text.</p>
 <p><strong>Why it matters:</strong> Gives precise control over composition instead of hoping the prompt lands.</p>
 <p><small><em>Index aliases:</em> ControlNet</small></p>
-<h3 id="image-lora-style-fine-tunes">Image LoRA / style fine-tunes<a class="headerlink" href="#image-lora-style-fine-tunes" title="Permanent link">&para;</a></h3>
+<h3 id="image-lora-style-fine-tunes">Image LoRA / style fine-tunes <a id="image-lora-style-fine-tunes"></a><a class="headerlink" href="#image-lora-style-fine-tunes" title="Permanent link">&para;</a></h3>
 <p>LoRA adapters trained on a few dozen images to teach a diffusion model a style, product or face.</p>
 <p><strong>Why it matters:</strong> The same LoRA idea from section 9, applied to images; the basis of the custom-model marketplaces.</p>
-<h3 id="inpainting-outpainting-img2img">Inpainting, outpainting, img2img<a class="headerlink" href="#inpainting-outpainting-img2img" title="Permanent link">&para;</a></h3>
+<h3 id="inpainting-outpainting-img2img">Inpainting, outpainting, img2img <a id="inpainting-outpainting-img2img"></a><a class="headerlink" href="#inpainting-outpainting-img2img" title="Permanent link">&para;</a></h3>
 <p>Regenerating part of an image, extending beyond its borders, or transforming an existing image guided by a prompt.</p>
 <p><strong>Why it matters:</strong> The editing operations behind "generative fill" features.</p>
 <p><small><em>Index aliases:</em> Inpainting, img2img</small></p>
-<h3 id="automatic-speech-recognition">Automatic Speech Recognition<a class="headerlink" href="#automatic-speech-recognition" title="Permanent link">&para;</a></h3>
+<h3 id="automatic-speech-recognition">Automatic Speech Recognition <a id="automatic-speech-recognition"></a><a class="headerlink" href="#automatic-speech-recognition" title="Permanent link">&para;</a></h3>
 <p><em>Also known as:</em> ASR, Whisper</p>
 <p>Speech to text. Whisper is the widely used open model.</p>
 <p><strong>Why it matters:</strong> The first step of every voice assistant and the way meeting transcripts are made.</p>
-<h3 id="text-to-speech-voice-cloning">Text-to-Speech / voice cloning (TTS)<a class="headerlink" href="#text-to-speech-voice-cloning" title="Permanent link">&para;</a></h3>
+<h3 id="text-to-speech-voice-cloning-tts">Text-to-Speech / voice cloning (TTS) <a id="text-to-speech-voice-cloning"></a><a class="headerlink" href="#text-to-speech-voice-cloning-tts" title="Permanent link">&para;</a></h3>
 <p>Generating natural speech from text; cloning reproduces a specific voice from a short sample.</p>
 <p><strong>Why it matters:</strong> The output side of voice assistants, audiobooks and dubbing; cloning is also why voice-based fraud is rising.</p>
 <p><small><em>Index aliases:</em> TTS, Voice cloning</small></p>
-<h3 id="speech-to-speech-realtime-models">Speech-to-speech / realtime models<a class="headerlink" href="#speech-to-speech-realtime-models" title="Permanent link">&para;</a></h3>
+<h3 id="speech-to-speech-realtime-models">Speech-to-speech / realtime models <a id="speech-to-speech-realtime-models"></a><a class="headerlink" href="#speech-to-speech-realtime-models" title="Permanent link">&para;</a></h3>
 <p>Models that take audio in and produce audio out directly, with low latency, instead of chaining ASR → LLM → TTS.</p>
 <p><strong>Why it matters:</strong> Makes natural, interruptible voice conversation possible.</p>
 <p><small><em>Index aliases:</em> Realtime voice models</small></p>
-<h3 id="omni-models">Omni models<a class="headerlink" href="#omni-models" title="Permanent link">&para;</a></h3>
+<h3 id="omni-models">Omni models <a id="omni-models"></a><a class="headerlink" href="#omni-models" title="Permanent link">&para;</a></h3>
 <p>Single models trained on text, images, audio and video as input, producing text and speech (and sometimes images) as output.</p>
 <p><strong>Why it matters:</strong> Where the frontier is heading: one model for every modality instead of a pipeline of specialists.</p>
 <p><small><em>Index aliases:</em> Omni model</small></p>
-<h3 id="text-to-video">Text-to-video<a class="headerlink" href="#text-to-video" title="Permanent link">&para;</a></h3>
+<h3 id="text-to-video">Text-to-video <a id="text-to-video"></a><a class="headerlink" href="#text-to-video" title="Permanent link">&para;</a></h3>
 <p><em>Also known as:</em> Veo, Runway, Kling; OpenAI's Sora, discontinued in 2026</p>
 <p>Diffusion or transformer models that generate video clips from a prompt or an image.</p>
 <p><strong>Why it matters:</strong> Same ideas as image generation, far more compute; the current showcase of generative AI, and a crowded market.</p>
 <p><small><em>Index aliases:</em> Sora, Veo / Runway</small></p>
-<h3 id="world-models">World models<a class="headerlink" href="#world-models" title="Permanent link">&para;</a></h3>
+<h3 id="world-models">World models <a id="world-models"></a><a class="headerlink" href="#world-models" title="Permanent link">&para;</a></h3>
 <p>Models that learn to predict how an environment evolves (the next frame, the result of an action), used in robotics and games.</p>
 <p><strong>Why it matters:</strong> The argument that video generation is a step toward models that understand physics and planning.</p>
 <p><small><em>Index aliases:</em> World model</small></p>
-<h3 id="ocr-document-ai">OCR / document AI<a class="headerlink" href="#ocr-document-ai" title="Permanent link">&para;</a></h3>
+<h3 id="ocr-document-ai">OCR / document AI <a id="ocr-document-ai"></a><a class="headerlink" href="#ocr-document-ai" title="Permanent link">&para;</a></h3>
 <p>Extracting text and structure from scanned documents and PDFs; increasingly done by VLMs directly.</p>
 <p><strong>Why it matters:</strong> How invoices, forms and old archives get into RAG pipelines.</p>
 <p><small><em>Index aliases:</em> Document AI</small></p>
-<h3 id="multimodal-embeddings">Multimodal embeddings<a class="headerlink" href="#multimodal-embeddings" title="Permanent link">&para;</a></h3>
+<h3 id="multimodal-embeddings">Multimodal embeddings <a id="multimodal-embeddings"></a><a class="headerlink" href="#multimodal-embeddings" title="Permanent link">&para;</a></h3>
 <p>Embedding models that map images, text and audio into one shared vector space.</p>
 <p><strong>Why it matters:</strong> Search a photo library with a sentence, or a product catalogue with a picture.</p>
-<h3 id="deepfake-synthetic-media-detection">Deepfake / synthetic media detection<a class="headerlink" href="#deepfake-synthetic-media-detection" title="Permanent link">&para;</a></h3>
+<h3 id="deepfake-synthetic-media-detection">Deepfake / synthetic media detection <a id="deepfake-synthetic-media-detection"></a><a class="headerlink" href="#deepfake-synthetic-media-detection" title="Permanent link">&para;</a></h3>
 <p>Generated images, voices and videos impersonating real people, and the tools that try to detect or watermark them.</p>
 <p><strong>Why it matters:</strong> The main misuse of generative media; provenance standards (C2PA) and watermarks are the response.</p>
 <p><small><em>Index aliases:</em> Deepfake, C2PA / watermarking</small></p>

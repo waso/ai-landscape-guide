@@ -1258,7 +1258,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#latency-ttft-tpot-tokens-sec" class="md-nav__link">
+  <a href="#latency-ttft-tpot-tokenssec" class="md-nav__link">
     <span class="md-ellipsis">
       
         Latency: TTFT, TPOT, tokens/sec
@@ -2026,7 +2026,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#latency-ttft-tpot-tokens-sec" class="md-nav__link">
+  <a href="#latency-ttft-tpot-tokenssec" class="md-nav__link">
     <span class="md-ellipsis">
       
         Latency: TTFT, TPOT, tokens/sec
@@ -2211,108 +2211,108 @@
 <p class="admonition-title">How to read this section</p>
 <p>Each entry is a short definition followed by a <strong>Why it matters</strong> line that says, in plain words, what the idea buys you. Terms marked ★ belong to the <a href="../../#learn-these-30-first">30 to learn first</a>. The <strong>Also known as</strong> line lists the acronyms and other names you may hear in videos; all of them appear in the <a href="../../index-a-z/">A–Z index</a>.</p>
 </div>
-<h3 id="inference">Inference ★<a class="headerlink" href="#inference" title="Permanent link">&para;</a></h3>
+<h3 id="inference">Inference ★ <a id="inference"></a><a class="headerlink" href="#inference" title="Permanent link">&para;</a></h3>
 <p>Using a trained model to produce output. No weights change.</p>
 <p><strong>Why it matters:</strong> What every API call and chat message is. The cost and speed of AI products are decided here.</p>
-<h3 id="autoregressive-generation">Autoregressive generation<a class="headerlink" href="#autoregressive-generation" title="Permanent link">&para;</a></h3>
+<h3 id="autoregressive-generation">Autoregressive generation <a id="autoregressive-generation"></a><a class="headerlink" href="#autoregressive-generation" title="Permanent link">&para;</a></h3>
 <p>Produce one token, append it to the input, run again, until a stop token or the max length is reached.</p>
 <p><strong>Why it matters:</strong> Why text appears word by word, and why long answers take proportionally longer.</p>
-<h3 id="prefill-vs-decode">Prefill vs decode<a class="headerlink" href="#prefill-vs-decode" title="Permanent link">&para;</a></h3>
+<h3 id="prefill-vs-decode">Prefill vs decode <a id="prefill-vs-decode"></a><a class="headerlink" href="#prefill-vs-decode" title="Permanent link">&para;</a></h3>
 <p>Prefill processes the whole prompt in one parallel pass (compute-bound). Decode produces tokens one at a time (memory-bound).</p>
 <p><strong>Why it matters:</strong> Explains the two numbers you feel: a pause before the first token (prefill), then a steady stream (decode).</p>
 <p><small><em>Index aliases:</em> Prefill, Decode</small></p>
-<h3 id="kv-cache">KV cache<a class="headerlink" href="#kv-cache" title="Permanent link">&para;</a></h3>
+<h3 id="kv-cache">KV cache <a id="kv-cache"></a><a class="headerlink" href="#kv-cache" title="Permanent link">&para;</a></h3>
 <p>Storing the keys and values of all previous tokens so each new token does not recompute them.</p>
 <p><strong>Why it matters:</strong> Makes generation many times faster; its memory size is the main limit on long contexts and many parallel users.</p>
-<h3 id="decoding-strategy">Decoding strategy<a class="headerlink" href="#decoding-strategy" title="Permanent link">&para;</a></h3>
+<h3 id="decoding-strategy">Decoding strategy <a id="decoding-strategy"></a><a class="headerlink" href="#decoding-strategy" title="Permanent link">&para;</a></h3>
 <p>How the next token is chosen from the probability distribution the model outputs.</p>
 <p><strong>Why it matters:</strong> The same model can sound careful or creative depending only on this choice.</p>
-<h3 id="greedy-decoding">Greedy decoding<a class="headerlink" href="#greedy-decoding" title="Permanent link">&para;</a></h3>
+<h3 id="greedy-decoding">Greedy decoding <a id="greedy-decoding"></a><a class="headerlink" href="#greedy-decoding" title="Permanent link">&para;</a></h3>
 <p>Always pick the most probable token.</p>
 <p><strong>Why it matters:</strong> Deterministic and fast, but tends to repeat itself and miss better overall sentences.</p>
-<h3 id="sampling">Sampling<a class="headerlink" href="#sampling" title="Permanent link">&para;</a></h3>
+<h3 id="sampling">Sampling <a id="sampling"></a><a class="headerlink" href="#sampling" title="Permanent link">&para;</a></h3>
 <p>Pick the next token randomly according to the model's probabilities.</p>
 <p><strong>Why it matters:</strong> Gives variety and more natural text; the reason the same prompt gives different answers.</p>
-<h3 id="temperature">Temperature ★<a class="headerlink" href="#temperature" title="Permanent link">&para;</a></h3>
+<h3 id="temperature">Temperature ★ <a id="temperature"></a><a class="headerlink" href="#temperature" title="Permanent link">&para;</a></h3>
 <p>Scales the logits before softmax. Low values make output focused and near-deterministic, high values make it diverse and random. 0 is effectively greedy.</p>
 <p><strong>Why it matters:</strong> Your main creativity knob: low for code and facts, higher for brainstorming.</p>
-<h3 id="top-k-top-p-nucleus-sampling">Top-k / Top-p (nucleus) sampling<a class="headerlink" href="#top-k-top-p-nucleus-sampling" title="Permanent link">&para;</a></h3>
+<h3 id="top-k-top-p-nucleus-sampling">Top-k / Top-p (nucleus) sampling <a id="top-k-top-p-nucleus-sampling"></a><a class="headerlink" href="#top-k-top-p-nucleus-sampling" title="Permanent link">&para;</a></h3>
 <p>Only sample from the k most likely tokens, or from the smallest set of tokens whose probabilities add up to p.</p>
 <p><strong>Why it matters:</strong> Cuts off the long tail of nonsense tokens so sampling stays creative but coherent.</p>
 <p><small><em>Index aliases:</em> Nucleus sampling, Top-p, Top-k</small></p>
-<h3 id="beam-search">Beam search<a class="headerlink" href="#beam-search" title="Permanent link">&para;</a></h3>
+<h3 id="beam-search">Beam search <a id="beam-search"></a><a class="headerlink" href="#beam-search" title="Permanent link">&para;</a></h3>
 <p>Keep several candidate sequences and expand the best ones.</p>
 <p><strong>Why it matters:</strong> Finds higher-probability whole sentences; common in translation, rarely used in chat because it sounds bland.</p>
-<h3 id="repetition-frequency-penalty">Repetition / frequency penalty<a class="headerlink" href="#repetition-frequency-penalty" title="Permanent link">&para;</a></h3>
+<h3 id="repetition-frequency-penalty">Repetition / frequency penalty <a id="repetition-frequency-penalty"></a><a class="headerlink" href="#repetition-frequency-penalty" title="Permanent link">&para;</a></h3>
 <p>Lower the probability of tokens that have already appeared.</p>
 <p><strong>Why it matters:</strong> Stops the model from looping on the same phrase.</p>
 <p><small><em>Index aliases:</em> Frequency penalty</small></p>
-<h3 id="constrained-grammar-based-decoding">Constrained / grammar-based decoding<a class="headerlink" href="#constrained-grammar-based-decoding" title="Permanent link">&para;</a></h3>
+<h3 id="constrained-grammar-based-decoding">Constrained / grammar-based decoding <a id="constrained-grammar-based-decoding"></a><a class="headerlink" href="#constrained-grammar-based-decoding" title="Permanent link">&para;</a></h3>
 <p>Restricting sampling so the output must follow a grammar or JSON schema.</p>
 <p><strong>Why it matters:</strong> Guarantees valid JSON or a fixed set of choices, rather than hoping the model complies.</p>
 <p><small><em>Index aliases:</em> Grammar-constrained decoding</small></p>
-<h3 id="logprobs">Logprobs<a class="headerlink" href="#logprobs" title="Permanent link">&para;</a></h3>
+<h3 id="logprobs">Logprobs <a id="logprobs"></a><a class="headerlink" href="#logprobs" title="Permanent link">&para;</a></h3>
 <p>The log-probabilities of generated tokens, which APIs can expose.</p>
 <p><strong>Why it matters:</strong> A cheap confidence signal: low probability on a key token is a hint the model is guessing.</p>
-<h3 id="max-tokens-stop-sequences">Max tokens / stop sequences<a class="headerlink" href="#max-tokens-stop-sequences" title="Permanent link">&para;</a></h3>
+<h3 id="max-tokens-stop-sequences">Max tokens / stop sequences <a id="max-tokens-stop-sequences"></a><a class="headerlink" href="#max-tokens-stop-sequences" title="Permanent link">&para;</a></h3>
 <p>The limit on output length, and strings that end generation early.</p>
 <p><strong>Why it matters:</strong> Controls cost and prevents run-on answers.</p>
 <p><small><em>Index aliases:</em> Stop sequence, Max tokens</small></p>
-<h3 id="streaming">Streaming<a class="headerlink" href="#streaming" title="Permanent link">&para;</a></h3>
+<h3 id="streaming">Streaming <a id="streaming"></a><a class="headerlink" href="#streaming" title="Permanent link">&para;</a></h3>
 <p>Sending tokens to the client as they are generated.</p>
 <p><strong>Why it matters:</strong> Makes a 10-second answer feel instant because the user starts reading immediately.</p>
-<h3 id="latency-ttft-tpot-tokens-sec">Latency: TTFT, TPOT, tokens/sec<a class="headerlink" href="#latency-ttft-tpot-tokens-sec" title="Permanent link">&para;</a></h3>
+<h3 id="latency-ttft-tpot-tokenssec">Latency: TTFT, TPOT, tokens/sec <a id="latency-ttft-tpot-tokens-sec"></a><a class="headerlink" href="#latency-ttft-tpot-tokenssec" title="Permanent link">&para;</a></h3>
 <p><em>Also known as:</em> time to first token, time per output token</p>
 <p>Time to first token measures prefill. Time per output token (the gap between tokens, also called inter-token latency) measures decode; tokens per second is its inverse.</p>
 <p><strong>Why it matters:</strong> The numbers users feel: optimise TTFT for chat, TPOT for long outputs.</p>
 <p><small><em>Index aliases:</em> TPOT, Inter-token latency, TTFT, Tokens per second</small></p>
-<h3 id="throughput-batching-continuous-batching">Throughput / batching / continuous batching<a class="headerlink" href="#throughput-batching-continuous-batching" title="Permanent link">&para;</a></h3>
+<h3 id="throughput-batching-continuous-batching">Throughput / batching / continuous batching <a id="throughput-batching-continuous-batching"></a><a class="headerlink" href="#throughput-batching-continuous-batching" title="Permanent link">&para;</a></h3>
 <p>Serving many requests at once by batching their decode steps. Continuous batching slots new requests in mid-stream.</p>
 <p><strong>Why it matters:</strong> Serves many more users per GPU, which is what makes API prices possible.</p>
 <p><small><em>Index aliases:</em> Continuous batching</small></p>
-<h3 id="pagedattention-vllm">PagedAttention / vLLM<a class="headerlink" href="#pagedattention-vllm" title="Permanent link">&para;</a></h3>
+<h3 id="pagedattention-vllm">PagedAttention / vLLM <a id="pagedattention-vllm"></a><a class="headerlink" href="#pagedattention-vllm" title="Permanent link">&para;</a></h3>
 <p>Managing the KV cache like virtual-memory pages so GPU memory is not wasted. vLLM is the open-source engine that popularised it.</p>
 <p><strong>Why it matters:</strong> Fits more simultaneous requests in the same GPU memory, roughly 2–4× the throughput.</p>
 <p><small><em>Index aliases:</em> vLLM, PagedAttention</small></p>
-<h3 id="quantization">Quantization<a class="headerlink" href="#quantization" title="Permanent link">&para;</a></h3>
+<h3 id="quantization">Quantization <a id="quantization"></a><a class="headerlink" href="#quantization" title="Permanent link">&para;</a></h3>
 <p><em>Also known as:</em> INT8, INT4, FP8</p>
 <p>Storing weights (and sometimes activations) in fewer bits.</p>
 <p><strong>Why it matters:</strong> Cuts memory 2–4× and speeds up inference, at a small quality cost; how a 70B model fits on one GPU or a laptop.</p>
 <p><small><em>Index aliases:</em> INT8 / INT4</small></p>
-<h3 id="gguf-gptq-awq">GGUF, GPTQ, AWQ<a class="headerlink" href="#gguf-gptq-awq" title="Permanent link">&para;</a></h3>
+<h3 id="gguf-gptq-awq">GGUF, GPTQ, AWQ <a id="gguf-gptq-awq"></a><a class="headerlink" href="#gguf-gptq-awq" title="Permanent link">&para;</a></h3>
 <p>Common quantized formats and methods. GGUF is the format llama.cpp, Ollama and LM Studio use.</p>
 <p><strong>Why it matters:</strong> When a download page lists "Q4_K_M", it is a 4-bit GGUF file ready for local use.</p>
 <p><small><em>Index aliases:</em> GGUF, GPTQ / AWQ</small></p>
-<h3 id="speculative-decoding">Speculative decoding<a class="headerlink" href="#speculative-decoding" title="Permanent link">&para;</a></h3>
+<h3 id="speculative-decoding">Speculative decoding <a id="speculative-decoding"></a><a class="headerlink" href="#speculative-decoding" title="Permanent link">&para;</a></h3>
 <p>A small draft model proposes several tokens, the big model verifies them in one pass.</p>
 <p><strong>Why it matters:</strong> Same output as the big model, noticeably faster, because verifying is cheaper than generating.</p>
-<h3 id="serving-engines">Serving engines<a class="headerlink" href="#serving-engines" title="Permanent link">&para;</a></h3>
+<h3 id="serving-engines">Serving engines <a id="serving-engines"></a><a class="headerlink" href="#serving-engines" title="Permanent link">&para;</a></h3>
 <p><em>Also known as:</em> vLLM, SGLang, TensorRT-LLM, TGI, llama.cpp, Ollama</p>
 <p>Software that loads weights and serves requests efficiently: the first four for servers, the last two for laptops.</p>
 <p><strong>Why it matters:</strong> The difference between a demo and a production service; they handle batching, caching and memory for you.</p>
-<h3 id="prompt-caching">Prompt caching<a class="headerlink" href="#prompt-caching" title="Permanent link">&para;</a></h3>
+<h3 id="prompt-caching">Prompt caching <a id="prompt-caching"></a><a class="headerlink" href="#prompt-caching" title="Permanent link">&para;</a></h3>
 <p>Reusing the KV cache for a repeated prefix (a long system prompt, a set of documents) across requests.</p>
 <p><strong>Why it matters:</strong> Cuts cost and latency sharply when many requests share the same long beginning.</p>
-<h3 id="semantic-caching">Semantic caching<a class="headerlink" href="#semantic-caching" title="Permanent link">&para;</a></h3>
+<h3 id="semantic-caching">Semantic caching <a id="semantic-caching"></a><a class="headerlink" href="#semantic-caching" title="Permanent link">&para;</a></h3>
 <p>Caching whole answers keyed by the meaning of the question, so a similar question returns the stored answer without calling the model.</p>
 <p><strong>Why it matters:</strong> Avoids paying for the same answer twice when users ask the same thing in different words.</p>
-<h3 id="model-routing-cascades">Model routing / cascades<a class="headerlink" href="#model-routing-cascades" title="Permanent link">&para;</a></h3>
+<h3 id="model-routing-cascades">Model routing / cascades <a id="model-routing-cascades"></a><a class="headerlink" href="#model-routing-cascades" title="Permanent link">&para;</a></h3>
 <p>Sending each request to the cheapest model likely to handle it, escalating to a bigger one only when needed.</p>
 <p><strong>Why it matters:</strong> Big cost savings with little quality loss, because most requests are easy.</p>
 <p><small><em>Index aliases:</em> Cascades</small></p>
-<h3 id="batch-api-rate-limits">Batch API, rate limits<a class="headerlink" href="#batch-api-rate-limits" title="Permanent link">&para;</a></h3>
+<h3 id="batch-api-rate-limits">Batch API, rate limits <a id="batch-api-rate-limits"></a><a class="headerlink" href="#batch-api-rate-limits" title="Permanent link">&para;</a></h3>
 <p>Providers offer discounted non-urgent batch processing, and cap how many requests and tokens you can send per minute.</p>
 <p><strong>Why it matters:</strong> Shapes system design: batch what can wait, queue and retry for the rest.</p>
 <p><small><em>Index aliases:</em> Rate limits</small></p>
-<h3 id="long-context-context-extension">Long context / context extension<a class="headerlink" href="#long-context-context-extension" title="Permanent link">&para;</a></h3>
+<h3 id="long-context-context-extension">Long context / context extension <a id="long-context-context-extension"></a><a class="headerlink" href="#long-context-context-extension" title="Permanent link">&para;</a></h3>
 <p>Running models beyond their trained length with positional scaling tricks (RoPE scaling, YaRN) and better attention kernels.</p>
 <p><strong>Why it matters:</strong> How 4k-context models became 128k; recall at the far end of the window is still weaker.</p>
 <p><small><em>Index aliases:</em> YaRN / RoPE scaling</small></p>
-<h3 id="on-device-edge-inference">On-device / edge inference<a class="headerlink" href="#on-device-edge-inference" title="Permanent link">&para;</a></h3>
+<h3 id="on-device-edge-inference">On-device / edge inference <a id="on-device-edge-inference"></a><a class="headerlink" href="#on-device-edge-inference" title="Permanent link">&para;</a></h3>
 <p>Running small quantized models on phones and laptops with no server.</p>
 <p><strong>Why it matters:</strong> Private, offline and free per use; the trade-off is a much smaller model.</p>
 <p><small><em>Index aliases:</em> Edge inference</small></p>
-<h3 id="model-size-vs-memory">Model size vs memory<a class="headerlink" href="#model-size-vs-memory" title="Permanent link">&para;</a></h3>
+<h3 id="model-size-vs-memory">Model size vs memory <a id="model-size-vs-memory"></a><a class="headerlink" href="#model-size-vs-memory" title="Permanent link">&para;</a></h3>
 <p>Rule of thumb: parameters × bytes per weight. A 7B model is about 14 GB in 16-bit and about 4 GB at 4-bit, plus the KV cache.</p>
 <p><strong>Why it matters:</strong> Quick way to know whether a model fits your GPU or laptop before downloading it.</p>
 

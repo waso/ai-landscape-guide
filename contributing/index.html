@@ -1735,8 +1735,7 @@ scripts/
 </code></pre></div>
 <h2 id="the-entry-format">The entry format<a class="headerlink" href="#the-entry-format" title="Permanent link">&para;</a></h2>
 <p>Every term in <code>docs/glossary/</code> follows the same shape. Copy it exactly; the checker and the index generator rely on it.</p>
-<div class="highlight"><pre><span></span><code><span class="gu">### Rotary Positional Embedding (RoPE) { #rotary-positional-embedding }</span>
-
+<div class="highlight"><pre><span></span><code><span class="gu">### Rotary Positional Embedding (RoPE) &lt;a id="rotary-positional-embedding"&gt;&lt;/a&gt;</span>
 Today's standard positional scheme: encodes position by rotating the Q and K vectors so attention depends on relative distance.
 
 <span class="gs">**Why it matters:**</span> Does not extrapolate well on its own, but can be cheaply stretched to longer contexts (position interpolation, NTK-aware scaling, YaRN), which is what makes 128k-token contexts practical.
@@ -1744,7 +1743,7 @@ Today's standard positional scheme: encodes position by rotating the Q and K vec
 &lt;small&gt;*Index aliases:* rotary embeddings&lt;/small&gt;
 </code></pre></div>
 <ul>
-<li><strong>Heading</strong>: the term as people say it, with a short acronym in parentheses if there is one, and a stable id in <code>{ #kebab-case }</code>. Add <code>★</code> before the id only for the “learn these first” terms (keep that list to about 30).</li>
+<li><strong>Heading</strong>: the term as people say it, with a short acronym in parentheses if there is one, and a stable id as an empty anchor at the end, <code>&lt;a id="kebab-case"&gt;&lt;/a&gt;</code>. The anchor form works both on the website and when the file is viewed on GitHub. Add <code>★</code> before the anchor only for the “learn these first” terms (keep that list to about 30).</li>
 <li><strong><em>Also known as</em></strong>: longer expansions, several acronyms, or product names, comma-separated. Optional; use it when the acronym does not fit in the heading.</li>
 <li><strong>Definition</strong>: one to three plain sentences. Say what it is and, if useful, who uses it. Numbers and dates are welcome when they help (“Llama-3-8B has 32 query heads and 8 KV heads”).</li>
 <li><strong><em>Why it matters</em></strong>: one sentence, in the reader’s interest: faster, cheaper, more accurate, safer, or “explains why videos say X”. This line is mandatory.</li>

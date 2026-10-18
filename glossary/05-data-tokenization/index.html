@@ -997,7 +997,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#byte-pair-encoding" class="md-nav__link">
+  <a href="#byte-pair-encoding-bpe" class="md-nav__link">
     <span class="md-ellipsis">
       
         Byte-Pair Encoding (BPE)
@@ -1784,7 +1784,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#byte-pair-encoding" class="md-nav__link">
+  <a href="#byte-pair-encoding-bpe" class="md-nav__link">
     <span class="md-ellipsis">
       
         Byte-Pair Encoding (BPE)
@@ -1969,65 +1969,65 @@
 <p class="admonition-title">How to read this section</p>
 <p>Each entry is a short definition followed by a <strong>Why it matters</strong> line that says, in plain words, what the idea buys you. Terms marked ★ belong to the <a href="../../#learn-these-30-first">30 to learn first</a>. The <strong>Also known as</strong> line lists the acronyms and other names you may hear in videos; all of them appear in the <a href="../../index-a-z/">A–Z index</a>.</p>
 </div>
-<h3 id="corpus-training-data">Corpus / training data<a class="headerlink" href="#corpus-training-data" title="Permanent link">&para;</a></h3>
+<h3 id="corpus-training-data">Corpus / training data <a id="corpus-training-data"></a><a class="headerlink" href="#corpus-training-data" title="Permanent link">&para;</a></h3>
 <p>The collection of text (web pages, books, code, transcripts) the model learns from. Trillions of tokens for frontier models.</p>
 <p><strong>Why it matters:</strong> The model knows only what was in here. Quality and mix of the corpus decide much of the model's quality.</p>
-<h3 id="token">Token ★<a class="headerlink" href="#token" title="Permanent link">&para;</a></h3>
+<h3 id="token">Token ★ <a id="token"></a><a class="headerlink" href="#token" title="Permanent link">&para;</a></h3>
 <p>The unit the model actually reads and writes. Usually a word piece; roughly ¾ of an English word on average.</p>
 <p><strong>Why it matters:</strong> Everything is counted in tokens: context limits, speed, and your API bill.</p>
-<h3 id="tokenizer">Tokenizer<a class="headerlink" href="#tokenizer" title="Permanent link">&para;</a></h3>
+<h3 id="tokenizer">Tokenizer <a id="tokenizer"></a><a class="headerlink" href="#tokenizer" title="Permanent link">&para;</a></h3>
 <p>Converts text to token IDs and back. Built before pre-training and frozen with the model.</p>
 <p><strong>Why it matters:</strong> Explains odd behaviour like miscounting letters in a word: the model never sees letters, only token IDs.</p>
-<h3 id="token-ids-detokenization">Token IDs / detokenization<a class="headerlink" href="#token-ids-detokenization" title="Permanent link">&para;</a></h3>
+<h3 id="token-ids-detokenization">Token IDs / detokenization <a id="token-ids-detokenization"></a><a class="headerlink" href="#token-ids-detokenization" title="Permanent link">&para;</a></h3>
 <p>Each token has an integer ID in the vocabulary. The model consumes and produces IDs; detokenization turns IDs back into text.</p>
 <p><strong>Why it matters:</strong> The model is a function from integers to integers; text is only at the edges.</p>
-<h3 id="byte-pair-encoding">Byte-Pair Encoding (BPE)<a class="headerlink" href="#byte-pair-encoding" title="Permanent link">&para;</a></h3>
+<h3 id="byte-pair-encoding-bpe">Byte-Pair Encoding (BPE) <a id="byte-pair-encoding"></a><a class="headerlink" href="#byte-pair-encoding-bpe" title="Permanent link">&para;</a></h3>
 <p>The most common tokenizer algorithm: start from bytes or characters and repeatedly merge the most frequent adjacent pair. Used by GPT and Llama models.</p>
 <p><strong>Why it matters:</strong> Lets the model handle any string (even emoji and typos) with a fixed vocabulary, while keeping common words as single tokens.</p>
 <p><small><em>Index aliases:</em> BPE</small></p>
-<h3 id="wordpiece-sentencepiece-tiktoken">WordPiece, SentencePiece, tiktoken<a class="headerlink" href="#wordpiece-sentencepiece-tiktoken" title="Permanent link">&para;</a></h3>
+<h3 id="wordpiece-sentencepiece-tiktoken">WordPiece, SentencePiece, tiktoken <a id="wordpiece-sentencepiece-tiktoken"></a><a class="headerlink" href="#wordpiece-sentencepiece-tiktoken" title="Permanent link">&para;</a></h3>
 <p>Other tokenizer algorithms and libraries: BERT uses WordPiece, many open models use SentencePiece, OpenAI models use tiktoken.</p>
 <p><strong>Why it matters:</strong> Different names in different tutorials, same job: text ↔ tokens.</p>
 <p><small><em>Index aliases:</em> tiktoken, SentencePiece, WordPiece</small></p>
-<h3 id="vocabulary-vocab-size">Vocabulary / vocab size<a class="headerlink" href="#vocabulary-vocab-size" title="Permanent link">&para;</a></h3>
+<h3 id="vocabulary-vocab-size">Vocabulary / vocab size <a id="vocabulary-vocab-size"></a><a class="headerlink" href="#vocabulary-vocab-size" title="Permanent link">&para;</a></h3>
 <p>The set of all tokens the model knows, typically 32k to 200k entries.</p>
 <p><strong>Why it matters:</strong> A bigger vocabulary means fewer tokens per sentence (cheaper, faster) but a bigger output layer.</p>
-<h3 id="multilingual-token-cost">Multilingual token cost<a class="headerlink" href="#multilingual-token-cost" title="Permanent link">&para;</a></h3>
+<h3 id="multilingual-token-cost">Multilingual token cost <a id="multilingual-token-cost"></a><a class="headerlink" href="#multilingual-token-cost" title="Permanent link">&para;</a></h3>
 <p>Tokenizers are trained mostly on English, so other languages split into more tokens per word. Polish text typically costs about 2× the tokens of the same text in English (1.5–2.5× depending on the tokenizer; newer 200k+ vocabularies do better, older 32k ones worse).</p>
 <p><strong>Why it matters:</strong> The same prompt in Polish uses more of the context window and costs more than in English.</p>
-<h3 id="special-tokens">Special tokens<a class="headerlink" href="#special-tokens" title="Permanent link">&para;</a></h3>
+<h3 id="special-tokens">Special tokens <a id="special-tokens"></a><a class="headerlink" href="#special-tokens" title="Permanent link">&para;</a></h3>
 <p><em>Also known as:</em> BOS, EOS, PAD</p>
 <p>Control tokens marking beginning / end of sequence, padding, or chat roles (user, assistant, tool).</p>
 <p><strong>Why it matters:</strong> How the model knows where a message starts and ends, and when to stop generating.</p>
 <p><small><em>Index aliases:</em> BOS / EOS / PAD</small></p>
-<h3 id="context-window-context-length">Context window / context length ★<a class="headerlink" href="#context-window-context-length" title="Permanent link">&para;</a></h3>
+<h3 id="context-window-context-length">Context window / context length ★ <a id="context-window-context-length"></a><a class="headerlink" href="#context-window-context-length" title="Permanent link">&para;</a></h3>
 <p>The maximum number of tokens the model can take in at once (prompt plus answer): 8k, 128k, 1M.</p>
 <p><strong>Why it matters:</strong> The model's working memory. Anything outside it does not exist for the model; everything inside costs compute and money.</p>
-<h3 id="sequence-sequence-length">Sequence / sequence length<a class="headerlink" href="#sequence-sequence-length" title="Permanent link">&para;</a></h3>
+<h3 id="sequence-sequence-length">Sequence / sequence length <a id="sequence-sequence-length"></a><a class="headerlink" href="#sequence-sequence-length" title="Permanent link">&para;</a></h3>
 <p>An ordered list of tokens. Models are trained on fixed-length chunks of the corpus.</p>
 <p><strong>Why it matters:</strong> "Sequence length" in a training script is how much text the model sees per example.</p>
-<h3 id="inputtarget-pairs-sliding-window">Input–target pairs / sliding window<a class="headerlink" href="#inputtarget-pairs-sliding-window" title="Permanent link">&para;</a></h3>
+<h3 id="inputtarget-pairs-sliding-window">Input–target pairs / sliding window <a id="inputtarget-pairs-sliding-window"></a><a class="headerlink" href="#inputtarget-pairs-sliding-window" title="Permanent link">&para;</a></h3>
 <p>Training data is cut into chunks; the target is the same chunk shifted by one token, so every position has a "next token" to predict. (Raschka chapter 2.)</p>
 <p><strong>Why it matters:</strong> How free labels are created from raw text: the text itself is the answer key.</p>
-<h3 id="data-cleaning-deduplication-filtering">Data cleaning, deduplication, filtering<a class="headerlink" href="#data-cleaning-deduplication-filtering" title="Permanent link">&para;</a></h3>
+<h3 id="data-cleaning-deduplication-filtering">Data cleaning, deduplication, filtering <a id="data-cleaning-deduplication-filtering"></a><a class="headerlink" href="#data-cleaning-deduplication-filtering" title="Permanent link">&para;</a></h3>
 <p>Removing junk, duplicates and low-quality text before training.</p>
 <p><strong>Why it matters:</strong> One of the biggest levers on model quality: cleaner data makes a smarter model at the same size.</p>
 <p><small><em>Index aliases:</em> Dedup</small></p>
-<h3 id="data-mixture">Data mixture<a class="headerlink" href="#data-mixture" title="Permanent link">&para;</a></h3>
+<h3 id="data-mixture">Data mixture <a id="data-mixture"></a><a class="headerlink" href="#data-mixture" title="Permanent link">&para;</a></h3>
 <p>The proportions of web, code, books, maths, multilingual text in the training set.</p>
 <p><strong>Why it matters:</strong> Decides what the model is good at: more code in the mix makes a better coder.</p>
-<h3 id="synthetic-data">Synthetic data<a class="headerlink" href="#synthetic-data" title="Permanent link">&para;</a></h3>
+<h3 id="synthetic-data">Synthetic data <a id="synthetic-data"></a><a class="headerlink" href="#synthetic-data" title="Permanent link">&para;</a></h3>
 <p>Training text generated by another model.</p>
 <p><strong>Why it matters:</strong> Fills gaps where real data is scarce (maths steps, rare languages) and is now a major ingredient of both pre- and post-training.</p>
-<h3 id="data-annotation-human-raters">Data annotation / human raters<a class="headerlink" href="#data-annotation-human-raters" title="Permanent link">&para;</a></h3>
+<h3 id="data-annotation-human-raters">Data annotation / human raters <a id="data-annotation-human-raters"></a><a class="headerlink" href="#data-annotation-human-raters" title="Permanent link">&para;</a></h3>
 <p>People who write ideal answers, rank outputs or label data for SFT and reward models (companies like Scale AI and Surge AI).</p>
 <p><strong>Why it matters:</strong> The human work behind "human feedback"; its quality shapes how the model behaves.</p>
 <p><small><em>Index aliases:</em> Human raters, Scale AI</small></p>
-<h3 id="common-crawl-the-pile-fineweb">Common Crawl, The Pile, FineWeb<a class="headerlink" href="#common-crawl-the-pile-fineweb" title="Permanent link">&para;</a></h3>
+<h3 id="common-crawl-the-pile-fineweb">Common Crawl, The Pile, FineWeb <a id="common-crawl-the-pile-fineweb"></a><a class="headerlink" href="#common-crawl-the-pile-fineweb" title="Permanent link">&para;</a></h3>
 <p>Well-known public web-scale datasets used as pre-training corpora.</p>
 <p><strong>Why it matters:</strong> When a video says a model was trained on "the internet", these are the concrete datasets it means.</p>
 <p><small><em>Index aliases:</em> Common Crawl, FineWeb, The Pile</small></p>
-<h3 id="chat-template">Chat template<a class="headerlink" href="#chat-template" title="Permanent link">&para;</a></h3>
+<h3 id="chat-template">Chat template <a id="chat-template"></a><a class="headerlink" href="#chat-template" title="Permanent link">&para;</a></h3>
 <p>The exact text format (role markers, special tokens) used to serialise a conversation into tokens. Each model family has its own.</p>
 <p><strong>Why it matters:</strong> A conversation is just one long token sequence with markers; getting the template wrong is a common cause of bad outputs with open models.</p>
 

@@ -1087,7 +1087,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#parameter-efficient-fine-tuning" class="md-nav__link">
+  <a href="#parameter-efficient-fine-tuning-peft" class="md-nav__link">
     <span class="md-ellipsis">
       
         Parameter-Efficient Fine-Tuning (PEFT)
@@ -1098,7 +1098,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#low-rank-adaptation" class="md-nav__link">
+  <a href="#low-rank-adaptation-lora" class="md-nav__link">
     <span class="md-ellipsis">
       
         Low-Rank Adaptation (LoRA) ★
@@ -1751,7 +1751,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#parameter-efficient-fine-tuning" class="md-nav__link">
+  <a href="#parameter-efficient-fine-tuning-peft" class="md-nav__link">
     <span class="md-ellipsis">
       
         Parameter-Efficient Fine-Tuning (PEFT)
@@ -1762,7 +1762,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#low-rank-adaptation" class="md-nav__link">
+  <a href="#low-rank-adaptation-lora" class="md-nav__link">
     <span class="md-ellipsis">
       
         Low-Rank Adaptation (LoRA) ★
@@ -1947,66 +1947,66 @@
 <p class="admonition-title">How to read this section</p>
 <p>Each entry is a short definition followed by a <strong>Why it matters</strong> line that says, in plain words, what the idea buys you. Terms marked ★ belong to the <a href="../../#learn-these-30-first">30 to learn first</a>. The <strong>Also known as</strong> line lists the acronyms and other names you may hear in videos; all of them appear in the <a href="../../index-a-z/">A–Z index</a>.</p>
 </div>
-<h3 id="fine-tuning-your-version">Fine-tuning (your version) ★<a class="headerlink" href="#fine-tuning-your-version" title="Permanent link">&para;</a></h3>
+<h3 id="fine-tuning-your-version">Fine-tuning (your version) ★ <a id="fine-tuning-your-version"></a><a class="headerlink" href="#fine-tuning-your-version" title="Permanent link">&para;</a></h3>
 <p>Taking an open-weight model (or an API fine-tuning endpoint) and training it further on your own examples to change its style, format or domain behaviour.</p>
 <p><strong>Why it matters:</strong> Makes a general model behave your way: consistent format, your tone, your domain's conventions, often with a smaller and cheaper model.</p>
-<h3 id="full-fine-tuning">Full fine-tuning<a class="headerlink" href="#full-fine-tuning" title="Permanent link">&para;</a></h3>
+<h3 id="full-fine-tuning">Full fine-tuning <a id="full-fine-tuning"></a><a class="headerlink" href="#full-fine-tuning" title="Permanent link">&para;</a></h3>
 <p>Update all the weights.</p>
 <p><strong>Why it matters:</strong> Highest quality ceiling but needs the most GPU memory and risks forgetting general skills.</p>
-<h3 id="parameter-efficient-fine-tuning">Parameter-Efficient Fine-Tuning (PEFT)<a class="headerlink" href="#parameter-efficient-fine-tuning" title="Permanent link">&para;</a></h3>
+<h3 id="parameter-efficient-fine-tuning-peft">Parameter-Efficient Fine-Tuning (PEFT) <a id="parameter-efficient-fine-tuning"></a><a class="headerlink" href="#parameter-efficient-fine-tuning-peft" title="Permanent link">&para;</a></h3>
 <p>A family of methods that freeze the model and train only a small set of extra parameters.</p>
 <p><strong>Why it matters:</strong> Fine-tune a big model on a single GPU and store the result as a tiny file.</p>
 <p><small><em>Index aliases:</em> PEFT</small></p>
-<h3 id="low-rank-adaptation">Low-Rank Adaptation (LoRA) ★<a class="headerlink" href="#low-rank-adaptation" title="Permanent link">&para;</a></h3>
+<h3 id="low-rank-adaptation-lora">Low-Rank Adaptation (LoRA) ★ <a id="low-rank-adaptation"></a><a class="headerlink" href="#low-rank-adaptation-lora" title="Permanent link">&para;</a></h3>
 <p>The most popular PEFT method: learn small low-rank matrices that are added to the attention and feed-forward weights.</p>
 <p><strong>Why it matters:</strong> Trains ~1% of the parameters for most of the benefit; the adapter is a small file (tens to a couple of hundred MB) you can swap in and out.</p>
 <p><small><em>Index aliases:</em> LoRA</small></p>
-<h3 id="qlora">QLoRA<a class="headerlink" href="#qlora" title="Permanent link">&para;</a></h3>
+<h3 id="qlora">QLoRA <a id="qlora"></a><a class="headerlink" href="#qlora" title="Permanent link">&para;</a></h3>
 <p>LoRA on top of a 4-bit quantized base model.</p>
 <p><strong>Why it matters:</strong> Lets you fine-tune a 65–70B model on a single 48 GB GPU, or a 7–13B model on a consumer card.</p>
 <p><small><em>Index aliases:</em> QLoRA (4-bit LoRA)</small></p>
-<h3 id="adapters-prompt-tuning-prefix-tuning">Adapters, prompt tuning, prefix tuning<a class="headerlink" href="#adapters-prompt-tuning-prefix-tuning" title="Permanent link">&para;</a></h3>
+<h3 id="adapters-prompt-tuning-prefix-tuning">Adapters, prompt tuning, prefix tuning <a id="adapters-prompt-tuning-prefix-tuning"></a><a class="headerlink" href="#adapters-prompt-tuning-prefix-tuning" title="Permanent link">&para;</a></h3>
 <p>Other PEFT flavours: small bottleneck layers inserted in the network, or learned soft-prompt vectors prepended to the input.</p>
 <p><strong>Why it matters:</strong> Same goal as LoRA (cheap adaptation), different mechanics; LoRA won on simplicity.</p>
 <p><small><em>Index aliases:</em> Prefix tuning / prompt tuning</small></p>
-<h3 id="rank-r-and-alpha">Rank (r) and alpha<a class="headerlink" href="#rank-r-and-alpha" title="Permanent link">&para;</a></h3>
+<h3 id="rank-r-and-alpha">Rank (r) and alpha <a id="rank-r-and-alpha"></a><a class="headerlink" href="#rank-r-and-alpha" title="Permanent link">&para;</a></h3>
 <p>LoRA hyperparameters controlling adapter size and how strongly it is scaled.</p>
 <p><strong>Why it matters:</strong> Higher rank = more capacity and memory; typical values are 8–64.</p>
 <p><small><em>Index aliases:</em> Rank / alpha (LoRA)</small></p>
-<h3 id="merging-an-adapter">Merging an adapter<a class="headerlink" href="#merging-an-adapter" title="Permanent link">&para;</a></h3>
+<h3 id="merging-an-adapter">Merging an adapter <a id="merging-an-adapter"></a><a class="headerlink" href="#merging-an-adapter" title="Permanent link">&para;</a></h3>
 <p>Adding the trained LoRA matrices into the base weights to produce a single standalone model.</p>
 <p><strong>Why it matters:</strong> Removes the small inference overhead of a separate adapter and gives you one file to deploy.</p>
 <p><small><em>Index aliases:</em> Adapter (LoRA)</small></p>
-<h3 id="task-classification-head">Task / classification head<a class="headerlink" href="#task-classification-head" title="Permanent link">&para;</a></h3>
+<h3 id="task-classification-head">Task / classification head <a id="task-classification-head"></a><a class="headerlink" href="#task-classification-head" title="Permanent link">&para;</a></h3>
 <p>A small new output layer placed on top of the model for a specific task (e.g. spam / not spam), replacing the LM head. (Raschka chapter 6.)</p>
 <p><strong>Why it matters:</strong> The simplest fine-tune: reuse everything the model knows, train only the last layer for your labels.</p>
 <p><small><em>Index aliases:</em> Classification head</small></p>
-<h3 id="catastrophic-forgetting">Catastrophic forgetting<a class="headerlink" href="#catastrophic-forgetting" title="Permanent link">&para;</a></h3>
+<h3 id="catastrophic-forgetting">Catastrophic forgetting <a id="catastrophic-forgetting"></a><a class="headerlink" href="#catastrophic-forgetting" title="Permanent link">&para;</a></h3>
 <p>Fine-tuning on a narrow dataset erodes the general abilities the model had before.</p>
 <p><strong>Why it matters:</strong> Why you keep the learning rate low, mix in general data, and prefer LoRA: to add a skill without losing the others.</p>
-<h3 id="domain-adaptation">Domain adaptation<a class="headerlink" href="#domain-adaptation" title="Permanent link">&para;</a></h3>
+<h3 id="domain-adaptation">Domain adaptation <a id="domain-adaptation"></a><a class="headerlink" href="#domain-adaptation" title="Permanent link">&para;</a></h3>
 <p>Specialising a general model to a field: legal, medical, your codebase, your product's tone.</p>
 <p><strong>Why it matters:</strong> Makes the model fluent in your world's vocabulary and conventions.</p>
-<h3 id="instruction-dataset">Instruction dataset<a class="headerlink" href="#instruction-dataset" title="Permanent link">&para;</a></h3>
+<h3 id="instruction-dataset">Instruction dataset <a id="instruction-dataset"></a><a class="headerlink" href="#instruction-dataset" title="Permanent link">&para;</a></h3>
 <p>The prompt → completion pairs you fine-tune on. Quality matters more than quantity; hundreds to a few thousand good examples often suffice.</p>
 <p><strong>Why it matters:</strong> Your main lever: the model will copy whatever these examples do, including their mistakes.</p>
-<h3 id="dataset-formats">Dataset formats<a class="headerlink" href="#dataset-formats" title="Permanent link">&para;</a></h3>
+<h3 id="dataset-formats">Dataset formats <a id="dataset-formats"></a><a class="headerlink" href="#dataset-formats" title="Permanent link">&para;</a></h3>
 <p><em>Also known as:</em> Alpaca, ShareGPT, messages / JSONL</p>
 <p>Standard JSON layouts for instruction data: Alpaca (instruction / input / output), ShareGPT (conversations), or OpenAI-style messages lists.</p>
 <p><strong>Why it matters:</strong> The format most fine-tuning tools expect; converting your data into one of these is step one.</p>
 <p><small><em>Index aliases:</em> Alpaca / ShareGPT format</small></p>
-<h3 id="open-weights-vs-open-source">Open weights vs open source<a class="headerlink" href="#open-weights-vs-open-source" title="Permanent link">&para;</a></h3>
+<h3 id="open-weights-vs-open-source">Open weights vs open source <a id="open-weights-vs-open-source"></a><a class="headerlink" href="#open-weights-vs-open-source" title="Permanent link">&para;</a></h3>
 <p>Open weights means you can download and fine-tune the parameters (Llama, Mistral, Qwen, Gemma). True open source also releases the data and training code (OLMo).</p>
 <p><strong>Why it matters:</strong> Open weights are what let you fine-tune and self-host; "open source" is usually a looser claim.</p>
 <p><small><em>Index aliases:</em> Qwen, Open weights, Open source (models)</small></p>
-<h3 id="api-fine-tuning">API fine-tuning<a class="headerlink" href="#api-fine-tuning" title="Permanent link">&para;</a></h3>
+<h3 id="api-fine-tuning">API fine-tuning <a id="api-fine-tuning"></a><a class="headerlink" href="#api-fine-tuning" title="Permanent link">&para;</a></h3>
 <p>Fine-tuning a closed model through the provider's API: you upload examples, they train and host the result.</p>
 <p><strong>Why it matters:</strong> Fine-tuning without GPUs or ops; the trade-off is lock-in and less control.</p>
-<h3 id="hugging-face-peft-trl-unsloth-axolotl">Hugging Face PEFT / TRL / Unsloth / Axolotl<a class="headerlink" href="#hugging-face-peft-trl-unsloth-axolotl" title="Permanent link">&para;</a></h3>
+<h3 id="hugging-face-peft-trl-unsloth-axolotl">Hugging Face PEFT / TRL / Unsloth / Axolotl <a id="hugging-face-peft-trl-unsloth-axolotl"></a><a class="headerlink" href="#hugging-face-peft-trl-unsloth-axolotl" title="Permanent link">&para;</a></h3>
 <p>The standard libraries and tools for running LoRA, SFT and DPO on open models.</p>
 <p><strong>Why it matters:</strong> The tools most fine-tuning tutorials use; Unsloth is the fast, memory-light one for single GPUs.</p>
 <p><small><em>Index aliases:</em> Unsloth / Axolotl, TRL</small></p>
-<h3 id="evaluation-set">Evaluation set<a class="headerlink" href="#evaluation-set" title="Permanent link">&para;</a></h3>
+<h3 id="evaluation-set">Evaluation set <a id="evaluation-set"></a><a class="headerlink" href="#evaluation-set" title="Permanent link">&para;</a></h3>
 <p>A held-out slice of your own examples used to check the fine-tune actually improved things.</p>
 <p><strong>Why it matters:</strong> The only way to know your fine-tune helped and did not just overfit your examples.</p>
 

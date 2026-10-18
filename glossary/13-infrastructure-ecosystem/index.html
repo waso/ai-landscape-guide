@@ -1221,7 +1221,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#vram-hbm" class="md-nav__link">
+  <a href="#vram-hbm-gpu-memory" class="md-nav__link">
     <span class="md-ellipsis">
       
         VRAM / HBM (GPU memory)
@@ -1795,7 +1795,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#vram-hbm" class="md-nav__link">
+  <a href="#vram-hbm-gpu-memory" class="md-nav__link">
     <span class="md-ellipsis">
       
         VRAM / HBM (GPU memory)
@@ -1991,84 +1991,84 @@
 <p class="admonition-title">How to read this section</p>
 <p>Each entry is a short definition followed by a <strong>Why it matters</strong> line that says, in plain words, what the idea buys you. Terms marked ★ belong to the <a href="../../#learn-these-30-first">30 to learn first</a>. The <strong>Also known as</strong> line lists the acronyms and other names you may hear in videos; all of them appear in the <a href="../../index-a-z/">A–Z index</a>.</p>
 </div>
-<h3 id="gpu">GPU<a class="headerlink" href="#gpu" title="Permanent link">&para;</a></h3>
+<h3 id="gpu">GPU <a id="gpu"></a><a class="headerlink" href="#gpu" title="Permanent link">&para;</a></h3>
 <p><em>Also known as:</em> NVIDIA H100 / B200, AMD MI300</p>
 <p>The massively parallel processor that does nearly all training and inference.</p>
 <p><strong>Why it matters:</strong> Neural networks are mostly matrix multiplication, and GPUs do thousands of those in parallel; the reason AI progress tracks GPU supply.</p>
 <p><small><em>Index aliases:</em> H100 / B200, NVIDIA</small></p>
-<h3 id="tpu">TPU<a class="headerlink" href="#tpu" title="Permanent link">&para;</a></h3>
+<h3 id="tpu">TPU <a id="tpu"></a><a class="headerlink" href="#tpu" title="Permanent link">&para;</a></h3>
 <p>Google's custom accelerator, used for Gemini and available on Google Cloud.</p>
 <p><strong>Why it matters:</strong> The main non-NVIDIA option at frontier scale.</p>
 <p><small><em>Index aliases:</em> TPU (Google)</small></p>
-<h3 id="custom-inference-chips">Custom inference chips<a class="headerlink" href="#custom-inference-chips" title="Permanent link">&para;</a></h3>
+<h3 id="custom-inference-chips">Custom inference chips <a id="custom-inference-chips"></a><a class="headerlink" href="#custom-inference-chips" title="Permanent link">&para;</a></h3>
 <p><em>Also known as:</em> Groq LPU, Cerebras, Trainium, Inferentia</p>
 <p>Accelerators designed specifically for running (or training) models, often with very high token speed.</p>
 <p><strong>Why it matters:</strong> Why some providers serve 500+ tokens per second. (NVIDIA licensed Groq's technology in late 2025.)</p>
 <p><small><em>Index aliases:</em> Groq / Cerebras</small></p>
-<h3 id="cuda">CUDA<a class="headerlink" href="#cuda" title="Permanent link">&para;</a></h3>
+<h3 id="cuda">CUDA <a id="cuda"></a><a class="headerlink" href="#cuda" title="Permanent link">&para;</a></h3>
 <p>NVIDIA's GPU programming platform.</p>
 <p><strong>Why it matters:</strong> The software moat: most frameworks and kernels target CUDA first, which keeps the ecosystem NVIDIA-first.</p>
-<h3 id="vram-hbm">VRAM / HBM (GPU memory)<a class="headerlink" href="#vram-hbm" title="Permanent link">&para;</a></h3>
+<h3 id="vram-hbm-gpu-memory">VRAM / HBM (GPU memory) <a id="vram-hbm"></a><a class="headerlink" href="#vram-hbm-gpu-memory" title="Permanent link">&para;</a></h3>
 <p>The GPU's memory. 80 GB on an H100, 24 GB on a consumer RTX 4090.</p>
 <p><strong>Why it matters:</strong> The hard limit on which models fit; most "can I run this?" questions are about VRAM.</p>
 <p><small><em>Index aliases:</em> VRAM, HBM</small></p>
-<h3 id="out-of-memory">Out of memory<a class="headerlink" href="#out-of-memory" title="Permanent link">&para;</a></h3>
+<h3 id="out-of-memory">Out of memory <a id="out-of-memory"></a><a class="headerlink" href="#out-of-memory" title="Permanent link">&para;</a></h3>
 <p><em>Also known as:</em> OOM, CUDA OOM</p>
 <p>The error when a model, batch or KV cache does not fit in GPU memory.</p>
 <p><strong>Why it matters:</strong> The most common error in any training or serving tutorial; fixes are smaller batch, quantization, gradient accumulation or a bigger GPU.</p>
 <p><small><em>Index aliases:</em> OOM (out of memory)</small></p>
-<h3 id="nvlink-infiniband-cluster">NVLink, InfiniBand, cluster<a class="headerlink" href="#nvlink-infiniband-cluster" title="Permanent link">&para;</a></h3>
+<h3 id="nvlink-infiniband-cluster">NVLink, InfiniBand, cluster <a id="nvlink-infiniband-cluster"></a><a class="headerlink" href="#nvlink-infiniband-cluster" title="Permanent link">&para;</a></h3>
 <p>High-speed interconnects joining thousands of GPUs into one training machine.</p>
 <p><strong>Why it matters:</strong> Training a frontier model is as much a networking problem as a maths problem.</p>
 <p><small><em>Index aliases:</em> InfiniBand / NVLink</small></p>
-<h3 id="pytorch">PyTorch<a class="headerlink" href="#pytorch" title="Permanent link">&para;</a></h3>
+<h3 id="pytorch">PyTorch <a id="pytorch"></a><a class="headerlink" href="#pytorch" title="Permanent link">&para;</a></h3>
 <p>The dominant deep-learning framework, and what Raschka's book uses. JAX (Google) and TensorFlow are the alternatives.</p>
 <p><strong>Why it matters:</strong> Nearly every tutorial, paper and model release is in PyTorch; learn it first.</p>
 <p><small><em>Index aliases:</em> JAX / TensorFlow</small></p>
-<h3 id="hugging-face">Hugging Face<a class="headerlink" href="#hugging-face" title="Permanent link">&para;</a></h3>
+<h3 id="hugging-face">Hugging Face <a id="hugging-face"></a><a class="headerlink" href="#hugging-face" title="Permanent link">&para;</a></h3>
 <p><em>Also known as:</em> Transformers library, Hub</p>
 <p>The de-facto library and repository for open models, datasets and tokenizers.</p>
 <p><strong>Why it matters:</strong> The GitHub of models: where you download weights and the library that loads them in three lines.</p>
 <p><small><em>Index aliases:</em> Hugging Face Hub</small></p>
-<h3 id="safetensors-weights-file">Safetensors / weights file<a class="headerlink" href="#safetensors-weights-file" title="Permanent link">&para;</a></h3>
+<h3 id="safetensors-weights-file">Safetensors / weights file <a id="safetensors-weights-file"></a><a class="headerlink" href="#safetensors-weights-file" title="Permanent link">&para;</a></h3>
 <p>The standard file format for storing model parameters safely (no arbitrary code on load).</p>
 <p><strong>Why it matters:</strong> The file you actually download; safe to open unlike the older pickle format.</p>
 <p><small><em>Index aliases:</em> Safetensors</small></p>
-<h3 id="parameter-count">Parameter count<a class="headerlink" href="#parameter-count" title="Permanent link">&para;</a></h3>
+<h3 id="parameter-count">Parameter count <a id="parameter-count"></a><a class="headerlink" href="#parameter-count" title="Permanent link">&para;</a></h3>
 <p><em>Also known as:</em> 7B, 70B, 405B</p>
 <p>Model size in billions of weights.</p>
 <p><strong>Why it matters:</strong> A quick proxy for capability, memory and cost; the first number anyone quotes about a model.</p>
-<h3 id="model-api">Model API<a class="headerlink" href="#model-api" title="Permanent link">&para;</a></h3>
+<h3 id="model-api">Model API <a id="model-api"></a><a class="headerlink" href="#model-api" title="Permanent link">&para;</a></h3>
 <p><em>Also known as:</em> Anthropic, OpenAI, Google, Bedrock, Vertex</p>
 <p>Hosted access to a model: you send tokens, you get tokens, you pay per token.</p>
 <p><strong>Why it matters:</strong> The way most products use frontier models: no GPUs, no ops, pay per use.</p>
-<h3 id="inference-providers">Inference providers<a class="headerlink" href="#inference-providers" title="Permanent link">&para;</a></h3>
+<h3 id="inference-providers">Inference providers <a id="inference-providers"></a><a class="headerlink" href="#inference-providers" title="Permanent link">&para;</a></h3>
 <p><em>Also known as:</em> Together, Fireworks, Groq; OpenRouter</p>
 <p>Companies that host open-weight models behind an API, often cheaper or faster than running them yourself. OpenRouter is an aggregator: one API that routes to many providers, closed and open.</p>
 <p><strong>Why it matters:</strong> The middle path between a frontier API and self-hosting.</p>
 <p><small><em>Index aliases:</em> Together / Fireworks / OpenRouter</small></p>
-<h3 id="gpu-kernel-triton">GPU kernel / Triton<a class="headerlink" href="#gpu-kernel-triton" title="Permanent link">&para;</a></h3>
+<h3 id="gpu-kernel-triton">GPU kernel / Triton <a id="gpu-kernel-triton"></a><a class="headerlink" href="#gpu-kernel-triton" title="Permanent link">&para;</a></h3>
 <p>A low-level program that runs on the GPU. FlashAttention is a kernel; Triton lets you write them in Python.</p>
 <p><strong>Why it matters:</strong> Where the big speed-ups come from; most engineers never write one, but the names come up.</p>
 <p><small><em>Index aliases:</em> Triton</small></p>
-<h3 id="serving-on-kubernetes">Serving on Kubernetes<a class="headerlink" href="#serving-on-kubernetes" title="Permanent link">&para;</a></h3>
+<h3 id="serving-on-kubernetes">Serving on Kubernetes <a id="serving-on-kubernetes"></a><a class="headerlink" href="#serving-on-kubernetes" title="Permanent link">&para;</a></h3>
 <p><em>Also known as:</em> GPU node pools, KServe, vLLM on GKE</p>
 <p>Running inference engines as containers on GPU nodes, with autoscaling and the usual K8s plumbing.</p>
 <p><strong>Why it matters:</strong> How a self-hosted model becomes a production service; the same platform skills you already have apply.</p>
 <p><small><em>Index aliases:</em> KServe / GKE GPU nodes</small></p>
-<h3 id="local-inference-stack">Local inference stack<a class="headerlink" href="#local-inference-stack" title="Permanent link">&para;</a></h3>
+<h3 id="local-inference-stack">Local inference stack <a id="local-inference-stack"></a><a class="headerlink" href="#local-inference-stack" title="Permanent link">&para;</a></h3>
 <p><em>Also known as:</em> llama.cpp, Ollama, LM Studio</p>
 <p>Tools for running open-weight models on your own laptop or server.</p>
 <p><strong>Why it matters:</strong> The fastest way to try an open model: one command, no cloud, full privacy.</p>
-<h3 id="apple-silicon-mlx">Apple Silicon / MLX<a class="headerlink" href="#apple-silicon-mlx" title="Permanent link">&para;</a></h3>
+<h3 id="apple-silicon-mlx">Apple Silicon / MLX <a id="apple-silicon-mlx"></a><a class="headerlink" href="#apple-silicon-mlx" title="Permanent link">&para;</a></h3>
 <p>Macs share memory between CPU and GPU, so a Mac with 64–512 GB of unified memory can run models that need several consumer GPUs; MLX is Apple's framework for it.</p>
 <p><strong>Why it matters:</strong> Why Mac laptops are popular for local LLMs despite having no NVIDIA GPU.</p>
 <p><small><em>Index aliases:</em> MLX</small></p>
-<h3 id="experiment-tracking">Experiment tracking<a class="headerlink" href="#experiment-tracking" title="Permanent link">&para;</a></h3>
+<h3 id="experiment-tracking">Experiment tracking <a id="experiment-tracking"></a><a class="headerlink" href="#experiment-tracking" title="Permanent link">&para;</a></h3>
 <p><em>Also known as:</em> Weights &amp; Biases, MLflow</p>
 <p>Tools that log every training run's settings, loss curves and results.</p>
 <p><strong>Why it matters:</strong> How teams compare hundreds of runs without losing track of what worked.</p>
-<h3 id="notebooks">Notebooks<a class="headerlink" href="#notebooks" title="Permanent link">&para;</a></h3>
+<h3 id="notebooks">Notebooks <a id="notebooks"></a><a class="headerlink" href="#notebooks" title="Permanent link">&para;</a></h3>
 <p><em>Also known as:</em> Jupyter, Colab, Kaggle</p>
 <p>Interactive Python environments; Colab and Kaggle give free GPU time.</p>
 <p><strong>Why it matters:</strong> Where most tutorials (and Raschka's code) run; the cheapest way to get a GPU for an hour.</p>

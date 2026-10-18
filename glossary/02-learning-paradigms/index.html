@@ -891,7 +891,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#self-supervised-learning" class="md-nav__link">
+  <a href="#self-supervised-learning-ssl" class="md-nav__link">
     <span class="md-ellipsis">
       
         Self-supervised learning (SSL) ★
@@ -913,7 +913,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#reinforcement-learning" class="md-nav__link">
+  <a href="#reinforcement-learning-rl" class="md-nav__link">
     <span class="md-ellipsis">
       
         Reinforcement Learning (RL) ★
@@ -924,7 +924,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#agent-environment-policy-reward" class="md-nav__link">
+  <a href="#agent-environment-policy-reward-rl-vocabulary" class="md-nav__link">
     <span class="md-ellipsis">
       
         Agent, environment, policy, reward (RL vocabulary)
@@ -946,7 +946,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#q-learning-dqn" class="md-nav__link">
+  <a href="#q-learning-dqn-deep-q-network" class="md-nav__link">
     <span class="md-ellipsis">
       
         Q-learning / DQN (Deep Q-Network)
@@ -957,7 +957,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#monte-carlo-tree-search-alphago" class="md-nav__link">
+  <a href="#monte-carlo-tree-search-alphago-mcts" class="md-nav__link">
     <span class="md-ellipsis">
       
         Monte Carlo Tree Search / AlphaGo (MCTS)
@@ -1762,7 +1762,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#self-supervised-learning" class="md-nav__link">
+  <a href="#self-supervised-learning-ssl" class="md-nav__link">
     <span class="md-ellipsis">
       
         Self-supervised learning (SSL) ★
@@ -1784,7 +1784,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#reinforcement-learning" class="md-nav__link">
+  <a href="#reinforcement-learning-rl" class="md-nav__link">
     <span class="md-ellipsis">
       
         Reinforcement Learning (RL) ★
@@ -1795,7 +1795,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#agent-environment-policy-reward" class="md-nav__link">
+  <a href="#agent-environment-policy-reward-rl-vocabulary" class="md-nav__link">
     <span class="md-ellipsis">
       
         Agent, environment, policy, reward (RL vocabulary)
@@ -1817,7 +1817,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#q-learning-dqn" class="md-nav__link">
+  <a href="#q-learning-dqn-deep-q-network" class="md-nav__link">
     <span class="md-ellipsis">
       
         Q-learning / DQN (Deep Q-Network)
@@ -1828,7 +1828,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#monte-carlo-tree-search-alphago" class="md-nav__link">
+  <a href="#monte-carlo-tree-search-alphago-mcts" class="md-nav__link">
     <span class="md-ellipsis">
       
         Monte Carlo Tree Search / AlphaGo (MCTS)
@@ -1969,66 +1969,66 @@
 <p class="admonition-title">How to read this section</p>
 <p>Each entry is a short definition followed by a <strong>Why it matters</strong> line that says, in plain words, what the idea buys you. Terms marked ★ belong to the <a href="../../#learn-these-30-first">30 to learn first</a>. The <strong>Also known as</strong> line lists the acronyms and other names you may hear in videos; all of them appear in the <a href="../../index-a-z/">A–Z index</a>.</p>
 </div>
-<h3 id="supervised-learning">Supervised learning ★<a class="headerlink" href="#supervised-learning" title="Permanent link">&para;</a></h3>
+<h3 id="supervised-learning">Supervised learning ★ <a id="supervised-learning"></a><a class="headerlink" href="#supervised-learning" title="Permanent link">&para;</a></h3>
 <p>Learning from examples that come with the correct answer (labels); the model learns input → label. Used in classic ML, in SFT and in reward-model training.</p>
 <p><strong>Why it matters:</strong> Most accurate way to learn when you can afford labelled examples. Its limit is the cost of labelling.</p>
-<h3 id="unsupervised-learning">Unsupervised learning<a class="headerlink" href="#unsupervised-learning" title="Permanent link">&para;</a></h3>
+<h3 id="unsupervised-learning">Unsupervised learning <a id="unsupervised-learning"></a><a class="headerlink" href="#unsupervised-learning" title="Permanent link">&para;</a></h3>
 <p>Finding structure in data with no labels: grouping, compressing, spotting anomalies.</p>
 <p><strong>Why it matters:</strong> Works on data nobody has labelled, which is most data. Finds groups and outliers you did not know to look for.</p>
-<h3 id="self-supervised-learning">Self-supervised learning (SSL) ★<a class="headerlink" href="#self-supervised-learning" title="Permanent link">&para;</a></h3>
+<h3 id="self-supervised-learning-ssl">Self-supervised learning (SSL) ★ <a id="self-supervised-learning"></a><a class="headerlink" href="#self-supervised-learning-ssl" title="Permanent link">&para;</a></h3>
 <p>Supervised-style training where the label is carved out of the data itself, e.g. hide the next word and predict it. This is how LLMs are pre-trained.</p>
 <p><strong>Why it matters:</strong> Turns the whole internet into free training labels. The single trick that made LLMs possible at scale.</p>
 <p><small><em>Index aliases:</em> SSL, SSL (self-supervised)</small></p>
-<h3 id="semi-supervised-learning">Semi-supervised learning<a class="headerlink" href="#semi-supervised-learning" title="Permanent link">&para;</a></h3>
+<h3 id="semi-supervised-learning">Semi-supervised learning <a id="semi-supervised-learning"></a><a class="headerlink" href="#semi-supervised-learning" title="Permanent link">&para;</a></h3>
 <p>Mixing a small labelled set with a lot of unlabelled data.</p>
 <p><strong>Why it matters:</strong> Gets most of the accuracy of supervised learning with a fraction of the labelling cost.</p>
-<h3 id="reinforcement-learning">Reinforcement Learning (RL) ★<a class="headerlink" href="#reinforcement-learning" title="Permanent link">&para;</a></h3>
+<h3 id="reinforcement-learning-rl">Reinforcement Learning (RL) ★ <a id="reinforcement-learning"></a><a class="headerlink" href="#reinforcement-learning-rl" title="Permanent link">&para;</a></h3>
 <p>An agent takes actions in an environment and learns from rewards instead of labelled answers. Used in games, robotics and LLM post-training (RLHF, GRPO).</p>
 <p><strong>Why it matters:</strong> Lets a model get better than its teachers: it can discover strategies no example showed it, as long as you can score the result.</p>
 <p><small><em>Index aliases:</em> RL, RL (reinforcement learning)</small></p>
-<h3 id="agent-environment-policy-reward">Agent, environment, policy, reward (RL vocabulary)<a class="headerlink" href="#agent-environment-policy-reward" title="Permanent link">&para;</a></h3>
+<h3 id="agent-environment-policy-reward-rl-vocabulary">Agent, environment, policy, reward (RL vocabulary) <a id="agent-environment-policy-reward"></a><a class="headerlink" href="#agent-environment-policy-reward-rl-vocabulary" title="Permanent link">&para;</a></h3>
 <p>The agent is the learner, the environment is what it acts on, the policy is its decision rule (for LLMs: the model itself), the reward is the feedback signal.</p>
 <p><strong>Why it matters:</strong> Decode any RL video: "policy" = the model being trained, "reward" = the score it is chasing.</p>
 <p><small><em>Index aliases:</em> RL vocabulary, Policy (RL), Reward (RL), Environment (RL)</small></p>
-<h3 id="exploration-vs-exploitation">Exploration vs exploitation<a class="headerlink" href="#exploration-vs-exploitation" title="Permanent link">&para;</a></h3>
+<h3 id="exploration-vs-exploitation">Exploration vs exploitation <a id="exploration-vs-exploitation"></a><a class="headerlink" href="#exploration-vs-exploitation" title="Permanent link">&para;</a></h3>
 <p>The RL dilemma: try new actions to discover better ones (explore) or repeat what already works (exploit).</p>
 <p><strong>Why it matters:</strong> Explains why RL training samples several answers per prompt instead of only the best one.</p>
-<h3 id="q-learning-dqn">Q-learning / DQN (Deep Q-Network)<a class="headerlink" href="#q-learning-dqn" title="Permanent link">&para;</a></h3>
+<h3 id="q-learning-dqn-deep-q-network">Q-learning / DQN (Deep Q-Network) <a id="q-learning-dqn"></a><a class="headerlink" href="#q-learning-dqn-deep-q-network" title="Permanent link">&para;</a></h3>
 <p>Classic value-based RL: learn a table (or network) estimating how good each action is in each state. DQN was the 2013 breakthrough that played Atari games from pixels.</p>
 <p><strong>Why it matters:</strong> The RL you see in game-playing demos. LLM post-training uses policy-based methods (PPO, GRPO) instead.</p>
 <p><small><em>Index aliases:</em> Deep Q-Network, DQN</small></p>
-<h3 id="monte-carlo-tree-search-alphago">Monte Carlo Tree Search / AlphaGo (MCTS)<a class="headerlink" href="#monte-carlo-tree-search-alphago" title="Permanent link">&para;</a></h3>
+<h3 id="monte-carlo-tree-search-alphago-mcts">Monte Carlo Tree Search / AlphaGo (MCTS) <a id="monte-carlo-tree-search-alphago"></a><a class="headerlink" href="#monte-carlo-tree-search-alphago-mcts" title="Permanent link">&para;</a></h3>
 <p>Search that looks ahead by simulating many possible futures and focusing on promising ones. Combined with neural networks (AlphaGo) it beat Go champion Lee Sedol in 2016.</p>
 <p><strong>Why it matters:</strong> An ancestor of "thinking longer" in reasoning models: spend more compute at decision time to get better decisions. (Today's reasoning models do it with long chains of thought, not tree search.)</p>
 <p><small><em>Index aliases:</em> MCTS, AlphaGo</small></p>
-<h3 id="imitation-learning-behaviour-cloning">Imitation learning / behaviour cloning<a class="headerlink" href="#imitation-learning-behaviour-cloning" title="Permanent link">&para;</a></h3>
+<h3 id="imitation-learning-behaviour-cloning">Imitation learning / behaviour cloning <a id="imitation-learning-behaviour-cloning"></a><a class="headerlink" href="#imitation-learning-behaviour-cloning" title="Permanent link">&para;</a></h3>
 <p>Learning a policy by copying demonstrations from an expert.</p>
 <p><strong>Why it matters:</strong> SFT is imitation learning: the model copies the ideal answers humans wrote. RL is what lets it go beyond them.</p>
 <p><small><em>Index aliases:</em> Behaviour cloning</small></p>
-<h3 id="transfer-learning">Transfer learning<a class="headerlink" href="#transfer-learning" title="Permanent link">&para;</a></h3>
+<h3 id="transfer-learning">Transfer learning <a id="transfer-learning"></a><a class="headerlink" href="#transfer-learning" title="Permanent link">&para;</a></h3>
 <p>Reusing what a model learned on one task or dataset as the starting point for another. Fine-tuning a pre-trained model is transfer learning.</p>
 <p><strong>Why it matters:</strong> Why you never start from zero: a model that already knows language learns your task from a few hundred examples.</p>
-<h3 id="contrastive-learning">Contrastive learning<a class="headerlink" href="#contrastive-learning" title="Permanent link">&para;</a></h3>
+<h3 id="contrastive-learning">Contrastive learning <a id="contrastive-learning"></a><a class="headerlink" href="#contrastive-learning" title="Permanent link">&para;</a></h3>
 <p><em>Also known as:</em> CLIP, SimCLR</p>
 <p>Training that pulls representations of matching pairs together and pushes non-matching pairs apart (an image and its caption; two views of the same photo).</p>
 <p><strong>Why it matters:</strong> How embedding models and CLIP learn that "a photo of a cat" and the cat picture belong together.</p>
-<h3 id="classification">Classification<a class="headerlink" href="#classification" title="Permanent link">&para;</a></h3>
+<h3 id="classification">Classification <a id="classification"></a><a class="headerlink" href="#classification" title="Permanent link">&para;</a></h3>
 <p>Predicting a category (spam / not spam, cat / dog).</p>
 <p><strong>Why it matters:</strong> The most common ML task in business. Next-token prediction is also a classification over the vocabulary.</p>
-<h3 id="regression">Regression<a class="headerlink" href="#regression" title="Permanent link">&para;</a></h3>
+<h3 id="regression">Regression <a id="regression"></a><a class="headerlink" href="#regression" title="Permanent link">&para;</a></h3>
 <p>Predicting a continuous number (price, temperature, time to failure).</p>
 <p><strong>Why it matters:</strong> The other basic task; when the answer is a number, it is regression.</p>
-<h3 id="clustering">Clustering<a class="headerlink" href="#clustering" title="Permanent link">&para;</a></h3>
+<h3 id="clustering">Clustering <a id="clustering"></a><a class="headerlink" href="#clustering" title="Permanent link">&para;</a></h3>
 <p>Grouping similar items together without labels (k-means).</p>
 <p><strong>Why it matters:</strong> Finds natural groups: customer segments, topics in documents, duplicate records.</p>
-<h3 id="dimensionality-reduction">Dimensionality reduction<a class="headerlink" href="#dimensionality-reduction" title="Permanent link">&para;</a></h3>
+<h3 id="dimensionality-reduction">Dimensionality reduction <a id="dimensionality-reduction"></a><a class="headerlink" href="#dimensionality-reduction" title="Permanent link">&para;</a></h3>
 <p>Compressing many features into fewer while keeping the important structure (PCA, t-SNE, UMAP).</p>
 <p><strong>Why it matters:</strong> How people draw 2-D pictures of embeddings: hundreds of dimensions squashed down so you can see clusters.</p>
 <p><small><em>Index aliases:</em> t-SNE / UMAP</small></p>
-<h3 id="anomaly-detection">Anomaly detection<a class="headerlink" href="#anomaly-detection" title="Permanent link">&para;</a></h3>
+<h3 id="anomaly-detection">Anomaly detection <a id="anomaly-detection"></a><a class="headerlink" href="#anomaly-detection" title="Permanent link">&para;</a></h3>
 <p>Flagging data points that do not look like the rest.</p>
 <p><strong>Why it matters:</strong> Fraud, intrusion and fault detection: learn what normal looks like, alert on the rest.</p>
-<h3 id="label-ground-truth">Label / ground truth<a class="headerlink" href="#label-ground-truth" title="Permanent link">&para;</a></h3>
+<h3 id="label-ground-truth">Label / ground truth <a id="label-ground-truth"></a><a class="headerlink" href="#label-ground-truth" title="Permanent link">&para;</a></h3>
 <p>The known correct answer attached to a training example.</p>
 <p><strong>Why it matters:</strong> The expensive ingredient of supervised learning; its quality caps the model's quality.</p>
 <p><small><em>Index aliases:</em> Ground truth</small></p>

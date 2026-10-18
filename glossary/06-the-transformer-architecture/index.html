@@ -1036,7 +1036,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#multi-head-attention" class="md-nav__link">
+  <a href="#multi-head-attention-mha" class="md-nav__link">
     <span class="md-ellipsis">
       
         Multi-Head Attention (MHA)
@@ -1058,7 +1058,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#multi-head-latent-attention" class="md-nav__link">
+  <a href="#multi-head-latent-attention-mla" class="md-nav__link">
     <span class="md-ellipsis">
       
         Multi-head Latent Attention (MLA)
@@ -1091,7 +1091,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#quadratic-cost-of-attention" class="md-nav__link">
+  <a href="#quadratic-cost-of-attention-on2" class="md-nav__link">
     <span class="md-ellipsis">
       
         Quadratic cost of attention (O(n²))
@@ -1168,7 +1168,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#rotary-positional-embedding" class="md-nav__link">
+  <a href="#rotary-positional-embedding-rope" class="md-nav__link">
     <span class="md-ellipsis">
       
         Rotary Positional Embedding (RoPE)
@@ -1234,7 +1234,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#attention-residuals" class="md-nav__link">
+  <a href="#attention-residuals-attnres" class="md-nav__link">
     <span class="md-ellipsis">
       
         Attention Residuals (AttnRes)
@@ -1267,7 +1267,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#d-model-n-heads-n-layers" class="md-nav__link">
+  <a href="#d_model-n_heads-n_layers-hidden-size" class="md-nav__link">
     <span class="md-ellipsis">
       
         d_model, n_heads, n_layers (hidden size)
@@ -1300,7 +1300,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#mixture-of-experts" class="md-nav__link">
+  <a href="#mixture-of-experts-moe" class="md-nav__link">
     <span class="md-ellipsis">
       
         Mixture of Experts (MoE)
@@ -1344,7 +1344,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#vision-transformer" class="md-nav__link">
+  <a href="#vision-transformer-vit" class="md-nav__link">
     <span class="md-ellipsis">
       
         Vision Transformer (ViT)
@@ -1971,7 +1971,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#multi-head-attention" class="md-nav__link">
+  <a href="#multi-head-attention-mha" class="md-nav__link">
     <span class="md-ellipsis">
       
         Multi-Head Attention (MHA)
@@ -1993,7 +1993,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#multi-head-latent-attention" class="md-nav__link">
+  <a href="#multi-head-latent-attention-mla" class="md-nav__link">
     <span class="md-ellipsis">
       
         Multi-head Latent Attention (MLA)
@@ -2026,7 +2026,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#quadratic-cost-of-attention" class="md-nav__link">
+  <a href="#quadratic-cost-of-attention-on2" class="md-nav__link">
     <span class="md-ellipsis">
       
         Quadratic cost of attention (O(n²))
@@ -2103,7 +2103,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#rotary-positional-embedding" class="md-nav__link">
+  <a href="#rotary-positional-embedding-rope" class="md-nav__link">
     <span class="md-ellipsis">
       
         Rotary Positional Embedding (RoPE)
@@ -2169,7 +2169,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#attention-residuals" class="md-nav__link">
+  <a href="#attention-residuals-attnres" class="md-nav__link">
     <span class="md-ellipsis">
       
         Attention Residuals (AttnRes)
@@ -2202,7 +2202,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#d-model-n-heads-n-layers" class="md-nav__link">
+  <a href="#d_model-n_heads-n_layers-hidden-size" class="md-nav__link">
     <span class="md-ellipsis">
       
         d_model, n_heads, n_layers (hidden size)
@@ -2235,7 +2235,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#mixture-of-experts" class="md-nav__link">
+  <a href="#mixture-of-experts-moe" class="md-nav__link">
     <span class="md-ellipsis">
       
         Mixture of Experts (MoE)
@@ -2279,7 +2279,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#vision-transformer" class="md-nav__link">
+  <a href="#vision-transformer-vit" class="md-nav__link">
     <span class="md-ellipsis">
       
         Vision Transformer (ViT)
@@ -2321,131 +2321,131 @@
 <p class="admonition-title">How to read this section</p>
 <p>Each entry is a short definition followed by a <strong>Why it matters</strong> line that says, in plain words, what the idea buys you. Terms marked ★ belong to the <a href="../../#learn-these-30-first">30 to learn first</a>. The <strong>Also known as</strong> line lists the acronyms and other names you may hear in videos; all of them appear in the <a href="../../index-a-z/">A–Z index</a>.</p>
 </div>
-<h3 id="transformer">Transformer ★<a class="headerlink" href="#transformer" title="Permanent link">&para;</a></h3>
+<h3 id="transformer">Transformer ★ <a id="transformer"></a><a class="headerlink" href="#transformer" title="Permanent link">&para;</a></h3>
 <p>The neural architecture from the 2017 paper "Attention Is All You Need": stacked blocks of attention plus feed-forward layers.</p>
 <p><strong>Why it matters:</strong> Processes all tokens in parallel (fast on GPUs) and lets any token look at any other (long-range context). Both are why it won.</p>
-<h3 id="attention">Attention ★<a class="headerlink" href="#attention" title="Permanent link">&para;</a></h3>
+<h3 id="attention">Attention ★ <a id="attention"></a><a class="headerlink" href="#attention" title="Permanent link">&para;</a></h3>
 <p>A mechanism that lets each token look at other tokens and weigh how relevant they are, so context flows across the whole sequence in one step.</p>
 <p><strong>Why it matters:</strong> How the model knows that "it" refers to "the cat" ten words earlier. The core idea of modern AI.</p>
-<h3 id="self-attention">Self-attention<a class="headerlink" href="#self-attention" title="Permanent link">&para;</a></h3>
+<h3 id="self-attention">Self-attention <a id="self-attention"></a><a class="headerlink" href="#self-attention" title="Permanent link">&para;</a></h3>
 <p>Attention where tokens attend to other tokens of the same sequence.</p>
 <p><strong>Why it matters:</strong> Lets every word be interpreted in the light of every other word in the text.</p>
-<h3 id="query-key-value">Query, Key, Value<a class="headerlink" href="#query-key-value" title="Permanent link">&para;</a></h3>
+<h3 id="query-key-value">Query, Key, Value <a id="query-key-value"></a><a class="headerlink" href="#query-key-value" title="Permanent link">&para;</a></h3>
 <p><em>Also known as:</em> Q, K, V</p>
 <p>Three projections of each token. A token's query is compared with every key to get weights, which are then applied to the values.</p>
 <p><strong>Why it matters:</strong> Think of a lookup: the query asks a question, keys say what each token offers, values are what gets returned.</p>
-<h3 id="scaled-dot-product-attention">Scaled dot-product attention<a class="headerlink" href="#scaled-dot-product-attention" title="Permanent link">&para;</a></h3>
+<h3 id="scaled-dot-product-attention">Scaled dot-product attention <a id="scaled-dot-product-attention"></a><a class="headerlink" href="#scaled-dot-product-attention" title="Permanent link">&para;</a></h3>
 <p>The actual attention formula: softmax(QKᵀ / √d) · V.</p>
 <p><strong>Why it matters:</strong> The one formula every video shows. Dividing by √d keeps the softmax from saturating so gradients stay healthy.</p>
-<h3 id="multi-head-attention">Multi-Head Attention (MHA)<a class="headerlink" href="#multi-head-attention" title="Permanent link">&para;</a></h3>
+<h3 id="multi-head-attention-mha">Multi-Head Attention (MHA) <a id="multi-head-attention"></a><a class="headerlink" href="#multi-head-attention-mha" title="Permanent link">&para;</a></h3>
 <p>Several attention operations run in parallel (heads), each free to focus on a different kind of relationship.</p>
 <p><strong>Why it matters:</strong> One head can track grammar while another tracks topic. More heads, richer understanding.</p>
 <p><small><em>Index aliases:</em> MHA</small></p>
-<h3 id="multi-query-grouped-query-attention">Multi-Query / Grouped-Query Attention<a class="headerlink" href="#multi-query-grouped-query-attention" title="Permanent link">&para;</a></h3>
+<h3 id="multi-query-grouped-query-attention">Multi-Query / Grouped-Query Attention <a id="multi-query-grouped-query-attention"></a><a class="headerlink" href="#multi-query-grouped-query-attention" title="Permanent link">&para;</a></h3>
 <p><em>Also known as:</em> MQA, GQA</p>
 <p>Variants that share key/value projections across heads. Llama 2 (70B), Llama 3, Mistral and most 2024+ models use GQA.</p>
 <p><strong>Why it matters:</strong> Shrinks the KV cache several-fold, so inference is faster and cheaper with almost no quality loss.</p>
-<h3 id="multi-head-latent-attention">Multi-head Latent Attention (MLA)<a class="headerlink" href="#multi-head-latent-attention" title="Permanent link">&para;</a></h3>
+<h3 id="multi-head-latent-attention-mla">Multi-head Latent Attention (MLA) <a id="multi-head-latent-attention"></a><a class="headerlink" href="#multi-head-latent-attention-mla" title="Permanent link">&para;</a></h3>
 <p>DeepSeek's alternative to GQA: keys and values are compressed into a small latent vector per token, which is what the KV cache stores; they are expanded again when attention runs (DeepSeek-V2, V3, R1).</p>
 <p><strong>Why it matters:</strong> Cuts the KV cache far more than GQA with no quality loss, which is how DeepSeek serves long contexts cheaply.</p>
 <p><small><em>Index aliases:</em> MLA</small></p>
-<h3 id="causal-masked-attention">Causal (masked) attention<a class="headerlink" href="#causal-masked-attention" title="Permanent link">&para;</a></h3>
+<h3 id="causal-masked-attention">Causal (masked) attention <a id="causal-masked-attention"></a><a class="headerlink" href="#causal-masked-attention" title="Permanent link">&para;</a></h3>
 <p>Masking so a token can only attend to earlier tokens.</p>
 <p><strong>Why it matters:</strong> Stops the model from cheating by looking at the answer during training, and is what makes it generate left to right.</p>
 <p><small><em>Index aliases:</em> Causal mask, Masked attention</small></p>
-<h3 id="attention-mask">Attention mask<a class="headerlink" href="#attention-mask" title="Permanent link">&para;</a></h3>
+<h3 id="attention-mask">Attention mask <a id="attention-mask"></a><a class="headerlink" href="#attention-mask" title="Permanent link">&para;</a></h3>
 <p>The tensor that marks which positions may attend to which (causal mask, padding mask).</p>
 <p><strong>Why it matters:</strong> The practical implementation of "no peeking ahead" and "ignore padding".</p>
-<h3 id="quadratic-cost-of-attention">Quadratic cost of attention (O(n²))<a class="headerlink" href="#quadratic-cost-of-attention" title="Permanent link">&para;</a></h3>
+<h3 id="quadratic-cost-of-attention-on2">Quadratic cost of attention (O(n²)) <a id="quadratic-cost-of-attention"></a><a class="headerlink" href="#quadratic-cost-of-attention-on2" title="Permanent link">&para;</a></h3>
 <p>Every token compares itself with every other, so compute and memory grow with the square of the sequence length.</p>
 <p><strong>Why it matters:</strong> Why long context is expensive and why FlashAttention, sliding windows and state-space models exist.</p>
 <p><small><em>Index aliases:</em> O(n²), O(n²) attention</small></p>
-<h3 id="sliding-window-attention-attention-sinks">Sliding-window attention / attention sinks<a class="headerlink" href="#sliding-window-attention-attention-sinks" title="Permanent link">&para;</a></h3>
+<h3 id="sliding-window-attention-attention-sinks">Sliding-window attention / attention sinks <a id="sliding-window-attention-attention-sinks"></a><a class="headerlink" href="#sliding-window-attention-attention-sinks" title="Permanent link">&para;</a></h3>
 <p>Limiting each token to attend only to the last N tokens (sliding window), optionally keeping a few initial tokens always visible (attention sinks).</p>
 <p><strong>Why it matters:</strong> Makes very long inputs affordable at some cost in long-range recall; used in the original Mistral 7B and, mixed with global layers, in Gemma 2/3 and gpt-oss.</p>
 <p><small><em>Index aliases:</em> SWA, Attention sinks</small></p>
-<h3 id="cross-attention">Cross-attention<a class="headerlink" href="#cross-attention" title="Permanent link">&para;</a></h3>
+<h3 id="cross-attention">Cross-attention <a id="cross-attention"></a><a class="headerlink" href="#cross-attention" title="Permanent link">&para;</a></h3>
 <p>The decoder attending to the encoder's outputs, in encoder-decoder models.</p>
 <p><strong>Why it matters:</strong> How a translator model reads the source sentence while writing the target one.</p>
-<h3 id="decoder-only-model">Decoder-only model<a class="headerlink" href="#decoder-only-model" title="Permanent link">&para;</a></h3>
+<h3 id="decoder-only-model">Decoder-only model <a id="decoder-only-model"></a><a class="headerlink" href="#decoder-only-model" title="Permanent link">&para;</a></h3>
 <p><em>Also known as:</em> GPT, Llama, Claude, Gemini, Mistral</p>
 <p>A Transformer with causal self-attention only, trained to predict the next token. The dominant LLM design.</p>
 <p><strong>Why it matters:</strong> Simplest design that scales; one model does understanding and generation. Almost every chat model is this.</p>
-<h3 id="encoder-only-model">Encoder-only model<a class="headerlink" href="#encoder-only-model" title="Permanent link">&para;</a></h3>
+<h3 id="encoder-only-model">Encoder-only model <a id="encoder-only-model"></a><a class="headerlink" href="#encoder-only-model" title="Permanent link">&para;</a></h3>
 <p><em>Also known as:</em> BERT, RoBERTa</p>
 <p>A bidirectional Transformer good at understanding, classification and embeddings, but not at generating text.</p>
 <p><strong>Why it matters:</strong> Still the usual choice for cheap classification and small, fast embedding models, because it reads both directions at once; many top-scoring embedding models are now built on decoder-only LLMs.</p>
-<h3 id="encoder-decoder-model">Encoder-decoder model<a class="headerlink" href="#encoder-decoder-model" title="Permanent link">&para;</a></h3>
+<h3 id="encoder-decoder-model">Encoder-decoder model <a id="encoder-decoder-model"></a><a class="headerlink" href="#encoder-decoder-model" title="Permanent link">&para;</a></h3>
 <p><em>Also known as:</em> T5, BART, original Transformer</p>
 <p>An encoder reads the input, a decoder writes the output.</p>
 <p><strong>Why it matters:</strong> Natural for translation and summarisation; largely displaced by decoder-only models that do everything.</p>
 <p><small><em>Index aliases:</em> T5 / BART</small></p>
-<h3 id="positional-encoding-embedding">Positional encoding / embedding<a class="headerlink" href="#positional-encoding-embedding" title="Permanent link">&para;</a></h3>
+<h3 id="positional-encoding-embedding">Positional encoding / embedding <a id="positional-encoding-embedding"></a><a class="headerlink" href="#positional-encoding-embedding" title="Permanent link">&para;</a></h3>
 <p>How the model knows token order, since attention by itself is order-blind. Sinusoidal in 2017, learned in GPT-2.</p>
 <p><strong>Why it matters:</strong> Without it, "dog bites man" and "man bites dog" look identical to the model.</p>
 <p><small><em>Index aliases:</em> Positional embedding</small></p>
-<h3 id="rotary-positional-embedding">Rotary Positional Embedding (RoPE)<a class="headerlink" href="#rotary-positional-embedding" title="Permanent link">&para;</a></h3>
+<h3 id="rotary-positional-embedding-rope">Rotary Positional Embedding (RoPE) <a id="rotary-positional-embedding"></a><a class="headerlink" href="#rotary-positional-embedding-rope" title="Permanent link">&para;</a></h3>
 <p>Today's standard positional scheme: encodes position by rotating the Q and K vectors so attention depends on relative distance.</p>
 <p><strong>Why it matters:</strong> Does not extrapolate well on its own, but can be cheaply stretched to longer contexts (position interpolation, NTK-aware scaling, YaRN), which is what makes 128k-token contexts practical.</p>
 <p><small><em>Index aliases:</em> RoPE</small></p>
-<h3 id="alibi">ALiBi<a class="headerlink" href="#alibi" title="Permanent link">&para;</a></h3>
+<h3 id="alibi">ALiBi <a id="alibi"></a><a class="headerlink" href="#alibi" title="Permanent link">&para;</a></h3>
 <p><em>Also known as:</em> Attention with Linear Biases</p>
 <p>A positional scheme with no position embeddings at all: a penalty proportional to the query–key distance is subtracted from each attention score, with a different slope per head (used by MPT and BLOOM).</p>
 <p><strong>Why it matters:</strong> Trains on short sequences and extrapolates to longer ones; the main rival to RoPE before RoPE won.</p>
 <p><small><em>Index aliases:</em> ALiBi (positional biases)</small></p>
-<h3 id="hidden-state">Hidden state<a class="headerlink" href="#hidden-state" title="Permanent link">&para;</a></h3>
+<h3 id="hidden-state">Hidden state <a id="hidden-state"></a><a class="headerlink" href="#hidden-state" title="Permanent link">&para;</a></h3>
 <p>The vector representing a token at a given layer; the residual stream's value at that point.</p>
 <p><strong>Why it matters:</strong> What gets passed from block to block, and what the LM head reads at the end. "Hidden size" = its length.</p>
-<h3 id="transformer-block-layer">Transformer block / layer<a class="headerlink" href="#transformer-block-layer" title="Permanent link">&para;</a></h3>
+<h3 id="transformer-block-layer">Transformer block / layer <a id="transformer-block-layer"></a><a class="headerlink" href="#transformer-block-layer" title="Permanent link">&para;</a></h3>
 <p>One unit of [attention → add &amp; norm → feed-forward → add &amp; norm]. Models stack 32 to 100+ of them.</p>
 <p><strong>Why it matters:</strong> The repeating unit; a model is this block copied N times with different weights. See Map 5.</p>
-<h3 id="feed-forward-in-a-block">Feed-forward in a block<a class="headerlink" href="#feed-forward-in-a-block" title="Permanent link">&para;</a></h3>
+<h3 id="feed-forward-in-a-block">Feed-forward in a block <a id="feed-forward-in-a-block"></a><a class="headerlink" href="#feed-forward-in-a-block" title="Permanent link">&para;</a></h3>
 <p><em>Also known as:</em> MLP, SwiGLU</p>
 <p>The per-token two-layer network after attention; it holds most of the parameters. SwiGLU is the gated variant most modern models use.</p>
 <p><strong>Why it matters:</strong> Attention moves information between tokens; the FFN processes it. Facts the model "knows" are mostly stored here.</p>
-<h3 id="residual-stream">Residual stream<a class="headerlink" href="#residual-stream" title="Permanent link">&para;</a></h3>
+<h3 id="residual-stream">Residual stream <a id="residual-stream"></a><a class="headerlink" href="#residual-stream" title="Permanent link">&para;</a></h3>
 <p>The running vector per token that every block adds its contribution to.</p>
 <p><strong>Why it matters:</strong> Each block reads from and writes to it, so information from early layers survives to the end.</p>
-<h3 id="attention-residuals">Attention Residuals (AttnRes)<a class="headerlink" href="#attention-residuals" title="Permanent link">&para;</a></h3>
+<h3 id="attention-residuals-attnres">Attention Residuals (AttnRes) <a id="attention-residuals"></a><a class="headerlink" href="#attention-residuals-attnres" title="Permanent link">&para;</a></h3>
 <p>A 2026 variant of the residual stream (Moonshot AI): instead of adding every earlier layer's output with a fixed weight of 1, each layer attends over earlier outputs with learned, softmax-normalised weights.</p>
 <p><strong>Why it matters:</strong> Small but consistent gains for ~4% extra training cost; a sign that even the residual stream is still being redesigned.</p>
 <p><small><em>Index aliases:</em> AttnRes</small></p>
-<h3 id="pre-norm-vs-post-norm">Pre-norm vs post-norm<a class="headerlink" href="#pre-norm-vs-post-norm" title="Permanent link">&para;</a></h3>
+<h3 id="pre-norm-vs-post-norm">Pre-norm vs post-norm <a id="pre-norm-vs-post-norm"></a><a class="headerlink" href="#pre-norm-vs-post-norm" title="Permanent link">&para;</a></h3>
 <p>Whether normalization happens before or after each sub-layer. Pre-norm with RMSNorm is the modern choice.</p>
 <p><strong>Why it matters:</strong> Pre-norm trains more stably at scale, which is why GPT-2 onward switched to it.</p>
 <p><small><em>Index aliases:</em> Pre-norm</small></p>
-<h3 id="qk-norm">QK-Norm<a class="headerlink" href="#qk-norm" title="Permanent link">&para;</a></h3>
+<h3 id="qk-norm">QK-Norm <a id="qk-norm"></a><a class="headerlink" href="#qk-norm" title="Permanent link">&para;</a></h3>
 <p><em>Also known as:</em> query-key normalization</p>
 <p>Normalize the query and key vectors (RMSNorm or LayerNorm) before computing attention scores (Gemma 3, OLMo 2, Qwen3).</p>
 <p><strong>Why it matters:</strong> Stops attention logits from blowing up, which removes a common cause of loss spikes and allows higher learning rates.</p>
 <p><small><em>Index aliases:</em> QKNorm</small></p>
-<h3 id="d-model-n-heads-n-layers">d_model, n_heads, n_layers (hidden size)<a class="headerlink" href="#d-model-n-heads-n-layers" title="Permanent link">&para;</a></h3>
+<h3 id="d_model-n_heads-n_layers-hidden-size">d_model, n_heads, n_layers (hidden size) <a id="d-model-n-heads-n-layers"></a><a class="headerlink" href="#d_model-n_heads-n_layers-hidden-size" title="Permanent link">&para;</a></h3>
 <p>The main shape hyperparameters of a Transformer: vector width per token, number of attention heads, number of stacked blocks.</p>
 <p><strong>Why it matters:</strong> Three numbers that describe a model's shape; parameter count follows from them (Map 5).</p>
 <p><small><em>Index aliases:</em> Hidden size</small></p>
-<h3 id="language-model-head">Language-model head<a class="headerlink" href="#language-model-head" title="Permanent link">&para;</a></h3>
+<h3 id="language-model-head">Language-model head <a id="language-model-head"></a><a class="headerlink" href="#language-model-head" title="Permanent link">&para;</a></h3>
 <p><em>Also known as:</em> LM head, unembedding</p>
 <p>The final linear layer mapping each token's hidden state to logits over the vocabulary.</p>
 <p><strong>Why it matters:</strong> Turns the model's internal vector into "a score for every possible next token".</p>
-<h3 id="weight-tying">Weight tying<a class="headerlink" href="#weight-tying" title="Permanent link">&para;</a></h3>
+<h3 id="weight-tying">Weight tying <a id="weight-tying"></a><a class="headerlink" href="#weight-tying" title="Permanent link">&para;</a></h3>
 <p>Reusing the token-embedding matrix as the LM head.</p>
 <p><strong>Why it matters:</strong> Saves a large chunk of parameters in small models (a third of GPT-2's).</p>
-<h3 id="mixture-of-experts">Mixture of Experts (MoE)<a class="headerlink" href="#mixture-of-experts" title="Permanent link">&para;</a></h3>
+<h3 id="mixture-of-experts-moe">Mixture of Experts (MoE) <a id="mixture-of-experts"></a><a class="headerlink" href="#mixture-of-experts-moe" title="Permanent link">&para;</a></h3>
 <p>Replaces each feed-forward layer with several experts and a router that activates only a few per token (Mixtral, DeepSeek-V3, Qwen3-MoE).</p>
 <p><strong>Why it matters:</strong> Huge knowledge capacity with the compute cost of a much smaller model: a 235B model that runs like a 22B one.</p>
 <p><small><em>Index aliases:</em> MoE</small></p>
-<h3 id="dense-vs-sparse-model">Dense vs sparse model<a class="headerlink" href="#dense-vs-sparse-model" title="Permanent link">&para;</a></h3>
+<h3 id="dense-vs-sparse-model">Dense vs sparse model <a id="dense-vs-sparse-model"></a><a class="headerlink" href="#dense-vs-sparse-model" title="Permanent link">&para;</a></h3>
 <p>A dense model uses all parameters for every token; a sparse (MoE) model uses a subset.</p>
 <p><strong>Why it matters:</strong> Explains names like "235B-A22B": 235B parameters total, 22B active per token.</p>
 <p><small><em>Index aliases:</em> Sparse model, Dense model</small></p>
-<h3 id="flashattention">FlashAttention<a class="headerlink" href="#flashattention" title="Permanent link">&para;</a></h3>
+<h3 id="flashattention">FlashAttention <a id="flashattention"></a><a class="headerlink" href="#flashattention" title="Permanent link">&para;</a></h3>
 <p>An exact but much faster, memory-efficient GPU implementation of attention.</p>
 <p><strong>Why it matters:</strong> Same maths, 2–4× faster and far less memory, by being clever about GPU memory traffic. An engineering trick, not a new architecture.</p>
-<h3 id="state-space-models-hybrids">State-space models / hybrids<a class="headerlink" href="#state-space-models-hybrids" title="Permanent link">&para;</a></h3>
+<h3 id="state-space-models-hybrids">State-space models / hybrids <a id="state-space-models-hybrids"></a><a class="headerlink" href="#state-space-models-hybrids" title="Permanent link">&para;</a></h3>
 <p><em>Also known as:</em> Mamba, SSM</p>
 <p>Alternative sequence layers whose cost grows linearly with sequence length. Often mixed with attention layers.</p>
 <p><strong>Why it matters:</strong> A bet on cheaper long context; hybrids keep a few attention layers for precise recall.</p>
-<h3 id="vision-transformer">Vision Transformer (ViT)<a class="headerlink" href="#vision-transformer" title="Permanent link">&para;</a></h3>
+<h3 id="vision-transformer-vit">Vision Transformer (ViT) <a id="vision-transformer"></a><a class="headerlink" href="#vision-transformer-vit" title="Permanent link">&para;</a></h3>
 <p>A Transformer applied to image patches as if they were tokens.</p>
 <p><strong>Why it matters:</strong> Showed the same architecture works for images, which is what makes multimodal models possible.</p>
 <p><small><em>Index aliases:</em> ViT</small></p>

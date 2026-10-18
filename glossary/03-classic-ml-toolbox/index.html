@@ -952,7 +952,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#support-vector-machine" class="md-nav__link">
+  <a href="#support-vector-machine-svm" class="md-nav__link">
     <span class="md-ellipsis">
       
         Support Vector Machine (SVM)
@@ -963,7 +963,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#k-nearest-neighbours" class="md-nav__link">
+  <a href="#k-nearest-neighbours-knn" class="md-nav__link">
     <span class="md-ellipsis">
       
         k-Nearest Neighbours (kNN)
@@ -996,7 +996,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#principal-component-analysis" class="md-nav__link">
+  <a href="#principal-component-analysis-pca" class="md-nav__link">
     <span class="md-ellipsis">
       
         Principal Component Analysis (PCA)
@@ -1861,7 +1861,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#support-vector-machine" class="md-nav__link">
+  <a href="#support-vector-machine-svm" class="md-nav__link">
     <span class="md-ellipsis">
       
         Support Vector Machine (SVM)
@@ -1872,7 +1872,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#k-nearest-neighbours" class="md-nav__link">
+  <a href="#k-nearest-neighbours-knn" class="md-nav__link">
     <span class="md-ellipsis">
       
         k-Nearest Neighbours (kNN)
@@ -1905,7 +1905,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#principal-component-analysis" class="md-nav__link">
+  <a href="#principal-component-analysis-pca" class="md-nav__link">
     <span class="md-ellipsis">
       
         Principal Component Analysis (PCA)
@@ -2101,91 +2101,91 @@
 <p class="admonition-title">How to read this section</p>
 <p>Each entry is a short definition followed by a <strong>Why it matters</strong> line that says, in plain words, what the idea buys you. Terms marked ★ belong to the <a href="../../#learn-these-30-first">30 to learn first</a>. The <strong>Also known as</strong> line lists the acronyms and other names you may hear in videos; all of them appear in the <a href="../../index-a-z/">A–Z index</a>.</p>
 </div>
-<h3 id="linear-regression">Linear regression<a class="headerlink" href="#linear-regression" title="Permanent link">&para;</a></h3>
+<h3 id="linear-regression">Linear regression <a id="linear-regression"></a><a class="headerlink" href="#linear-regression" title="Permanent link">&para;</a></h3>
 <p>Fit a straight line (or hyperplane) to predict a number.</p>
 <p><strong>Why it matters:</strong> The simplest model there is; everything else is a more flexible version of "fit a curve to the data".</p>
-<h3 id="logistic-regression">Logistic regression<a class="headerlink" href="#logistic-regression" title="Permanent link">&para;</a></h3>
+<h3 id="logistic-regression">Logistic regression <a id="logistic-regression"></a><a class="headerlink" href="#logistic-regression" title="Permanent link">&para;</a></h3>
 <p>A linear model for classification that outputs a probability.</p>
 <p><strong>Why it matters:</strong> Fast, explainable baseline. If a neural network cannot beat it, something is wrong.</p>
 <p><small><em>Index aliases:</em> Logistic regression (classifier)</small></p>
-<h3 id="decision-tree">Decision tree<a class="headerlink" href="#decision-tree" title="Permanent link">&para;</a></h3>
+<h3 id="decision-tree">Decision tree <a id="decision-tree"></a><a class="headerlink" href="#decision-tree" title="Permanent link">&para;</a></h3>
 <p>A flowchart of if/else splits on features. Easy to read, prone to overfitting.</p>
 <p><strong>Why it matters:</strong> Humans can read the rules it learned, which makes it popular where decisions must be explained.</p>
 <p><small><em>Index aliases:</em> Decision trees</small></p>
-<h3 id="random-forest">Random forest<a class="headerlink" href="#random-forest" title="Permanent link">&para;</a></h3>
+<h3 id="random-forest">Random forest <a id="random-forest"></a><a class="headerlink" href="#random-forest" title="Permanent link">&para;</a></h3>
 <p>Many decision trees trained on random subsets of data and features, then averaged.</p>
 <p><strong>Why it matters:</strong> Averaging many imperfect trees cancels their individual mistakes: more accurate and far more robust than one tree.</p>
 <p><small><em>Index aliases:</em> Random forest (ensemble)</small></p>
-<h3 id="gradient-boosting">Gradient boosting<a class="headerlink" href="#gradient-boosting" title="Permanent link">&para;</a></h3>
+<h3 id="gradient-boosting">Gradient boosting <a id="gradient-boosting"></a><a class="headerlink" href="#gradient-boosting" title="Permanent link">&para;</a></h3>
 <p><em>Also known as:</em> XGBoost, LightGBM, CatBoost</p>
 <p>Build trees one after another, each correcting the errors of the previous ones.</p>
 <p><strong>Why it matters:</strong> The most accurate choice for tabular data in most competitions and companies. Try this before a neural network.</p>
 <p><small><em>Index aliases:</em> Gradient boosting (XGBoost, LightGBM)</small></p>
-<h3 id="support-vector-machine">Support Vector Machine (SVM)<a class="headerlink" href="#support-vector-machine" title="Permanent link">&para;</a></h3>
+<h3 id="support-vector-machine-svm">Support Vector Machine (SVM) <a id="support-vector-machine"></a><a class="headerlink" href="#support-vector-machine-svm" title="Permanent link">&para;</a></h3>
 <p>Finds the boundary with the widest margin between classes.</p>
 <p><strong>Why it matters:</strong> A strong pre-2012 classifier; a wide margin makes it generalise well on small datasets.</p>
 <p><small><em>Index aliases:</em> SVM</small></p>
-<h3 id="k-nearest-neighbours">k-Nearest Neighbours (kNN)<a class="headerlink" href="#k-nearest-neighbours" title="Permanent link">&para;</a></h3>
+<h3 id="k-nearest-neighbours-knn">k-Nearest Neighbours (kNN) <a id="k-nearest-neighbours"></a><a class="headerlink" href="#k-nearest-neighbours-knn" title="Permanent link">&para;</a></h3>
 <p>Predict by looking at the k most similar training examples.</p>
 <p><strong>Why it matters:</strong> No training at all, just lookup. The same idea powers vector search in RAG: find the nearest embeddings.</p>
 <p><small><em>Index aliases:</em> kNN</small></p>
-<h3 id="naive-bayes">Naive Bayes<a class="headerlink" href="#naive-bayes" title="Permanent link">&para;</a></h3>
+<h3 id="naive-bayes">Naive Bayes <a id="naive-bayes"></a><a class="headerlink" href="#naive-bayes" title="Permanent link">&para;</a></h3>
 <p>Fast probabilistic classifier that assumes features are independent.</p>
 <p><strong>Why it matters:</strong> The classic spam filter; works surprisingly well on text with almost no compute.</p>
 <p><small><em>Index aliases:</em> Naive Bayes classifier</small></p>
-<h3 id="k-means">k-means<a class="headerlink" href="#k-means" title="Permanent link">&para;</a></h3>
+<h3 id="k-means">k-means <a id="k-means"></a><a class="headerlink" href="#k-means" title="Permanent link">&para;</a></h3>
 <p>Clustering by assigning points to the nearest of k centroids and repeating until stable.</p>
 <p><strong>Why it matters:</strong> The default way to split data into k groups when you have no labels.</p>
-<h3 id="principal-component-analysis">Principal Component Analysis (PCA)<a class="headerlink" href="#principal-component-analysis" title="Permanent link">&para;</a></h3>
+<h3 id="principal-component-analysis-pca">Principal Component Analysis (PCA) <a id="principal-component-analysis"></a><a class="headerlink" href="#principal-component-analysis-pca" title="Permanent link">&para;</a></h3>
 <p>Linear dimensionality reduction along the directions of largest variance.</p>
 <p><strong>Why it matters:</strong> Compresses data while keeping what varies most; used to shrink embeddings and to visualise them.</p>
 <p><small><em>Index aliases:</em> PCA</small></p>
-<h3 id="feature-feature-engineering">Feature / feature engineering<a class="headerlink" href="#feature-feature-engineering" title="Permanent link">&para;</a></h3>
+<h3 id="feature-feature-engineering">Feature / feature engineering <a id="feature-feature-engineering"></a><a class="headerlink" href="#feature-feature-engineering" title="Permanent link">&para;</a></h3>
 <p>A feature is one input variable. Feature engineering is hand-crafting better inputs.</p>
 <p><strong>Why it matters:</strong> In classic ML, good features matter more than the algorithm. Deep learning's big win is learning features automatically.</p>
 <p><small><em>Index aliases:</em> Feature engineering</small></p>
-<h3 id="train-validation-test-split">Train / validation / test split<a class="headerlink" href="#train-validation-test-split" title="Permanent link">&para;</a></h3>
+<h3 id="train-validation-test-split">Train / validation / test split <a id="train-validation-test-split"></a><a class="headerlink" href="#train-validation-test-split" title="Permanent link">&para;</a></h3>
 <p>Data is divided so you train on one part, tune settings on a second and measure final performance on a third the model never saw.</p>
 <p><strong>Why it matters:</strong> The only honest way to know how a model will do on new data. Skipping it is how projects fool themselves.</p>
 <p><small><em>Index aliases:</em> Validation set, Test set</small></p>
-<h3 id="cross-validation">Cross-validation<a class="headerlink" href="#cross-validation" title="Permanent link">&para;</a></h3>
+<h3 id="cross-validation">Cross-validation <a id="cross-validation"></a><a class="headerlink" href="#cross-validation" title="Permanent link">&para;</a></h3>
 <p>Rotate which slice is held out and average, for a more reliable estimate.</p>
 <p><strong>Why it matters:</strong> Gives a trustworthy accuracy number from a small dataset.</p>
-<h3 id="overfitting-underfitting">Overfitting / underfitting ★<a class="headerlink" href="#overfitting-underfitting" title="Permanent link">&para;</a></h3>
+<h3 id="overfitting-underfitting">Overfitting / underfitting ★ <a id="overfitting-underfitting"></a><a class="headerlink" href="#overfitting-underfitting" title="Permanent link">&para;</a></h3>
 <p>Memorising the training data (great on train, poor on new data) versus being too simple to capture the pattern at all.</p>
 <p><strong>Why it matters:</strong> Overfitting is the number-one way models fail in production: perfect in the lab, useless on real inputs.</p>
-<h3 id="biasvariance-trade-off">Bias–variance trade-off<a class="headerlink" href="#biasvariance-trade-off" title="Permanent link">&para;</a></h3>
+<h3 id="biasvariance-trade-off">Bias–variance trade-off <a id="biasvariance-trade-off"></a><a class="headerlink" href="#biasvariance-trade-off" title="Permanent link">&para;</a></h3>
 <p>Simple models err systematically (bias); complex models err erratically depending on the data they saw (variance).</p>
 <p><strong>Why it matters:</strong> Explains why bigger is not always better: a model can be too flexible for the amount of data you have.</p>
 <p><small><em>Index aliases:</em> Bias–variance</small></p>
-<h3 id="regularization">Regularization<a class="headerlink" href="#regularization" title="Permanent link">&para;</a></h3>
+<h3 id="regularization">Regularization <a id="regularization"></a><a class="headerlink" href="#regularization" title="Permanent link">&para;</a></h3>
 <p><em>Also known as:</em> L1, L2</p>
 <p>Penalising large weights to reduce overfitting. L1 also pushes weights to exactly zero.</p>
 <p><strong>Why it matters:</strong> Makes a model generalise better by stopping it from relying too hard on any one input.</p>
 <p><small><em>Index aliases:</em> L1 / L2 regularization</small></p>
-<h3 id="early-stopping">Early stopping<a class="headerlink" href="#early-stopping" title="Permanent link">&para;</a></h3>
+<h3 id="early-stopping">Early stopping <a id="early-stopping"></a><a class="headerlink" href="#early-stopping" title="Permanent link">&para;</a></h3>
 <p>Stop training when validation loss stops improving, even if training loss is still falling.</p>
 <p><strong>Why it matters:</strong> The cheapest protection against overfitting: just stop at the right moment.</p>
-<h3 id="hyperparameter">Hyperparameter<a class="headerlink" href="#hyperparameter" title="Permanent link">&para;</a></h3>
+<h3 id="hyperparameter">Hyperparameter <a id="hyperparameter"></a><a class="headerlink" href="#hyperparameter" title="Permanent link">&para;</a></h3>
 <p>A setting you choose before training (learning rate, tree depth, LoRA rank), as opposed to parameters learned from data.</p>
 <p><strong>Why it matters:</strong> What engineers tune by hand; a wrong learning rate can make an otherwise good model fail completely.</p>
-<h3 id="ensemble">Ensemble<a class="headerlink" href="#ensemble" title="Permanent link">&para;</a></h3>
+<h3 id="ensemble">Ensemble <a id="ensemble"></a><a class="headerlink" href="#ensemble" title="Permanent link">&para;</a></h3>
 <p>Combining several models' predictions.</p>
 <p><strong>Why it matters:</strong> Usually beats any single model; the same idea as asking several experts and taking the majority view.</p>
-<h3 id="confusion-matrix">Confusion matrix<a class="headerlink" href="#confusion-matrix" title="Permanent link">&para;</a></h3>
+<h3 id="confusion-matrix">Confusion matrix <a id="confusion-matrix"></a><a class="headerlink" href="#confusion-matrix" title="Permanent link">&para;</a></h3>
 <p>A table of predicted class versus actual class, showing where a classifier confuses things.</p>
 <p><strong>Why it matters:</strong> Shows which mistakes the model makes, not just how many. Essential when some errors cost more than others.</p>
-<h3 id="precision-recall-f1-roc-auc">Precision, recall, F1, ROC / AUC<a class="headerlink" href="#precision-recall-f1-roc-auc" title="Permanent link">&para;</a></h3>
+<h3 id="precision-recall-f1-roc-auc">Precision, recall, F1, ROC / AUC <a id="precision-recall-f1-roc-auc"></a><a class="headerlink" href="#precision-recall-f1-roc-auc" title="Permanent link">&para;</a></h3>
 <p>Precision: of what the model flagged, how much was right. Recall: of what should be flagged, how much it caught. F1 balances the two; ROC / AUC summarises the trade-off across thresholds.</p>
 <p><strong>Why it matters:</strong> Accuracy alone lies when classes are unbalanced (99% "not fraud" is 99% accurate and useless). These metrics tell the truth.</p>
 <p><small><em>Index aliases:</em> AUC / ROC, Precision / recall, F1 score</small></p>
-<h3 id="data-leakage">Data leakage<a class="headerlink" href="#data-leakage" title="Permanent link">&para;</a></h3>
+<h3 id="data-leakage">Data leakage <a id="data-leakage"></a><a class="headerlink" href="#data-leakage" title="Permanent link">&para;</a></h3>
 <p>Information from the test set, or from the future, accidentally reaching the training data.</p>
 <p><strong>Why it matters:</strong> The classic reason a model scores brilliantly in testing and fails in production.</p>
-<h3 id="class-imbalance">Class imbalance<a class="headerlink" href="#class-imbalance" title="Permanent link">&para;</a></h3>
+<h3 id="class-imbalance">Class imbalance <a id="class-imbalance"></a><a class="headerlink" href="#class-imbalance" title="Permanent link">&para;</a></h3>
 <p>When one class is far rarer than the other (fraud, defects, disease).</p>
 <p><strong>Why it matters:</strong> Needs special handling (re-weighting, re-sampling, the right metrics) or the model simply learns to predict the majority class.</p>
-<h3 id="scikit-learn">scikit-learn<a class="headerlink" href="#scikit-learn" title="Permanent link">&para;</a></h3>
+<h3 id="scikit-learn">scikit-learn <a id="scikit-learn"></a><a class="headerlink" href="#scikit-learn" title="Permanent link">&para;</a></h3>
 <p>The standard Python library for classic ML.</p>
 <p><strong>Why it matters:</strong> Where almost every tutorial's <code>.fit()</code> and <code>.predict()</code> come from.</p>
 

@@ -1046,7 +1046,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#backpropagation" class="md-nav__link">
+  <a href="#backpropagation-backprop" class="md-nav__link">
     <span class="md-ellipsis">
       
         Backpropagation (backprop) ★
@@ -1068,7 +1068,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#gradient-descent" class="md-nav__link">
+  <a href="#gradient-descent-sgd" class="md-nav__link">
     <span class="md-ellipsis">
       
         Gradient descent (SGD) ★
@@ -1090,7 +1090,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#learning-rate" class="md-nav__link">
+  <a href="#learning-rate-lr" class="md-nav__link">
     <span class="md-ellipsis">
       
         Learning rate (LR)
@@ -1255,7 +1255,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#convolutional-neural-network" class="md-nav__link">
+  <a href="#convolutional-neural-network-cnn" class="md-nav__link">
     <span class="md-ellipsis">
       
         Convolutional Neural Network (CNN)
@@ -1277,7 +1277,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#sequence-to-sequence" class="md-nav__link">
+  <a href="#sequence-to-sequence-seq2seq" class="md-nav__link">
     <span class="md-ellipsis">
       
         Sequence-to-sequence (seq2seq)
@@ -1299,7 +1299,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#generative-adversarial-network" class="md-nav__link">
+  <a href="#generative-adversarial-network-gan" class="md-nav__link">
     <span class="md-ellipsis">
       
         Generative Adversarial Network (GAN)
@@ -2059,7 +2059,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#backpropagation" class="md-nav__link">
+  <a href="#backpropagation-backprop" class="md-nav__link">
     <span class="md-ellipsis">
       
         Backpropagation (backprop) ★
@@ -2081,7 +2081,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#gradient-descent" class="md-nav__link">
+  <a href="#gradient-descent-sgd" class="md-nav__link">
     <span class="md-ellipsis">
       
         Gradient descent (SGD) ★
@@ -2103,7 +2103,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#learning-rate" class="md-nav__link">
+  <a href="#learning-rate-lr" class="md-nav__link">
     <span class="md-ellipsis">
       
         Learning rate (LR)
@@ -2268,7 +2268,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#convolutional-neural-network" class="md-nav__link">
+  <a href="#convolutional-neural-network-cnn" class="md-nav__link">
     <span class="md-ellipsis">
       
         Convolutional Neural Network (CNN)
@@ -2290,7 +2290,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#sequence-to-sequence" class="md-nav__link">
+  <a href="#sequence-to-sequence-seq2seq" class="md-nav__link">
     <span class="md-ellipsis">
       
         Sequence-to-sequence (seq2seq)
@@ -2312,7 +2312,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#generative-adversarial-network" class="md-nav__link">
+  <a href="#generative-adversarial-network-gan" class="md-nav__link">
     <span class="md-ellipsis">
       
         Generative Adversarial Network (GAN)
@@ -2365,134 +2365,134 @@
 <p class="admonition-title">How to read this section</p>
 <p>Each entry is a short definition followed by a <strong>Why it matters</strong> line that says, in plain words, what the idea buys you. Terms marked ★ belong to the <a href="../../#learn-these-30-first">30 to learn first</a>. The <strong>Also known as</strong> line lists the acronyms and other names you may hear in videos; all of them appear in the <a href="../../index-a-z/">A–Z index</a>.</p>
 </div>
-<h3 id="neuron-perceptron">Neuron / perceptron<a class="headerlink" href="#neuron-perceptron" title="Permanent link">&para;</a></h3>
+<h3 id="neuron-perceptron">Neuron / perceptron <a id="neuron-perceptron"></a><a class="headerlink" href="#neuron-perceptron" title="Permanent link">&para;</a></h3>
 <p>The basic unit: a weighted sum of inputs plus a bias, passed through an activation function.</p>
 <p><strong>Why it matters:</strong> Everything in deep learning is millions of these wired together; each one is just multiply, add, squash.</p>
 <p><small><em>Index aliases:</em> Perceptron</small></p>
-<h3 id="weights-biases-parameters">Weights, biases, parameters ★<a class="headerlink" href="#weights-biases-parameters" title="Permanent link">&para;</a></h3>
+<h3 id="weights-biases-parameters">Weights, biases, parameters ★ <a id="weights-biases-parameters"></a><a class="headerlink" href="#weights-biases-parameters" title="Permanent link">&para;</a></h3>
 <p>The numbers inside the model that training adjusts. "7B" means 7 billion of them.</p>
 <p><strong>Why it matters:</strong> The parameters are the model. Download the weights and you have it; change them and you have a different model.</p>
 <p><small><em>Index aliases:</em> Weights (the file), Parameters</small></p>
-<h3 id="activations">Activations<a class="headerlink" href="#activations" title="Permanent link">&para;</a></h3>
+<h3 id="activations">Activations <a id="activations"></a><a class="headerlink" href="#activations" title="Permanent link">&para;</a></h3>
 <p>The intermediate values flowing through the network for one input (as opposed to the weights, which are fixed during inference).</p>
 <p><strong>Why it matters:</strong> Weights are what the model knows; activations are what it is thinking right now about this input. Interpretability studies activations.</p>
-<h3 id="layer-hidden-layer">Layer / hidden layer<a class="headerlink" href="#layer-hidden-layer" title="Permanent link">&para;</a></h3>
+<h3 id="layer-hidden-layer">Layer / hidden layer <a id="layer-hidden-layer"></a><a class="headerlink" href="#layer-hidden-layer" title="Permanent link">&para;</a></h3>
 <p>A group of neurons computed together. Layers between input and output are hidden layers.</p>
 <p><strong>Why it matters:</strong> "Deep" simply means many hidden layers; each adds a level of abstraction.</p>
 <p><small><em>Index aliases:</em> Hidden layer</small></p>
-<h3 id="multi-layer-perceptron-feed-forward-network">Multi-Layer Perceptron / Feed-forward network<a class="headerlink" href="#multi-layer-perceptron-feed-forward-network" title="Permanent link">&para;</a></h3>
+<h3 id="multi-layer-perceptron-feed-forward-network">Multi-Layer Perceptron / Feed-forward network <a id="multi-layer-perceptron-feed-forward-network"></a><a class="headerlink" href="#multi-layer-perceptron-feed-forward-network" title="Permanent link">&para;</a></h3>
 <p><em>Also known as:</em> MLP, FFN</p>
 <p>Stacked fully-connected layers. Also the second half of every Transformer block.</p>
 <p><strong>Why it matters:</strong> The plainest neural network; inside an LLM the FFN layers are where most of the parameters, and most of the stored knowledge, live.</p>
-<h3 id="activation-function">Activation function<a class="headerlink" href="#activation-function" title="Permanent link">&para;</a></h3>
+<h3 id="activation-function">Activation function <a id="activation-function"></a><a class="headerlink" href="#activation-function" title="Permanent link">&para;</a></h3>
 <p><em>Also known as:</em> ReLU, GELU, SiLU/Swish, sigmoid, tanh</p>
 <p>Non-linearity applied after a layer. GELU and SiLU are the ones used inside LLMs.</p>
 <p><strong>Why it matters:</strong> Without it, stacking layers would collapse into one straight line. The non-linearity is what lets networks learn curves and complex rules.</p>
-<h3 id="softmax">Softmax<a class="headerlink" href="#softmax" title="Permanent link">&para;</a></h3>
+<h3 id="softmax">Softmax <a id="softmax"></a><a class="headerlink" href="#softmax" title="Permanent link">&para;</a></h3>
 <p>Turns a vector of scores into probabilities that sum to 1.</p>
 <p><strong>Why it matters:</strong> How the model expresses "70% sure the next word is 'Paris'". Applied at the output and inside attention.</p>
-<h3 id="logits">Logits<a class="headerlink" href="#logits" title="Permanent link">&para;</a></h3>
+<h3 id="logits">Logits <a id="logits"></a><a class="headerlink" href="#logits" title="Permanent link">&para;</a></h3>
 <p>Raw, unnormalised scores that come out before softmax.</p>
 <p><strong>Why it matters:</strong> What the model actually computes; softmax just converts them to probabilities. Temperature acts on logits.</p>
-<h3 id="one-hot-encoding">One-hot encoding<a class="headerlink" href="#one-hot-encoding" title="Permanent link">&para;</a></h3>
+<h3 id="one-hot-encoding">One-hot encoding <a id="one-hot-encoding"></a><a class="headerlink" href="#one-hot-encoding" title="Permanent link">&para;</a></h3>
 <p>Representing a category as a vector of zeros with a single 1 at that category's position.</p>
 <p><strong>Why it matters:</strong> The naive way to feed words to a network. Embeddings replace it with dense vectors that carry meaning.</p>
-<h3 id="forward-pass">Forward pass<a class="headerlink" href="#forward-pass" title="Permanent link">&para;</a></h3>
+<h3 id="forward-pass">Forward pass <a id="forward-pass"></a><a class="headerlink" href="#forward-pass" title="Permanent link">&para;</a></h3>
 <p>Running an input through the network to get an output.</p>
 <p><strong>Why it matters:</strong> Inference is just a forward pass; training is a forward pass plus a backward pass.</p>
-<h3 id="loss-function">Loss function ★<a class="headerlink" href="#loss-function" title="Permanent link">&para;</a></h3>
+<h3 id="loss-function">Loss function ★ <a id="loss-function"></a><a class="headerlink" href="#loss-function" title="Permanent link">&para;</a></h3>
 <p><em>Also known as:</em> cross-entropy, MSE</p>
 <p>A number measuring how wrong the output is; training minimises it. Cross-entropy for classification and next-token prediction, mean squared error for regression.</p>
 <p><strong>Why it matters:</strong> Defines what "better" means. The whole of training is "make this number smaller".</p>
 <p><small><em>Index aliases:</em> Cross-entropy</small></p>
-<h3 id="backpropagation">Backpropagation (backprop) ★<a class="headerlink" href="#backpropagation" title="Permanent link">&para;</a></h3>
+<h3 id="backpropagation-backprop">Backpropagation (backprop) ★ <a id="backpropagation"></a><a class="headerlink" href="#backpropagation-backprop" title="Permanent link">&para;</a></h3>
 <p>The algorithm that computes how much each weight contributed to the loss, by applying the chain rule backwards through the network.</p>
 <p><strong>Why it matters:</strong> Tells every one of the billions of weights which direction to move. Without it, training deep networks would be hopeless.</p>
-<h3 id="gradient">Gradient<a class="headerlink" href="#gradient" title="Permanent link">&para;</a></h3>
+<h3 id="gradient">Gradient <a id="gradient"></a><a class="headerlink" href="#gradient" title="Permanent link">&para;</a></h3>
 <p>The direction and size of change in loss for each weight.</p>
 <p><strong>Why it matters:</strong> The "which way is downhill" signal; backprop computes it, the optimizer follows it.</p>
-<h3 id="gradient-descent">Gradient descent (SGD) ★<a class="headerlink" href="#gradient-descent" title="Permanent link">&para;</a></h3>
+<h3 id="gradient-descent-sgd">Gradient descent (SGD) ★ <a id="gradient-descent"></a><a class="headerlink" href="#gradient-descent-sgd" title="Permanent link">&para;</a></h3>
 <p>Nudge each weight a small step against its gradient. Stochastic gradient descent does this on one mini-batch per step.</p>
 <p><strong>Why it matters:</strong> The learning rule behind all of deep learning: take a small step downhill, repeat millions of times.</p>
 <p><small><em>Index aliases:</em> SGD</small></p>
-<h3 id="optimizer">Optimizer<a class="headerlink" href="#optimizer" title="Permanent link">&para;</a></h3>
+<h3 id="optimizer">Optimizer <a id="optimizer"></a><a class="headerlink" href="#optimizer" title="Permanent link">&para;</a></h3>
 <p><em>Also known as:</em> Adam, AdamW</p>
 <p>Smarter update rules that adapt the step size per weight using running averages of gradients. AdamW is the default for Transformers.</p>
 <p><strong>Why it matters:</strong> Makes training converge faster and more reliably than plain gradient descent, at the cost of extra memory per weight.</p>
-<h3 id="learning-rate">Learning rate (LR)<a class="headerlink" href="#learning-rate" title="Permanent link">&para;</a></h3>
+<h3 id="learning-rate-lr">Learning rate (LR) <a id="learning-rate"></a><a class="headerlink" href="#learning-rate-lr" title="Permanent link">&para;</a></h3>
 <p>How big each update step is.</p>
 <p><strong>Why it matters:</strong> The single most important hyperparameter. Too high and training blows up; too low and it never gets anywhere.</p>
 <p><small><em>Index aliases:</em> Learning rate (LR)</small></p>
-<h3 id="batch-mini-batch">Batch / mini-batch<a class="headerlink" href="#batch-mini-batch" title="Permanent link">&para;</a></h3>
+<h3 id="batch-mini-batch">Batch / mini-batch <a id="batch-mini-batch"></a><a class="headerlink" href="#batch-mini-batch" title="Permanent link">&para;</a></h3>
 <p>The group of examples processed in one step before the weights are updated.</p>
 <p><strong>Why it matters:</strong> Bigger batches use the GPU better and give smoother gradients; smaller ones fit in memory. A knob you will see in every training script.</p>
-<h3 id="epoch">Epoch<a class="headerlink" href="#epoch" title="Permanent link">&para;</a></h3>
+<h3 id="epoch">Epoch <a id="epoch"></a><a class="headerlink" href="#epoch" title="Permanent link">&para;</a></h3>
 <p>One full pass over the training set.</p>
 <p><strong>Why it matters:</strong> Classic ML trains for many epochs; LLM pre-training usually sees each token about once.</p>
-<h3 id="training-loop">Training loop<a class="headerlink" href="#training-loop" title="Permanent link">&para;</a></h3>
+<h3 id="training-loop">Training loop <a id="training-loop"></a><a class="headerlink" href="#training-loop" title="Permanent link">&para;</a></h3>
 <p>Forward pass → loss → backward pass → optimizer step, repeated. Everything from a toy MLP to a frontier LLM runs this loop.</p>
 <p><strong>Why it matters:</strong> If you understand this loop (Map 3) you understand what "training" means at every stage of Map 2.</p>
-<h3 id="weight-initialization">Weight initialization<a class="headerlink" href="#weight-initialization" title="Permanent link">&para;</a></h3>
+<h3 id="weight-initialization">Weight initialization <a id="weight-initialization"></a><a class="headerlink" href="#weight-initialization" title="Permanent link">&para;</a></h3>
 <p>How the weights are set before training starts: small random numbers with a carefully chosen scale.</p>
 <p><strong>Why it matters:</strong> A bad starting scale makes gradients vanish or explode on step one; good initialization makes deep networks trainable.</p>
-<h3 id="dropout">Dropout<a class="headerlink" href="#dropout" title="Permanent link">&para;</a></h3>
+<h3 id="dropout">Dropout <a id="dropout"></a><a class="headerlink" href="#dropout" title="Permanent link">&para;</a></h3>
 <p>Randomly switch off neurons during training.</p>
 <p><strong>Why it matters:</strong> Forces the network not to rely on any single neuron, which reduces overfitting.</p>
-<h3 id="weight-decay">Weight decay<a class="headerlink" href="#weight-decay" title="Permanent link">&para;</a></h3>
+<h3 id="weight-decay">Weight decay <a id="weight-decay"></a><a class="headerlink" href="#weight-decay" title="Permanent link">&para;</a></h3>
 <p>Shrink the weights slightly every step (L2-style regularization).</p>
 <p><strong>Why it matters:</strong> Keeps weights small, which helps generalisation; the "W" in AdamW.</p>
-<h3 id="normalization">Normalization<a class="headerlink" href="#normalization" title="Permanent link">&para;</a></h3>
+<h3 id="normalization">Normalization <a id="normalization"></a><a class="headerlink" href="#normalization" title="Permanent link">&para;</a></h3>
 <p><em>Also known as:</em> BatchNorm, LayerNorm, RMSNorm</p>
 <p>Rescaling activations so they stay in a healthy range. LayerNorm and its cheaper cousin RMSNorm are the ones used in Transformers.</p>
 <p><strong>Why it matters:</strong> Keeps training stable in very deep networks; without it, values drift and training diverges.</p>
-<h3 id="residual-skip-connection">Residual / skip connection<a class="headerlink" href="#residual-skip-connection" title="Permanent link">&para;</a></h3>
+<h3 id="residual-skip-connection">Residual / skip connection <a id="residual-skip-connection"></a><a class="headerlink" href="#residual-skip-connection" title="Permanent link">&para;</a></h3>
 <p>Add a layer's input to its output. Forms the residual stream of a Transformer.</p>
 <p><strong>Why it matters:</strong> Lets gradients flow straight through dozens of layers, which is what makes 100-layer networks trainable at all.</p>
 <p><small><em>Index aliases:</em> Skip connection</small></p>
-<h3 id="vanishing-exploding-gradients">Vanishing / exploding gradients<a class="headerlink" href="#vanishing-exploding-gradients" title="Permanent link">&para;</a></h3>
+<h3 id="vanishing-exploding-gradients">Vanishing / exploding gradients <a id="vanishing-exploding-gradients"></a><a class="headerlink" href="#vanishing-exploding-gradients" title="Permanent link">&para;</a></h3>
 <p>Gradients shrinking to nothing or blowing up as they flow back through many layers.</p>
 <p><strong>Why it matters:</strong> The historical reason deep networks did not work before ~2012; residuals, normalization and better initialization fixed it.</p>
 <p><small><em>Index aliases:</em> Exploding gradients, Vanishing gradients</small></p>
-<h3 id="embedding">Embedding ★<a class="headerlink" href="#embedding" title="Permanent link">&para;</a></h3>
+<h3 id="embedding">Embedding ★ <a id="embedding"></a><a class="headerlink" href="#embedding" title="Permanent link">&para;</a></h3>
 <p>A learned vector of numbers representing a token, word, image or item so that similar things end up close together.</p>
 <p><strong>Why it matters:</strong> How a computer represents meaning: "king" and "queen" become nearby points. The input to every LLM and the basis of semantic search.</p>
-<h3 id="latent-space-representation">Latent space / representation<a class="headerlink" href="#latent-space-representation" title="Permanent link">&para;</a></h3>
+<h3 id="latent-space-representation">Latent space / representation <a id="latent-space-representation"></a><a class="headerlink" href="#latent-space-representation" title="Permanent link">&para;</a></h3>
 <p>The internal vector space in which the model represents meaning.</p>
 <p><strong>Why it matters:</strong> Where the model "thinks": arithmetic on these vectors (king − man + woman ≈ queen) is what makes them useful.</p>
 <p><small><em>Index aliases:</em> Latent space</small></p>
-<h3 id="inductive-bias">Inductive bias<a class="headerlink" href="#inductive-bias" title="Permanent link">&para;</a></h3>
+<h3 id="inductive-bias">Inductive bias <a id="inductive-bias"></a><a class="headerlink" href="#inductive-bias" title="Permanent link">&para;</a></h3>
 <p>The assumptions an architecture builds in: CNNs assume nearby pixels matter, RNNs assume order, Transformers assume very little.</p>
 <p><strong>Why it matters:</strong> Explains why CNNs need less data for images and why Transformers need huge data but scale further.</p>
-<h3 id="tensor">Tensor<a class="headerlink" href="#tensor" title="Permanent link">&para;</a></h3>
+<h3 id="tensor">Tensor <a id="tensor"></a><a class="headerlink" href="#tensor" title="Permanent link">&para;</a></h3>
 <p>A multi-dimensional array (vector, matrix, and beyond).</p>
 <p><strong>Why it matters:</strong> The data type everything in deep learning is made of; a "shape" like [batch, tokens, 768] tells you what is flowing where.</p>
-<h3 id="autograd-computational-graph">Autograd / computational graph<a class="headerlink" href="#autograd-computational-graph" title="Permanent link">&para;</a></h3>
+<h3 id="autograd-computational-graph">Autograd / computational graph <a id="autograd-computational-graph"></a><a class="headerlink" href="#autograd-computational-graph" title="Permanent link">&para;</a></h3>
 <p>Framework machinery (PyTorch) that records every operation so backprop can be computed automatically.</p>
 <p><strong>Why it matters:</strong> Why you never write backprop by hand: call <code>loss.backward()</code> and PyTorch does the calculus.</p>
 <p><small><em>Index aliases:</em> Computational graph</small></p>
-<h3 id="convolutional-neural-network">Convolutional Neural Network (CNN)<a class="headerlink" href="#convolutional-neural-network" title="Permanent link">&para;</a></h3>
+<h3 id="convolutional-neural-network-cnn">Convolutional Neural Network (CNN) <a id="convolutional-neural-network"></a><a class="headerlink" href="#convolutional-neural-network-cnn" title="Permanent link">&para;</a></h3>
 <p>A network using small sliding filters. The classic architecture for images (LeNet, AlexNet, ResNet).</p>
 <p><strong>Why it matters:</strong> Detects the same pattern anywhere in an image with few parameters. Still the workhorse for vision on small devices.</p>
 <p><small><em>Index aliases:</em> CNN</small></p>
-<h3 id="recurrent-networks">Recurrent networks<a class="headerlink" href="#recurrent-networks" title="Permanent link">&para;</a></h3>
+<h3 id="recurrent-networks">Recurrent networks <a id="recurrent-networks"></a><a class="headerlink" href="#recurrent-networks" title="Permanent link">&para;</a></h3>
 <p><em>Also known as:</em> RNN, LSTM, GRU</p>
 <p>Networks that process sequences one step at a time with a memory state. They dominated language tasks before Transformers replaced them.</p>
 <p><strong>Why it matters:</strong> Worked for sequences but could not be parallelised and forgot long-range context. Attention fixed both problems.</p>
 <p><small><em>Index aliases:</em> LSTM / GRU</small></p>
-<h3 id="sequence-to-sequence">Sequence-to-sequence (seq2seq)<a class="headerlink" href="#sequence-to-sequence" title="Permanent link">&para;</a></h3>
+<h3 id="sequence-to-sequence-seq2seq">Sequence-to-sequence (seq2seq) <a id="sequence-to-sequence"></a><a class="headerlink" href="#sequence-to-sequence-seq2seq" title="Permanent link">&para;</a></h3>
 <p>An encoder reads an input sequence, a decoder writes an output sequence (early translation models).</p>
 <p><strong>Why it matters:</strong> Attention was invented to fix seq2seq's bottleneck of squeezing a whole sentence into one vector.</p>
 <p><small><em>Index aliases:</em> seq2seq</small></p>
-<h3 id="autoencoder-vae">Autoencoder / VAE<a class="headerlink" href="#autoencoder-vae" title="Permanent link">&para;</a></h3>
+<h3 id="autoencoder-vae">Autoencoder / VAE <a id="autoencoder-vae"></a><a class="headerlink" href="#autoencoder-vae" title="Permanent link">&para;</a></h3>
 <p><em>Also known as:</em> Variational Autoencoder</p>
 <p>Networks trained to compress and then reconstruct their input. The variational version learns a smooth latent space you can sample from.</p>
 <p><strong>Why it matters:</strong> Learns compact representations without labels; the VAE is also the compressor inside Stable Diffusion.</p>
 <p><small><em>Index aliases:</em> VAE</small></p>
-<h3 id="generative-adversarial-network">Generative Adversarial Network (GAN)<a class="headerlink" href="#generative-adversarial-network" title="Permanent link">&para;</a></h3>
+<h3 id="generative-adversarial-network-gan">Generative Adversarial Network (GAN) <a id="generative-adversarial-network"></a><a class="headerlink" href="#generative-adversarial-network-gan" title="Permanent link">&para;</a></h3>
 <p>A generator and a discriminator trained against each other.</p>
 <p><strong>Why it matters:</strong> Produced the first photorealistic generated faces (2014–2020); mostly replaced by diffusion models, which are easier to train.</p>
 <p><small><em>Index aliases:</em> GAN</small></p>
-<h3 id="diffusion-model">Diffusion model<a class="headerlink" href="#diffusion-model" title="Permanent link">&para;</a></h3>
+<h3 id="diffusion-model">Diffusion model <a id="diffusion-model"></a><a class="headerlink" href="#diffusion-model" title="Permanent link">&para;</a></h3>
 <p>Generates images (and audio, video) by learning to reverse a gradual noising process.</p>
 <p><strong>Why it matters:</strong> The engine behind Stable Diffusion, DALL·E 2/3 and Midjourney: start from noise, remove it step by step toward the prompt.</p>
 
